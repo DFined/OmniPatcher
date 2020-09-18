@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration status="WARN">
+    <appenders>
+        <Console name="Console" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level: %logger{36}:: %msg%n"/>
+        </Console>
+
+        <RollingFile name="LogFile" filePattern="logs/%d{dd.MM.yyyy-HH-mm-ss}.log">
+            <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level: %logger{36}:: %msg%n"/>
+            <Policies>
+                <OnStartupTriggeringPolicy />
+            </Policies>
+        </RollingFile>
+    </appenders>
+
+    <loggers>
+        <root level="debug">
+            <appender-ref ref="Console" level="all"/>
+            <appender-ref ref="LogFile" level="all"/>
+        </root>
+    </loggers>
+</configuration>

@@ -1,0 +1,12 @@
+{
+  "dataDir": {
+    "path": "G:\\Downloads\\Code\\Java\\ParserPatcher\\data"
+  },
+  "tempDir": {
+    "path": "G:\\Downloads\\Code\\Java\\ParserPatcher\\data\\temp"
+  },
+  "sourceDir": {
+    "path": "G:\\DFined\\Graphics\\Dota\\root"
+  },
+  "fileManager": "SIMPLE_FILE_MANAGER"
+}
