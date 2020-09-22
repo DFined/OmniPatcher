@@ -1,20 +1,33 @@
 package dfined.patcher_parser.data.data_structure.game;
 
+import dfined.patcher_parser.data.annotations.PrimaryRegistryKey;
+
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
-public class Hero {
+public class Hero implements RegistryEntry {
+    @PrimaryRegistryKey
     String name;
     String modelPath;
     List<Item> items;
-    List<Item> defaultItems;
-    List<Slot> slots;
+    HashMap<String, Item> defaultItems;
+    HashMap<String, Slot> slots;
 
     public Hero(String name) {
         this.name = name;
         items = new ArrayList<>();
-        defaultItems = new ArrayList<>();
-        slots = new ArrayList<>();
+        defaultItems = new HashMap<>();
+        slots = new HashMap<>();
+        register();
+    }
+
+    public void addItem(Item item){
+        this.items.add(item);
+    }
+
+    public void addDefaultItem(Item item){
+        this.defaultItems.put(item.getItemSlot(),item);
     }
 
     public String getName() {
@@ -29,8 +42,8 @@ public class Hero {
         return modelPath;
     }
 
-    public void setModelPaths(String modelPaths) {
-        this.modelPath = modelPaths;
+    public void setModelPath(String modelPath) {
+        this.modelPath = modelPath;
     }
 
     public List<Item> getItems() {
@@ -41,23 +54,21 @@ public class Hero {
         this.items = items;
     }
 
-    public void addItem(Item item){
-        this.items.add(item);
+    public HashMap<String, Item> getDefaultItems() {
+        return defaultItems;
     }
 
-    public List<Slot> getSlots() {
+    public void setDefaultItems(HashMap<String, Item> defaultItems) {
+        this.defaultItems = defaultItems;
+    }
+
+    public HashMap<String, Slot> getSlots() {
         return slots;
     }
 
-    public void setSlots(List<Slot> slots) {
+    public void setSlots(HashMap<String, Slot> slots) {
         this.slots = slots;
     }
 
-    public void addDefaultItem(Item item){
-        this.defaultItems.add(item);
-    }
 
-    public List<Item> getDefaultItems() {
-        return defaultItems;
-    }
 }

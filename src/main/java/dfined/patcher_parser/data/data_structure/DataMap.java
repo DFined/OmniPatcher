@@ -1,52 +1,38 @@
 package dfined.patcher_parser.data.data_structure;
 
-import java.util.*;
+import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-public class DataMap {
-    HashMap<String, Object> map;
+public interface DataMap {
+    Stream<Object> streamByRegex(String regex, boolean getKeys);
+    default List<Object> listByRegex(String regex, boolean getKeys){
+        return streamByRegex(regex,getKeys).collect(Collectors.toList());
+    };
 
-    public DataMap(HashMap<String, Object> map) {
-        this.map = map;
+    default Object getSingle(String path, boolean getKey){
+        return streamByRegex(path, getKey).findFirst().orElse(null);
     }
 
-    public DataMap getByPath(String path){
-        return getByPath(path, map);
+    default <T> List<T> listTypeByRegex(String regex, Class<T> tClass){
+        return listByRegex(regex,false).stream()
+                .filter(object -> tClass.isAssignableFrom(object.getClass()))
+                .map(obj -> (T)obj)
+                .collect(Collectors.toList());
     }
 
-    public static DataMap getByPath(String path, HashMap map){
-        DataMap pathMap = navigateTo(path, map);
-        DataMap result = new DataMap(new HashMap<>());
-        if(pathMap != null){
-            result.map.putAll(pathMap.getMap());
+    default <T>T getSingleType(String path, Class<T> tClass){
+        return listTypeByRegex(path,tClass).stream().findFirst().orElse(null);
+    }
+
+    String getDataObjectName();
+
+    String backingPath();
+
+    default String[] prepPath(String regex){
+        if(regex.startsWith("/")){
+            return regex.substring(1).split("/",2);
         }
-        return result;
-    }
-
-    public static Object mapf(Map.Entry entry, HashMap map){
-        return map.put(entry.getKey(), entry.getValue());
-    }
-
-    public static DataMap navigateTo(String path, HashMap map){
-        String[] elements = path.split("/");
-        HashMap<String, Object> currentMap = map;
-        for(String element: elements){
-            Object value = currentMap.get(element);
-            if(value != null){
-                if(value instanceof HashMap){
-                    currentMap = (HashMap<String, Object>) value;
-                }else{
-                    return null;
-                }
-            }else {
-                return null;
-            }
-        }
-        return new DataMap(currentMap);
-    }
-
-    public HashMap<String, Object> getMap() {
-        return map;
+        return regex.split("/",2);
     }
 }

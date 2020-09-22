@@ -32,7 +32,7 @@ public class PatcherParser extends Application {
         primaryStage.setScene(new Scene(root, 300, 275));
         primaryStage.show();
         primaryStage.setWidth(1000);
-        primaryStage.setWidth(500);
+        primaryStage.setHeight(500);
         instance = this;
         setup();
     }

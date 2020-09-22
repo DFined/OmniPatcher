@@ -42,8 +42,8 @@ public class ItemTile extends HBox {
         }
         this.icon.setImage(item.getIcon());
         this.itemName.setText(item.getName());
-        this.heroName.setText(item.getHero());
-        this.slotName.setText(item.getSlot());
+        this.heroName.setText(item.getHeroName());
+        this.slotName.setText(item.getItemSlot());
         this.item = item;
         this.install.addEventFilter(ActionEvent.ACTION, action -> installItem());
     }

@@ -7,6 +7,6 @@ import java.lang.annotation.Target;
 
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.FIELD)
-public @interface AddOnRegex {
-    public String regex() default "";
+public @interface DefaultValue {
+    public String value();
 }

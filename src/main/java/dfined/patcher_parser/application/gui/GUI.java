@@ -4,6 +4,7 @@ import dfined.patcher_parser.application.ApplicationSettings;
 import dfined.patcher_parser.application.Param;
 import dfined.patcher_parser.application.PatcherParser;
 import dfined.patcher_parser.data.Data;
+import dfined.patcher_parser.data.data_structure.HashDataMap;
 import dfined.patcher_parser.data.data_structure.game.Item;
 import dfined.patcher_parser.data.data_structure.io.BufferedLineWriter;
 import dfined.patcher_parser.data.data_structure.io.IndexWriter;
@@ -63,7 +64,7 @@ public class GUI {
         FileManager manager = PatcherParser.getFileManager();
         ApplicationSettings settings = PatcherParser.getInstance().getSettings();
         File file = manager.getFromRepo(settings.getTempDir().getPath(), Param.INDEX_PATH);
-        IndexWriter.writeObject(new BufferedLineWriter(file), "items_game", Data.getGameData().getMap());
+        IndexWriter.writeObject(new BufferedLineWriter(file), "items_game", (HashDataMap) Data.getGameData());
     }
 
 

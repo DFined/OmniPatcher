@@ -7,6 +7,5 @@ import java.lang.annotation.Target;
 
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.FIELD)
-public @interface ReaderMapType {
-    public Class type() default Object.class;
+public @interface IgnoreDataMapping {
 }
