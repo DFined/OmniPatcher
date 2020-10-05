@@ -1,12 +1,15 @@
 {
-  "dataDir": {
-    "path": "G:\\Downloads\\Code\\Java\\ParserPatcher\\data"
+  "localDir": {
+    "path": "G:\\Downloads\\Code\\Java\\ParserPatcher\\data\\local"
   },
   "tempDir": {
     "path": "G:\\Downloads\\Code\\Java\\ParserPatcher\\data\\temp"
   },
   "sourceDir": {
-    "path": "G:\\DFined\\Graphics\\Dota\\root"
+    "path": "D:\\SteamLibrary\\steamapps\\common\\dota 2 beta\\game\\dota\\pak01_dir.vpk"
   },
-  "fileManager": "SIMPLE_FILE_MANAGER"
+  "dotaDir": {
+    "path": "D:\\SteamLibrary\\steamapps\\common\\dota 2 beta"
+  },
+  "fileManager": "VPK_FILE_MANAGER"
 }
