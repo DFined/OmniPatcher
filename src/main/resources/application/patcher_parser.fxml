@@ -12,19 +12,20 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
+
 <SplitPane dividerPositions="0.3394803017602682" prefHeight="904.0" prefWidth="1195.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dfined.omnipatcher.application.gui.GUI">
     <items>
       <VBox alignment="CENTER">
          <children>
+                  <AnchorPane prefHeight="30.0" prefWidth="551.0">
+                      <children>
+                          <ComboBox fx:id="heroSelector" onAction="#onHeroSelect" prefWidth="150.0" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0" />
+                      </children>
+                  </AnchorPane>
               <ScrollPane fitToHeight="true" fitToWidth="true" hbarPolicy="ALWAYS" prefHeight="200.0" prefWidth="443.0" vbarPolicy="ALWAYS" VBox.vgrow="ALWAYS">
                   <content>
                   <VBox>
                      <children>
-                              <AnchorPane prefHeight="30.0" prefWidth="551.0">
-                                  <children>
-                                      <ComboBox fx:id="heroSelector" onAction="#onHeroSelect" prefWidth="150.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
-                                  </children>
-                              </AnchorPane>
                         <VBox fx:id="progressBox" alignment="CENTER">
                            <children>
                               <Label text="Loading assets. Please wait.">

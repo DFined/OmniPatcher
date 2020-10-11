@@ -1,7 +1,7 @@
 package dfined.omnipatcher.filesystem;
 
-import dfined.javavpk.core.Archive;
-import dfined.javavpk.core.Entry;
+import javavpk.core.Archive;
+import javavpk.core.Entry;
 import org.apache.commons.io.FileUtils;
 
 import java.io.File;
@@ -67,5 +67,21 @@ public class VPKFileManager implements FileManager {
     @Override
     public void deleteLocal(File localPath, String localFile) {
         new File(localPath,localFile).delete();
+    }
+
+    @Override
+    public HashMap<String, File> listFilesInRepoDir(File repo, String dirPath) {
+        HashMap<String,File> result = new HashMap<>();
+        File dir = new File(repo, dirPath);
+        addToMapFromDir(result, dir);
+        return result;
+    }
+
+    private void addToMapFromDir(HashMap<String,File> map, File dir){
+        if(dir.isDirectory()){
+            Arrays.stream(dir.listFiles()).forEach(file->addToMapFromDir(map, file));
+        }else{
+            map.put(dir.getPath(),dir);
+        }
     }
 }

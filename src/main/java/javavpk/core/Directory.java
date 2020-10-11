@@ -1,4 +1,4 @@
-package dfined.javavpk.core;
+package javavpk.core;
 
 import java.io.File;
 import java.util.ArrayList;

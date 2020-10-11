@@ -1,7 +1,7 @@
-package dfined.javavpk.core;
+package javavpk.core;
 
-import dfined.javavpk.exceptions.ArchiveException;
-import dfined.javavpk.exceptions.EntryException;
+import javavpk.exceptions.ArchiveException;
+import javavpk.exceptions.EntryException;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -57,7 +57,7 @@ public class Entry
 		
 		//get target archive
 		File target = null;
-		if (this.archive.isMultiPart())
+		if (this.archiveIndex != Entry.TERMINATOR)
 			target = this.archive.getChildArchive(this.archiveIndex);
 		else
 			target = this.archive.getFile();

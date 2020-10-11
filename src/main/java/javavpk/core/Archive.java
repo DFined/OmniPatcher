@@ -1,7 +1,8 @@
-package dfined.javavpk.core;
+package javavpk.core;
 
-import dfined.javavpk.exceptions.ArchiveException;
-import dfined.javavpk.exceptions.EntryException;
+import javavpk.exceptions.ArchiveException;
+import javavpk.exceptions.EntryException;
+import org.apache.commons.io.FileUtils;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -9,9 +10,17 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
-import java.util.*;
+import java.nio.file.Paths;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.zip.CRC32;
 
 public class Archive {
+
+    private static final int SHORT_SIZE = 2;
+    private static final int INT_SIZE = 4;
 
     /**
      * Create a new VPK archive.
@@ -126,6 +135,93 @@ public class Archive {
         return fileSystem;
     }
 
+    public File writeV1SingleArchive(HashMap<String, File> entries, String removePrefix) throws IOException {
+        try (FileOutputStream fileOutputStream = new FileOutputStream(this.file)) {
+            HashMap<String, HashMap<String, HashMap<String, File>>> fileTree = new LinkedHashMap<>();
+            int treeSize = 1;
+            for (String fullPath : entries.keySet()) {
+                //get extension
+                String[] fSplit = fullPath.split("\\.");
+                String filePathAndName = fSplit[0];
+                String extension = fSplit[1];
+                String fileName = Paths.get(filePathAndName).getFileName().toString();
+                String filePath = Paths.get(filePathAndName).getParent().toString();
+                String localPath = filePath.replace("\\","/");
+                localPath = localPath.replaceFirst(removePrefix.replace("\\","/"),"");
+                localPath = localPath.startsWith("/")?localPath.substring(1):localPath;
+                if(!fileTree.containsKey(extension)) {
+                    fileTree.put(extension, new LinkedHashMap<>());
+                    treeSize+=extension.length()+2;
+                }
+                if(!fileTree.get(extension).containsKey(filePath)){
+                    fileTree.get(extension).put(filePath, new LinkedHashMap<>());
+                    treeSize += localPath.length()+2;
+                }
+                fileTree.get(extension).get(filePath).put(fileName, entries.get(fullPath));
+                treeSize+=fileName.length()+1 + INT_SIZE*3 + SHORT_SIZE*3;
+            }
+            //write header
+            writeInt(Archive.SIGNATURE, fileOutputStream);
+            writeInt(Archive.MINIMUM_VERSION, fileOutputStream);
+            writeInt(treeSize, fileOutputStream);
+
+            int offset = 0;
+            for (String extension : fileTree.keySet()) {
+                //Write the extension
+                writeString(extension, fileOutputStream);
+                for (String path : fileTree.get(extension).keySet()) {
+                    //Write the path
+                    String localPath = toLocal(path, removePrefix);
+                    writeString(localPath, fileOutputStream);
+                    for (String name : fileTree.get(extension).get(path).keySet()) {
+                        writeString(name, fileOutputStream);
+                        //read data
+                        File file = fileTree.get(extension).get(path).get(name);
+                        byte[] bytes = FileUtils.readFileToByteArray(file);
+                        int fileSize = bytes.length;
+                        //write crc
+                        CRC32 crc32 = new CRC32();
+                        crc32.update(bytes);
+                        writeInt((int) crc32.getValue(), fileOutputStream);
+                        //write preloadSize;
+                        writeShort((short) 0, fileOutputStream);
+                        //write this archive index
+                        writeShort((short) THIS_ARCHIVE, fileOutputStream);
+                        //write offset relative to this dir and increment
+                        writeInt(offset, fileOutputStream);
+                        //write file size
+                        writeInt(fileSize, fileOutputStream);
+                        writeShort((short) -1, fileOutputStream);
+                        offset += fileSize;
+
+                    }
+                    fileOutputStream.write(NULL_TERMINATOR);
+                }
+                fileOutputStream.write(NULL_TERMINATOR);
+            }
+            fileOutputStream.write(NULL_TERMINATOR);
+
+            for (String extension : fileTree.keySet()) {
+                for (String path : fileTree.get(extension).keySet()) {
+                    for (String name : fileTree.get(extension).get(path).keySet()) {
+                        File file = fileTree.get(extension).get(path).get(name);
+                        byte[] bytes = FileUtils.readFileToByteArray(file);
+                        fileOutputStream.write(bytes);
+                    }
+                }
+            }
+            fileOutputStream.flush();
+        }
+        return this.file;
+    }
+
+    private static String toLocal(String path,String prefix) {
+        String localPath = path.replace("\\","/");
+        localPath = localPath.replaceFirst(prefix.replace("\\","/"),"");
+        localPath = localPath.startsWith("/")?localPath.substring(1):localPath;
+        return localPath;
+    }
+
     /**
      * Returns a child archive that belongs to this parent.
      *
@@ -152,7 +248,6 @@ public class Archive {
     }
 
 
-
     /**
      * Reads a stream character by character until a null terminator is reached.
      *
@@ -170,6 +265,13 @@ public class Archive {
             stringBuilder.append((char) character);
 
         return stringBuilder.toString();
+    }
+
+    private void writeString(String extension, FileOutputStream stream) throws IOException {
+        for (char character : extension.toCharArray()) {
+            stream.write(character);
+        }
+        stream.write(NULL_TERMINATOR);
     }
 
     /**
@@ -191,6 +293,13 @@ public class Archive {
         return byteBuffer.getInt();
     }
 
+    private void writeInt(int value, FileOutputStream fileOutputStream) throws IOException {
+        ByteBuffer byteBuffer = ByteBuffer.allocate(4);
+        byteBuffer.order(ByteOrder.LITTLE_ENDIAN);
+        byteBuffer.putInt(value);
+        fileOutputStream.write(byteBuffer.array());
+    }
+
     /**
      * Reads an unsigned short (2 bytes) from a stream.
      *
@@ -202,12 +311,18 @@ public class Archive {
         //byte array
         byte[] buffer = new byte[2];
         fileInputStream.read(buffer);
-
         //byte buffer
         ByteBuffer byteBuffer = ByteBuffer.wrap(buffer);
         byteBuffer.order(ByteOrder.LITTLE_ENDIAN);
 
         return byteBuffer.getShort();
+    }
+
+    private void writeShort(short val, FileOutputStream stream) throws IOException {
+        ByteBuffer buffer = ByteBuffer.allocate(2);
+        buffer.order(ByteOrder.LITTLE_ENDIAN);
+        buffer.putShort(val);
+        stream.write(buffer.array());
     }
 
     /**
@@ -277,6 +392,8 @@ public class Archive {
 
     public static final int SIGNATURE = 0x55AA1234;
     public static final char NULL_TERMINATOR = 0x0;
+    public static final int TERMINATOR = -1;
+    public static final int THIS_ARCHIVE = 32767;
 
     public static final int MINIMUM_VERSION = 1;
     public static final int MAXIMUM_VERSION = 2;

@@ -5,7 +5,7 @@ import dfined.omnipatcher.application.Param;
 import dfined.omnipatcher.application.OmniPatcher;
 import dfined.omnipatcher.data.Data;
 import dfined.omnipatcher.data.Registries;
-import dfined.omnipatcher.data.ValveFormatDecompiler;
+import dfined.omnipatcher.filesystem.ValveResourceManager;
 import dfined.omnipatcher.data.annotations.DefaultValue;
 import dfined.omnipatcher.data.annotations.FieldDataRegex;
 import dfined.omnipatcher.data.annotations.IgnoreDataMapping;
@@ -70,7 +70,7 @@ public class Item extends GameData {
         if (imageInventory != null) {
             String iconPath = ICONS_PATH_PREFIX + imageInventory;
             try {
-                image = new Image(new FileInputStream(ValveFormatDecompiler.getResource(iconPath, ICONS_INPUT_EXTENSION, ICONS_OUTPUT_EXTENSION, true)));
+                image = new Image(new FileInputStream(ValveResourceManager.getResource(iconPath, ICONS_INPUT_EXTENSION, ICONS_OUTPUT_EXTENSION, true)));
             } catch (IOException e) {
                 log.warn(String.format("Error loading icon '%s'", iconPath), e);
             }
@@ -86,13 +86,19 @@ public class Item extends GameData {
         File outputPath = OmniPatcher.getInstance().getSettings().getTempDir();
 
         //Install main model file if it exists. It might not for items such as personas
-        if (modelPlayer != null) {
+        if (modelPlayer != null && targetSlot.getPath()!=null) {
             FileManagerUtils.fromSourceToRepo(modelPlayer + FILE_POSTFIX, outputPath, targetSlot.getPath() + FILE_POSTFIX);
+        }else{
+            System.out.println();
         }
 
         //Install visuals
         for (VisualModifier visual : visuals) {
-            FileManagerUtils.fromSourceToRepo(visual.getModifier() + FILE_POSTFIX, outputPath, visual.getAsset() + FILE_POSTFIX);
+            if(visual.getAsset()!=null) {
+                FileManagerUtils.fromSourceToRepo(visual.getModifier() + FILE_POSTFIX, outputPath, visual.getAsset() + FILE_POSTFIX);
+            }else{
+                System.out.println();
+            }
         }
 
         Item defaultItem = hero.getDefaultItems().get(targetSlot.getName());

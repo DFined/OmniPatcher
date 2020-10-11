@@ -1,4 +1,4 @@
-package dfined.javavpk.exceptions;
+package javavpk.exceptions;
 
 import java.io.IOException;
 

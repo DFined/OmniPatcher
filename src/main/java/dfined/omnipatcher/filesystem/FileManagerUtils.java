@@ -11,7 +11,7 @@ public abstract class FileManagerUtils {
     // If the requested file exists in the Local repo - retrieve it. Otherwise - copy it from source first
     public static File getFromLocal(String path) throws IOException {
         ApplicationSettings settings = OmniPatcher.getInstance().getSettings();
-        return OmniPatcher.getFileManager().getFromLocal(settings.getSourceDir(), settings.localDir(), path);
+        return OmniPatcher.getFileManager().getFromLocal(settings.getSourceFile(), settings.localDir(), path);
     }
 
     // True iff the requested file exists in the Local repo
@@ -29,7 +29,7 @@ public abstract class FileManagerUtils {
     //Copy file from the specified path in the Source repo to the specified path in the Local repo
     public static File fromSourceToLocal(String sourcePath, String destPath) throws IOException {
         ApplicationSettings settings = OmniPatcher.getInstance().getSettings();
-        return OmniPatcher.getFileManager().getFromSource(settings.getSourceDir(), sourcePath, settings.getLocalDir(), destPath);
+        return OmniPatcher.getFileManager().getFromSource(settings.getSourceFile(), sourcePath, settings.getLocalDir(), destPath);
     }
 
     //Copy file from the specified path in the Source repo to the same path in the Local repo
@@ -40,7 +40,7 @@ public abstract class FileManagerUtils {
     //Copy file from the specified path in the Source repo to the specified path in the specified repo
     public static File fromSourceToRepo(String sourcePath, File repo, String dest) throws IOException {
         ApplicationSettings settings = OmniPatcher.getInstance().getSettings();
-        return OmniPatcher.getFileManager().getFromSource(settings.getSourceDir(), sourcePath, repo, dest);
+        return OmniPatcher.getFileManager().getFromSource(settings.getSourceFile(), sourcePath, repo, dest);
     }
 
     public static String getLocalPath(){
@@ -52,6 +52,6 @@ public abstract class FileManagerUtils {
     }
 
     public static String getSourcePath(){
-        return OmniPatcher.getInstance().getSettings().getSourceDir().getAbsolutePath();
+        return OmniPatcher.getInstance().getSettings().getSourceFile().getAbsolutePath();
     }
 }

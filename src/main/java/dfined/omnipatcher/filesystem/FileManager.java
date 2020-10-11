@@ -2,6 +2,7 @@ package dfined.omnipatcher.filesystem;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.HashMap;
 
 public interface FileManager {
     // Get a file from a selected source and copy it into the selected repo
@@ -17,4 +18,6 @@ public interface FileManager {
     public boolean existsInLocal(File localPath, String localFile);
 
     public void deleteLocal(File localPath, String s);
+
+    public HashMap<String,File> listFilesInRepoDir(File repo, String dir);
 }

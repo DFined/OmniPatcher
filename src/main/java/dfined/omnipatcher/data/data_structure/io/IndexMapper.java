@@ -1,6 +1,5 @@
 package dfined.omnipatcher.data.data_structure.io;
 
-import com.sun.javaws.exceptions.InvalidArgumentException;
 import dfined.omnipatcher.application.OmniPatcher;
 import dfined.omnipatcher.data.data_structure.DataMap;
 import dfined.omnipatcher.data.data_structure.HashDataMap;
@@ -35,7 +34,7 @@ public abstract class IndexMapper {
     public static DataMap parseObjectInternal(LineReader reader, String name, String path) throws IOException {
         String line = prepLine(reader);
         if (!line.equals("{")) {
-            log.fatal(String.format("Malformed index file. Expected line '{' but found '%s'. Exiting.", line), new InvalidArgumentException(new String[]{line}));
+            log.fatal(String.format("Malformed index file. Expected line '{' but found '%s'. Exiting.", line), new IllegalArgumentException());
             Platform.exit();
             System.exit(1);
         }

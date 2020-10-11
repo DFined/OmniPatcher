@@ -1,17 +1,22 @@
 package dfined.omnipatcher.application.gui;
 
+import dfined.omnipatcher.application.ApplicationSettings;
 import dfined.omnipatcher.application.OmniPatcher;
+import dfined.omnipatcher.application.Param;
 import dfined.omnipatcher.data.Data;
 import dfined.omnipatcher.data.Session;
 import dfined.omnipatcher.data.data_structure.game.Item;
+import dfined.omnipatcher.filesystem.ValveResourceManager;
 import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.ProgressBar;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
 import org.apache.commons.io.FileUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -48,6 +53,13 @@ public class GUI {
 
     ItemTile leftSelectedTile = null;
     ItemTile installedSelectedTile = null;
+
+    public static void setupLoadingGUI(Stage primaryStage){
+        VBox startup = new StartupTile();
+        primaryStage.setTitle(Param.APPLICATION_TITLE);
+        primaryStage.setScene(new Scene(startup, 200, 200));
+        primaryStage.show();
+    }
 
     public void init() {
         //Hero selector setup
@@ -174,12 +186,14 @@ public class GUI {
     public void onInstallAll() {
         File repo = OmniPatcher.getInstance().getSettings().getTempDir();
         String errorMsg = "";
+        if(!repo.exists()){
+            repo.mkdir();
+        }
         if (repo.isDirectory()) {
             String[] files = repo.list();
             int clear = JOptionPane.YES_OPTION;
             if (files.length != 0) {
                 clear = JOptionPane.showConfirmDialog(null, "Selected repo is not empty. Clear?", "Clear Repo?", JOptionPane.YES_NO_OPTION);
-
             }
             if (clear == JOptionPane.YES_OPTION) {
                 try {
@@ -188,18 +202,26 @@ public class GUI {
                         item.installItem();
                     }
                     Item.installAll();
+                    ApplicationSettings settings = OmniPatcher.getInstance().getSettings();
+                    if(settings.getVpkDir().exists()){
+                        FileUtils.cleanDirectory(settings.getVpkDir());
+                    }else{
+                        settings.getVpkDir().mkdir();
+                    }
+                    ValveResourceManager.installDirectoryToGame(settings.getTempDir(),settings.getVpkFile());
+                    ValveResourceManager.convertGameinfo(settings.getGameinfoFile());
                     return;
                 } catch (IOException e) {
                     errorMsg = "Encountered filesystem error during install. " + e.getMessage();
                     log.warn(String.format("Encountered filesystem error during install. '%s'", e.getMessage()));
-                    e.printStackTrace();
+                    log.warn(errorMsg);
+
                 }
             }
         } else {
-            errorMsg = String.format("Repo is not a directory: '%s'", repo.getAbsolutePath());
+            errorMsg = String.format("Repo is not a directory: '%s'", repo.getPath());
         }
-        JOptionPane.showMessageDialog(null, errorMsg, "Error installing mods", JOptionPane.ERROR_MESSAGE);
-    }
+        JOptionPane.showMessageDialog(null, errorMsg, "Error installing mods", JOptionPane.ERROR_MESSAGE);    }
 
 
     public String selectedHero() {
