@@ -5,6 +5,7 @@ import javavpk.core.Entry;
 import org.apache.commons.io.FileUtils;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -36,6 +37,9 @@ public class VPKFileManager implements FileManager {
         Entry entry = fileSystem.get(pathInSource);
         if(resultFile.exists()){
             resultFile.delete();
+        }
+        if(entry==null){
+            throw new FileNotFoundException(String.format("File %s not found in vpk %s",pathInSource,sourcePath));
         }
         FileUtils.touch(resultFile);
         entry.extract(resultFile);

@@ -13,7 +13,7 @@ public class VisualModifier extends GameData {
 
     public VisualModifier(HashDataMap map, Hero hero) {
         super(map);
-        if(asset!= null) {
+        if (asset != null) {
             if (asset.equals(hero.getName())) {
                 asset = hero.getModelPath();
             }
@@ -22,7 +22,9 @@ public class VisualModifier extends GameData {
 
     public boolean isAllowed() {
         if (type != null) {
-            return ALLOWED_TYPES.contains(type) && modifier != null && asset != null;
+            if (modifier != null && asset != null) {
+                return ALLOWED_TYPES.contains(type) && assetIsFile(modifier) && assetIsFile(asset);
+            }
         }
         return false;
     }
@@ -37,5 +39,9 @@ public class VisualModifier extends GameData {
 
     public String getModifier() {
         return modifier;
+    }
+
+    private boolean assetIsFile(String asset) {
+        return asset.contains(".");
     }
 }

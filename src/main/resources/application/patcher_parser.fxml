@@ -13,7 +13,7 @@
 <?import javafx.scene.text.Font?>
 
 
-<SplitPane dividerPositions="0.3394803017602682" prefHeight="904.0" prefWidth="1195.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dfined.omnipatcher.application.gui.GUI">
+<fx:root type="SplitPane" dividerPositions="0.3394803017602682" prefHeight="904.0" prefWidth="1195.0" xmlns="http://javafx.com/javafx/8.0.261" xmlns:fx="http://javafx.com/fxml/1">
     <items>
       <VBox alignment="CENTER">
          <children>
@@ -114,4 +114,4 @@
          </HBox>
         </VBox>
     </items>
-</SplitPane>
+</fx:root>

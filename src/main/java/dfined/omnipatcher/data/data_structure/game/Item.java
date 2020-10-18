@@ -5,6 +5,7 @@ import dfined.omnipatcher.application.Param;
 import dfined.omnipatcher.application.OmniPatcher;
 import dfined.omnipatcher.data.Data;
 import dfined.omnipatcher.data.Registries;
+import dfined.omnipatcher.data.Session;
 import dfined.omnipatcher.filesystem.ValveResourceManager;
 import dfined.omnipatcher.data.annotations.DefaultValue;
 import dfined.omnipatcher.data.annotations.FieldDataRegex;
@@ -15,9 +16,11 @@ import dfined.omnipatcher.data.data_structure.io.IndexWriter;
 import dfined.omnipatcher.filesystem.FileManager;
 import dfined.omnipatcher.filesystem.FileManagerUtils;
 import javafx.scene.image.Image;
+import org.apache.commons.io.FileUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import javax.swing.*;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -117,11 +120,52 @@ public class Item extends GameData {
 
     }
 
-    public static void installAll() throws IOException {
-        FileManager manager = OmniPatcher.getFileManager();
-        ApplicationSettings settings = OmniPatcher.getInstance().getSettings();
-        File file = manager.createFileInRepo(settings.getTempDir(), Param.INDEX_PATH);
-        IndexWriter.writeObject(new BufferedLineWriter(file), "items_game", (HashDataMap) Data.getGameData());
+    public static void installAll(boolean silent) {
+        File repo = OmniPatcher.getInstance().getSettings().getTempDir();
+        String errorMsg = "";
+        if (!repo.exists()) {
+            repo.mkdir();
+        }
+        if (repo.isDirectory()) {
+            String[] files = repo.list();
+            int clear = JOptionPane.YES_OPTION;
+            if (files.length != 0) {
+                if(!silent) {
+                    clear = JOptionPane.showConfirmDialog(null, "Selected repo is not empty. Clear?", "Clear Repo?", JOptionPane.YES_NO_OPTION);
+                }
+            }
+            if (clear == JOptionPane.YES_OPTION) {
+                try {
+                    FileUtils.cleanDirectory(repo);
+                    for (Item item : Session.getToInstall().stream().map(name -> Data.getItems().get(name)).collect(Collectors.toList())) {
+                        item.installItem();
+                    }
+
+                    FileManager manager = OmniPatcher.getFileManager();
+                    ApplicationSettings settings = OmniPatcher.getInstance().getSettings();
+                    File file = manager.createFileInRepo(settings.getTempDir(), Param.INDEX_PATH);
+                    IndexWriter.writeObject(new BufferedLineWriter(file), "items_game", (HashDataMap) Data.getGameData());
+
+                    if (settings.getVpkDir().exists()) {
+                        FileUtils.cleanDirectory(settings.getVpkDir());
+                    } else {
+                        settings.getVpkDir().mkdir();
+                    }
+                    ValveResourceManager.installDirectoryToGame(settings.getTempDir(), settings.getVpkFile());
+                    ValveResourceManager.convertGameinfo(settings.getGameinfoFile());
+                    if(!silent) {
+                        JOptionPane.showMessageDialog(null, "Mods installed.", "Mods Installed", JOptionPane.INFORMATION_MESSAGE);
+                    }
+                    return;
+                } catch (IOException e) {
+                    errorMsg = "Encountered filesystem error during install. " + e.getMessage();
+                    log.warn(String.format("Encountered filesystem error during install. '%s'", errorMsg));
+                }
+            }
+        } else {
+            errorMsg = String.format("Repo is not a directory: '%s'", repo.getPath());
+        }
+        JOptionPane.showMessageDialog(null, errorMsg, "Error installing mods", JOptionPane.ERROR_MESSAGE);
     }
 
     public String getName() {

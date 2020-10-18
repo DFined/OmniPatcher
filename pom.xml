@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>groupId</groupId>
     <artifactId>OmniPatcher</artifactId>
-    <version>0.1.0-ALPHA</version>
+    <version>0.1.1-BETA</version>
     <packaging>jar</packaging>
 
     <properties>
@@ -38,6 +38,11 @@
             <groupId>com.google.guava</groupId>
             <artifactId>guava</artifactId>
             <version>14.0</version>
+        </dependency>
+        <dependency>
+            <groupId>net.lingala.zip4j</groupId>
+            <artifactId>zip4j</artifactId>
+            <version>2.6.3</version>
         </dependency>
     </dependencies>
 

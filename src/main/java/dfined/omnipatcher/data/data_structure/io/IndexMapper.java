@@ -71,7 +71,6 @@ public abstract class IndexMapper {
     public static NamedString getNameAndR(String name) {
         String value = null;
         if (name.contains("\"")) {
-            //This is an atomic value
             String[] values = name.split("\"[ \n\t]*\"");
             name = values[0].trim();
             value = values[1].trim();
