@@ -11,10 +11,7 @@ import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 import java.nio.file.Paths;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.LinkedHashMap;
-import java.util.List;
+import java.util.*;
 import java.util.zip.CRC32;
 
 public class Archive {
@@ -135,7 +132,7 @@ public class Archive {
         return fileSystem;
     }
 
-    public File writeV1SingleArchive(HashMap<String, File> entries, String removePrefix) throws IOException {
+    public File writeV1SingleArchive(Map<String, File> entries, String removePrefix) throws IOException {
         try (FileOutputStream fileOutputStream = new FileOutputStream(this.file)) {
             HashMap<String, HashMap<String, HashMap<String, File>>> fileTree = new LinkedHashMap<>();
             int treeSize = 1;

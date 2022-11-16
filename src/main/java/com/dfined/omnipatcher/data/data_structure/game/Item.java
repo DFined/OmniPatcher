@@ -3,14 +3,14 @@ package com.dfined.omnipatcher.data.data_structure.game;
 import com.dfined.omnipatcher.data.Session;
 import com.dfined.omnipatcher.data.annotations.FieldDataRegex;
 import com.dfined.omnipatcher.data.annotations.IgnoreDataMapping;
-import com.dfined.omnipatcher.data.data_structure.io.BufferedLineWriter;
+import com.dfined.omnipatcher.v2.io.BufferedLineWriter;
 import com.dfined.omnipatcher.data.data_structure.io.IndexWriter;
 import com.dfined.omnipatcher.application.ApplicationSettings;
 import com.dfined.omnipatcher.application.Param;
 import com.dfined.omnipatcher.application.OmniPatcher;
 import com.dfined.omnipatcher.data.Data;
 import com.dfined.omnipatcher.data.Registries;
-import com.dfined.omnipatcher.filesystem.ValveResourceManager;
+import com.dfined.omnipatcher.v2.filesystem.ValveResourceManager;
 import com.dfined.omnipatcher.data.annotations.DefaultValue;
 import com.dfined.omnipatcher.data.data_structure.HashDataMap;
 import com.dfined.omnipatcher.filesystem.FileManager;
@@ -73,7 +73,7 @@ public class Item extends GameData {
         if (imageInventory != null) {
             String iconPath = ICONS_PATH_PREFIX + imageInventory;
             try {
-                image = new Image(new FileInputStream(ValveResourceManager.getResource(iconPath, ICONS_INPUT_EXTENSION, ICONS_OUTPUT_EXTENSION, true)));
+                image = new Image(new FileInputStream(ValveResourceManager.getIcon(iconPath, ICONS_INPUT_EXTENSION, ICONS_OUTPUT_EXTENSION)));
             } catch (IOException e) {
                 log.warn(String.format("Error loading icon '%s'", iconPath), e);
             }

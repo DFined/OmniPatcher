@@ -1,6 +1,6 @@
 package com.dfined.omnipatcher.application;
 
-import com.dfined.omnipatcher.application.gui.GUI;
+import com.dfined.omnipatcher.v2.ui.GUI;
 import com.dfined.omnipatcher.application.gui.MainGUI;
 import com.dfined.omnipatcher.application.gui.StartupGUI;
 import com.dfined.omnipatcher.data.Data;
@@ -8,7 +8,7 @@ import com.dfined.omnipatcher.data.Session;
 import com.dfined.omnipatcher.data.data_structure.game.Item;
 import com.dfined.omnipatcher.filesystem.FileManager;
 import com.dfined.omnipatcher.filesystem.FileSystem;
-import com.dfined.omnipatcher.filesystem.ValveResourceManager;
+import com.dfined.omnipatcher.v2.filesystem.ValveResourceManager;
 import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.stage.DirectoryChooser;

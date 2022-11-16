@@ -10,14 +10,15 @@ import java.io.IOException;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Objects;
 
 public class VPKFileManager implements FileManager {
-    private static final List<String> ALLOWED_EXTENSIONS = Arrays.asList(new String[]{"vmdl_c","vpcf_c","txt","vtex_c"});
+    private static final List<String> ALLOWED_EXTENSIONS = Arrays.asList("vmdl_c","vpcf_c","txt","vtex_c");
     HashMap<String, Entry> fileSystem;
     String name;
 
     private void init(File archive) throws IOException {
-        if(name != archive.getPath()) {
+        if(!Objects.equals(name, archive.getPath())) {
             Archive vpkArchive = new Archive(archive);
             fileSystem = vpkArchive.load(ALLOWED_EXTENSIONS);
             name = archive.getPath();

@@ -1,6 +1,6 @@
 package com.dfined.omnipatcher.data;
 
-import com.dfined.omnipatcher.application.Globals;
+import com.dfined.omnipatcher.v2.Globals;
 import org.apache.commons.io.FileUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;

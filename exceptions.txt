@@ -1211,3 +1211,1011 @@ Exception: System.ArgumentException: Unrecognized block type 'RED2'
    at ValveResourceFormat.Resource.Read(Stream input) in C:\projects\valveresourceformat\ValveResourceFormat\Resource\Resource.cs:line 226
    at Decompiler.Decompiler.ProcessFile(String path, Stream stream) in C:\projects\valveresourceformat\Decompiler\Decompiler.cs:line 269
 
+---------------
+File: F:\DFined\Java\ParserPatcher\data\local\panorama\images\econ\items\abaddon\soul_of_darkness_back\soul_of_darkness_back_png.vtex_c
+Exception: System.ArgumentException: Unrecognized block type 'RED2'
+   at ValveResourceFormat.Resource.ConstructFromType(String input)
+   at ValveResourceFormat.Resource.Read(Stream input) in C:\projects\valveresourceformat\ValveResourceFormat\Resource\Resource.cs:line 226
+   at Decompiler.Decompiler.ProcessFile(String path, Stream stream) in C:\projects\valveresourceformat\Decompiler\Decompiler.cs:line 269
+
+---------------
+File: F:\DFined\Java\ParserPatcher\data\local\panorama\images\econ\items\abaddon\soul_of_darkness_head\soul_of_darkness_head_png.vtex_c
+Exception: System.ArgumentException: Unrecognized block type 'RED2'
+   at ValveResourceFormat.Resource.ConstructFromType(String input)
+   at ValveResourceFormat.Resource.Read(Stream input) in C:\projects\valveresourceformat\ValveResourceFormat\Resource\Resource.cs:line 226
+   at Decompiler.Decompiler.ProcessFile(String path, Stream stream) in C:\projects\valveresourceformat\Decompiler\Decompiler.cs:line 269
+
+---------------
+File: F:\DFined\Java\ParserPatcher\data\local\panorama\images\econ\items\abaddon\soul_of_darkness_mount\soul_of_darkness_mount_png.vtex_c
+Exception: System.ArgumentException: Unrecognized block type 'RED2'
+   at ValveResourceFormat.Resource.ConstructFromType(String input)
+   at ValveResourceFormat.Resource.Read(Stream input) in C:\projects\valveresourceformat\ValveResourceFormat\Resource\Resource.cs:line 226
+   at Decompiler.Decompiler.ProcessFile(String path, Stream stream) in C:\projects\valveresourceformat\Decompiler\Decompiler.cs:line 269
+
+---------------
+File: F:\DFined\Java\ParserPatcher\data\local\panorama\images\econ\items\abaddon\soul_of_darkness_shoulder\soul_of_darkness_shoulder_png.vtex_c
+Exception: System.ArgumentException: Unrecognized block type 'RED2'
+   at ValveResourceFormat.Resource.ConstructFromType(String input)
+   at ValveResourceFormat.Resource.Read(Stream input) in C:\projects\valveresourceformat\ValveResourceFormat\Resource\Resource.cs:line 226
+   at Decompiler.Decompiler.ProcessFile(String path, Stream stream) in C:\projects\valveresourceformat\Decompiler\Decompiler.cs:line 269
+
+---------------
+File: F:\DFined\Java\ParserPatcher\data\local\panorama\images\econ\items\abaddon\soul_of_darkness_weapon\soul_of_darkness_weapon_png.vtex_c
+Exception: System.ArgumentException: Unrecognized block type 'RED2'
+   at ValveResourceFormat.Resource.ConstructFromType(String input)
+   at ValveResourceFormat.Resource.Read(Stream input) in C:\projects\valveresourceformat\ValveResourceFormat\Resource\Resource.cs:line 226
+   at Decompiler.Decompiler.ProcessFile(String path, Stream stream) in C:\projects\valveresourceformat\Decompiler\Decompiler.cs:line 269
+
+---------------
+File: F:\DFined\Java\ParserPatcher\data\local\panorama\images\econ\items\abaddon\merciless_king_back\merciless_king_back_png.vtex_c
+Exception: System.ArgumentException: Unrecognized block type 'RED2'
+   at ValveResourceFormat.Resource.ConstructFromType(String input)
+   at ValveResourceFormat.Resource.Read(Stream input) in C:\projects\valveresourceformat\ValveResourceFormat\Resource\Resource.cs:line 226
+   at Decompiler.Decompiler.ProcessFile(String path, Stream stream) in C:\projects\valveresourceformat\Decompiler\Decompiler.cs:line 269
+
+---------------
+File: F:\DFined\Java\ParserPatcher\data\local\panorama\images\econ\items\abaddon\merciless_king_head\merciless_king_head_png.vtex_c
+Exception: System.ArgumentException: Unrecognized block type 'RED2'
+   at ValveResourceFormat.Resource.ConstructFromType(String input)
+   at ValveResourceFormat.Resource.Read(Stream input) in C:\projects\valveresourceformat\ValveResourceFormat\Resource\Resource.cs:line 226
+   at Decompiler.Decompiler.ProcessFile(String path, Stream stream) in C:\projects\valveresourceformat\Decompiler\Decompiler.cs:line 269
+
+---------------
+File: F:\DFined\Java\ParserPatcher\data\local\panorama\images\econ\items\abaddon\merciless_king_mount\merciless_king_mount_png.vtex_c
+Exception: System.ArgumentException: Unrecognized block type 'RED2'
+   at ValveResourceFormat.Resource.ConstructFromType(String input)
+   at ValveResourceFormat.Resource.Read(Stream input) in C:\projects\valveresourceformat\ValveResourceFormat\Resource\Resource.cs:line 226
+   at Decompiler.Decompiler.ProcessFile(String path, Stream stream) in C:\projects\valveresourceformat\Decompiler\Decompiler.cs:line 269
+
+---------------
+File: F:\DFined\Java\ParserPatcher\data\local\panorama\images\econ\items\abaddon\merciless_king_shoulder\merciless_king_shoulder_png.vtex_c
+Exception: System.ArgumentException: Unrecognized block type 'RED2'
+   at ValveResourceFormat.Resource.ConstructFromType(String input)
+   at ValveResourceFormat.Resource.Read(Stream input) in C:\projects\valveresourceformat\ValveResourceFormat\Resource\Resource.cs:line 226
+   at Decompiler.Decompiler.ProcessFile(String path, Stream stream) in C:\projects\valveresourceformat\Decompiler\Decompiler.cs:line 269
+
+---------------
+File: F:\DFined\Java\ParserPatcher\data\local\panorama\images\econ\items\abaddon\merciless_king_weapon\merciless_king_weapon_png.vtex_c
+Exception: System.ArgumentException: Unrecognized block type 'RED2'
+   at ValveResourceFormat.Resource.ConstructFromType(String input)
+   at ValveResourceFormat.Resource.Read(Stream input) in C:\projects\valveresourceformat\ValveResourceFormat\Resource\Resource.cs:line 226
+   at Decompiler.Decompiler.ProcessFile(String path, Stream stream) in C:\projects\valveresourceformat\Decompiler\Decompiler.cs:line 269
+
+---------------
+File: F:\DFined\Java\ParserPatcher\data\local\panorama\images\econ\items\abaddon\knight_of_the_abyss_back\knight_of_the_abyss_back_png.vtex_c
+Exception: System.ArgumentException: Unrecognized block type 'RED2'
+   at ValveResourceFormat.Resource.ConstructFromType(String input)
+   at ValveResourceFormat.Resource.Read(Stream input) in C:\projects\valveresourceformat\ValveResourceFormat\Resource\Resource.cs:line 226
+   at Decompiler.Decompiler.ProcessFile(String path, Stream stream) in C:\projects\valveresourceformat\Decompiler\Decompiler.cs:line 269
+
+---------------
+File: F:\DFined\Java\ParserPatcher\data\local\panorama\images\econ\items\abaddon\knight_of_the_abyss_head\knight_of_the_abyss_head_png.vtex_c
+Exception: System.ArgumentException: Unrecognized block type 'RED2'
+   at ValveResourceFormat.Resource.ConstructFromType(String input)
+   at ValveResourceFormat.Resource.Read(Stream input) in C:\projects\valveresourceformat\ValveResourceFormat\Resource\Resource.cs:line 226
+   at Decompiler.Decompiler.ProcessFile(String path, Stream stream) in C:\projects\valveresourceformat\Decompiler\Decompiler.cs:line 269
+
+---------------
+File: F:\DFined\Java\ParserPatcher\data\local\panorama\images\econ\items\abaddon\knight_of_the_abyss_mount\knight_of_the_abyss_mount_png.vtex_c
+Exception: System.ArgumentException: Unrecognized block type 'RED2'
+   at ValveResourceFormat.Resource.ConstructFromType(String input)
+   at ValveResourceFormat.Resource.Read(Stream input) in C:\projects\valveresourceformat\ValveResourceFormat\Resource\Resource.cs:line 226
+   at Decompiler.Decompiler.ProcessFile(String path, Stream stream) in C:\projects\valveresourceformat\Decompiler\Decompiler.cs:line 269
+
+---------------
+File: F:\DFined\Java\ParserPatcher\data\local\panorama\images\econ\items\abaddon\knight_of_the_abyss_shoulder\knight_of_the_abyss_shoulder_png.vtex_c
+Exception: System.ArgumentException: Unrecognized block type 'RED2'
+   at ValveResourceFormat.Resource.ConstructFromType(String input)
+   at ValveResourceFormat.Resource.Read(Stream input) in C:\projects\valveresourceformat\ValveResourceFormat\Resource\Resource.cs:line 226
+   at Decompiler.Decompiler.ProcessFile(String path, Stream stream) in C:\projects\valveresourceformat\Decompiler\Decompiler.cs:line 269
+
+---------------
+File: F:\DFined\Java\ParserPatcher\data\local\panorama\images\econ\items\abaddon\knight_of_the_abyss_weapon\knight_of_the_abyss_weapon_png.vtex_c
+Exception: System.ArgumentException: Unrecognized block type 'RED2'
+   at ValveResourceFormat.Resource.ConstructFromType(String input)
+   at ValveResourceFormat.Resource.Read(Stream input) in C:\projects\valveresourceformat\ValveResourceFormat\Resource\Resource.cs:line 226
+   at Decompiler.Decompiler.ProcessFile(String path, Stream stream) in C:\projects\valveresourceformat\Decompiler\Decompiler.cs:line 269
+
+---------------
+File: F:\DFined\Java\ParserPatcher\data\local\panorama\images\econ\items\marci\the_gift_of_new_year_armor\the_gift_of_new_year_armor_png.vtex_c
+Exception: System.ArgumentException: Unrecognized block type 'RED2'
+   at ValveResourceFormat.Resource.ConstructFromType(String input)
+   at ValveResourceFormat.Resource.Read(Stream input) in C:\projects\valveresourceformat\ValveResourceFormat\Resource\Resource.cs:line 226
+   at Decompiler.Decompiler.ProcessFile(String path, Stream stream) in C:\projects\valveresourceformat\Decompiler\Decompiler.cs:line 269
+
+---------------
+File: F:\DFined\Java\ParserPatcher\data\local\panorama\images\econ\items\marci\the_gift_of_new_year_back\the_gift_of_new_year_back_png.vtex_c
+Exception: System.ArgumentException: Unrecognized block type 'RED2'
+   at ValveResourceFormat.Resource.ConstructFromType(String input)
+   at ValveResourceFormat.Resource.Read(Stream input) in C:\projects\valveresourceformat\ValveResourceFormat\Resource\Resource.cs:line 226
+   at Decompiler.Decompiler.ProcessFile(String path, Stream stream) in C:\projects\valveresourceformat\Decompiler\Decompiler.cs:line 269
+
+---------------
+File: F:\DFined\Java\ParserPatcher\data\local\panorama\images\econ\items\marci\the_gift_of_new_year_head\the_gift_of_new_year_head_png.vtex_c
+Exception: System.ArgumentException: Unrecognized block type 'RED2'
+   at ValveResourceFormat.Resource.ConstructFromType(String input)
+   at ValveResourceFormat.Resource.Read(Stream input) in C:\projects\valveresourceformat\ValveResourceFormat\Resource\Resource.cs:line 226
+   at Decompiler.Decompiler.ProcessFile(String path, Stream stream) in C:\projects\valveresourceformat\Decompiler\Decompiler.cs:line 269
+
+---------------
+File: F:\DFined\Java\ParserPatcher\data\local\panorama\images\econ\items\marci\the_gift_of_new_year_shoudler\the_gift_of_new_year_shoudler_png.vtex_c
+Exception: System.ArgumentException: Unrecognized block type 'RED2'
+   at ValveResourceFormat.Resource.ConstructFromType(String input)
+   at ValveResourceFormat.Resource.Read(Stream input) in C:\projects\valveresourceformat\ValveResourceFormat\Resource\Resource.cs:line 226
+   at Decompiler.Decompiler.ProcessFile(String path, Stream stream) in C:\projects\valveresourceformat\Decompiler\Decompiler.cs:line 269
+
+---------------
+File: F:\DFined\Design\ParserPatcher\local\7657751\panorama\images\econ\items\omniknight\light_hammer\mesh\light_hammer_model_png.vtex_c
+Exception: System.ArgumentException: Unrecognized block type 'RED2'
+   at ValveResourceFormat.Resource.ConstructFromType(String input)
+   at ValveResourceFormat.Resource.Read(Stream input) in C:\projects\valveresourceformat\ValveResourceFormat\Resource\Resource.cs:line 226
+   at Decompiler.Decompiler.ProcessFile(String path, Stream stream) in C:\projects\valveresourceformat\Decompiler\Decompiler.cs:line 269
+
+---------------
+File: F:\DFined\Design\ParserPatcher\local\7657751\panorama\images\econ\items\queenofpain\ti8_qop_bat_queen_legs\ti8_qop_bat_queen_legs_png.vtex_c
+Exception: System.ArgumentException: Unrecognized block type 'RED2'
+   at ValveResourceFormat.Resource.ConstructFromType(String input)
+   at ValveResourceFormat.Resource.Read(Stream input) in C:\projects\valveresourceformat\ValveResourceFormat\Resource\Resource.cs:line 226
+   at Decompiler.Decompiler.ProcessFile(String path, Stream stream) in C:\projects\valveresourceformat\Decompiler\Decompiler.cs:line 269
+
+---------------
+File: F:\DFined\Design\ParserPatcher\local\7657751\panorama\images\econ\items\queenofpain\ti8_qop_bat_queen_legs\ti8_qop_bat_queen_legs_png.vtex_c
+Exception: System.ArgumentException: Unrecognized block type 'RED2'
+   at ValveResourceFormat.Resource.ConstructFromType(String input)
+   at ValveResourceFormat.Resource.Read(Stream input) in C:\projects\valveresourceformat\ValveResourceFormat\Resource\Resource.cs:line 226
+   at Decompiler.Decompiler.ProcessFile(String path, Stream stream) in C:\projects\valveresourceformat\Decompiler\Decompiler.cs:line 269
+
+---------------
+File: F:\DFined\Design\ParserPatcher\local\7657751\panorama\images\econ\items\omniknight\light_hammer\mesh\light_hammer_model_png.vtex_c
+Exception: System.ArgumentException: Unrecognized block type 'RED2'
+   at ValveResourceFormat.Resource.ConstructFromType(String input)
+   at ValveResourceFormat.Resource.Read(Stream input) in C:\projects\valveresourceformat\ValveResourceFormat\Resource\Resource.cs:line 226
+   at Decompiler.Decompiler.ProcessFile(String path, Stream stream) in C:\projects\valveresourceformat\Decompiler\Decompiler.cs:line 269
+
+---------------
+File: F:\DFined\Design\ParserPatcher\local\7657751\panorama\images\econ\items\ogre_magi\adventurers_of_fortune_arms\adventurers_of_fortune_arms_png.vtex_c
+Exception: System.ArgumentException: Unrecognized block type 'RED2'
+   at ValveResourceFormat.Resource.ConstructFromType(String input)
+   at ValveResourceFormat.Resource.Read(Stream input) in C:\projects\valveresourceformat\ValveResourceFormat\Resource\Resource.cs:line 226
+   at Decompiler.Decompiler.ProcessFile(String path, Stream stream) in C:\projects\valveresourceformat\Decompiler\Decompiler.cs:line 269
+
+---------------
+File: F:\DFined\Design\ParserPatcher\local\7657751\panorama\images\econ\items\ogre_magi\adventurers_of_fortune_back\adventurers_of_fortune_back_png.vtex_c
+Exception: System.ArgumentException: Unrecognized block type 'RED2'
+   at ValveResourceFormat.Resource.ConstructFromType(String input)
+   at ValveResourceFormat.Resource.Read(Stream input) in C:\projects\valveresourceformat\ValveResourceFormat\Resource\Resource.cs:line 226
+   at Decompiler.Decompiler.ProcessFile(String path, Stream stream) in C:\projects\valveresourceformat\Decompiler\Decompiler.cs:line 269
+
+---------------
+File: F:\DFined\Design\ParserPatcher\local\7657751\panorama\images\econ\items\ogre_magi\adventurers_of_fortune_belt\adventurers_of_fortune_belt_png.vtex_c
+Exception: System.ArgumentException: Unrecognized block type 'RED2'
+   at ValveResourceFormat.Resource.ConstructFromType(String input)
+   at ValveResourceFormat.Resource.Read(Stream input) in C:\projects\valveresourceformat\ValveResourceFormat\Resource\Resource.cs:line 226
+   at Decompiler.Decompiler.ProcessFile(String path, Stream stream) in C:\projects\valveresourceformat\Decompiler\Decompiler.cs:line 269
+
+---------------
+File: F:\DFined\Design\ParserPatcher\local\7657751\panorama\images\econ\items\ogre_magi\adventurers_of_fortune_head\adventurers_of_fortune_head_png.vtex_c
+Exception: System.ArgumentException: Unrecognized block type 'RED2'
+   at ValveResourceFormat.Resource.ConstructFromType(String input)
+   at ValveResourceFormat.Resource.Read(Stream input) in C:\projects\valveresourceformat\ValveResourceFormat\Resource\Resource.cs:line 226
+   at Decompiler.Decompiler.ProcessFile(String path, Stream stream) in C:\projects\valveresourceformat\Decompiler\Decompiler.cs:line 269
+
+---------------
+File: F:\DFined\Design\ParserPatcher\local\7657751\panorama\images\econ\items\ogre_magi\adventurers_of_fortune_weapon\adventurers_of_fortune_weapon_png.vtex_c
+Exception: System.ArgumentException: Unrecognized block type 'RED2'
+   at ValveResourceFormat.Resource.ConstructFromType(String input)
+   at ValveResourceFormat.Resource.Read(Stream input) in C:\projects\valveresourceformat\ValveResourceFormat\Resource\Resource.cs:line 226
+   at Decompiler.Decompiler.ProcessFile(String path, Stream stream) in C:\projects\valveresourceformat\Decompiler\Decompiler.cs:line 269
+
+---------------
+File: F:\DFined\Design\ParserPatcher\local\7657751\panorama\images\econ\items\primal_beast\pb_2022_armor\pb_2022_armor_arms_png.vtex_c
+Exception: System.ArgumentException: Unrecognized block type 'RED2'
+   at ValveResourceFormat.Resource.ConstructFromType(String input)
+   at ValveResourceFormat.Resource.Read(Stream input) in C:\projects\valveresourceformat\ValveResourceFormat\Resource\Resource.cs:line 226
+   at Decompiler.Decompiler.ProcessFile(String path, Stream stream) in C:\projects\valveresourceformat\Decompiler\Decompiler.cs:line 269
+
+---------------
+File: F:\DFined\Design\ParserPatcher\local\7657751\panorama\images\econ\items\primal_beast\pb_2022_armor\pb_2022_armor_armor_png.vtex_c
+Exception: System.ArgumentException: Unrecognized block type 'RED2'
+   at ValveResourceFormat.Resource.ConstructFromType(String input)
+   at ValveResourceFormat.Resource.Read(Stream input) in C:\projects\valveresourceformat\ValveResourceFormat\Resource\Resource.cs:line 226
+   at Decompiler.Decompiler.ProcessFile(String path, Stream stream) in C:\projects\valveresourceformat\Decompiler\Decompiler.cs:line 269
+
+---------------
+File: F:\DFined\Design\ParserPatcher\local\7657751\panorama\images\econ\items\primal_beast\pb_2022_armor\pb_2022_armor_head_png.vtex_c
+Exception: System.ArgumentException: Unrecognized block type 'RED2'
+   at ValveResourceFormat.Resource.ConstructFromType(String input)
+   at ValveResourceFormat.Resource.Read(Stream input) in C:\projects\valveresourceformat\ValveResourceFormat\Resource\Resource.cs:line 226
+   at Decompiler.Decompiler.ProcessFile(String path, Stream stream) in C:\projects\valveresourceformat\Decompiler\Decompiler.cs:line 269
+
+---------------
+File: F:\DFined\Design\ParserPatcher\local\7657751\panorama\images\econ\items\primal_beast\pb_2022_armor\pb_2022_armor_legs_png.vtex_c
+Exception: System.ArgumentException: Unrecognized block type 'RED2'
+   at ValveResourceFormat.Resource.ConstructFromType(String input)
+   at ValveResourceFormat.Resource.Read(Stream input) in C:\projects\valveresourceformat\ValveResourceFormat\Resource\Resource.cs:line 226
+   at Decompiler.Decompiler.ProcessFile(String path, Stream stream) in C:\projects\valveresourceformat\Decompiler\Decompiler.cs:line 269
+
+---------------
+File: F:\DFined\Design\ParserPatcher\local\7657751\panorama\images\econ\items\io\io_ti7\io_ti7_png.vtex_c
+Exception: System.ArgumentException: Unrecognized block type 'RED2'
+   at ValveResourceFormat.Resource.ConstructFromType(String input)
+   at ValveResourceFormat.Resource.Read(Stream input) in C:\projects\valveresourceformat\ValveResourceFormat\Resource\Resource.cs:line 226
+   at Decompiler.Decompiler.ProcessFile(String path, Stream stream) in C:\projects\valveresourceformat\Decompiler\Decompiler.cs:line 269
+
+---------------
+File: F:\DFined\Design\ParserPatcher\local\7657751\panorama\images\econ\items\juggernaut\arcana\juggernaut_arcana_mask_style1_png.vtex_c
+Exception: System.ArgumentException: Unrecognized block type 'RED2'
+   at ValveResourceFormat.Resource.ConstructFromType(String input)
+   at ValveResourceFormat.Resource.Read(Stream input) in C:\projects\valveresourceformat\ValveResourceFormat\Resource\Resource.cs:line 226
+   at Decompiler.Decompiler.ProcessFile(String path, Stream stream) in C:\projects\valveresourceformat\Decompiler\Decompiler.cs:line 269
+
+---------------
+File: F:\DFined\Design\ParserPatcher\local\7657751\panorama\images\econ\voicepack\juggernaut_arcana_voicepack_png.vtex_c
+Exception: System.ArgumentException: Unrecognized block type 'RED2'
+   at ValveResourceFormat.Resource.ConstructFromType(String input)
+   at ValveResourceFormat.Resource.Read(Stream input) in C:\projects\valveresourceformat\ValveResourceFormat\Resource\Resource.cs:line 226
+   at Decompiler.Decompiler.ProcessFile(String path, Stream stream) in C:\projects\valveresourceformat\Decompiler\Decompiler.cs:line 269
+
+---------------
+File: F:\DFined\Design\ParserPatcher\local\7657751\panorama\images\econ\items\faceless_void\faceless_void_arcana\faceless_void_arcana_belt_png.vtex_c
+Exception: System.ArgumentException: Unrecognized block type 'RED2'
+   at ValveResourceFormat.Resource.ConstructFromType(String input)
+   at ValveResourceFormat.Resource.Read(Stream input) in C:\projects\valveresourceformat\ValveResourceFormat\Resource\Resource.cs:line 226
+   at Decompiler.Decompiler.ProcessFile(String path, Stream stream) in C:\projects\valveresourceformat\Decompiler\Decompiler.cs:line 269
+
+---------------
+File: F:\DFined\Design\ParserPatcher\local\7657751\panorama\images\econ\items\faceless_void\faceless_void_arcana\faceless_void_arcana_bracer_png.vtex_c
+Exception: System.ArgumentException: Unrecognized block type 'RED2'
+   at ValveResourceFormat.Resource.ConstructFromType(String input)
+   at ValveResourceFormat.Resource.Read(Stream input) in C:\projects\valveresourceformat\ValveResourceFormat\Resource\Resource.cs:line 226
+   at Decompiler.Decompiler.ProcessFile(String path, Stream stream) in C:\projects\valveresourceformat\Decompiler\Decompiler.cs:line 269
+
+---------------
+File: F:\DFined\Design\ParserPatcher\local\7657751\panorama\images\econ\items\faceless_void\faceless_void_arcana\faceless_void_arcana_png.vtex_c
+Exception: System.ArgumentException: Unrecognized block type 'RED2'
+   at ValveResourceFormat.Resource.ConstructFromType(String input)
+   at ValveResourceFormat.Resource.Read(Stream input) in C:\projects\valveresourceformat\ValveResourceFormat\Resource\Resource.cs:line 226
+   at Decompiler.Decompiler.ProcessFile(String path, Stream stream) in C:\projects\valveresourceformat\Decompiler\Decompiler.cs:line 269
+
+---------------
+File: F:\DFined\Design\ParserPatcher\local\7657751\panorama\images\econ\items\faceless_void\faceless_void_arcana\faceless_void_arcana_shoulder_png.vtex_c
+Exception: System.ArgumentException: Unrecognized block type 'RED2'
+   at ValveResourceFormat.Resource.ConstructFromType(String input)
+   at ValveResourceFormat.Resource.Read(Stream input) in C:\projects\valveresourceformat\ValveResourceFormat\Resource\Resource.cs:line 226
+   at Decompiler.Decompiler.ProcessFile(String path, Stream stream) in C:\projects\valveresourceformat\Decompiler\Decompiler.cs:line 269
+
+---------------
+File: F:\DFined\Design\ParserPatcher\local\7657751\panorama\images\econ\items\faceless_void\faceless_void_arcana\faceless_void_arcana_weapon_png.vtex_c
+Exception: System.ArgumentException: Unrecognized block type 'RED2'
+   at ValveResourceFormat.Resource.ConstructFromType(String input)
+   at ValveResourceFormat.Resource.Read(Stream input) in C:\projects\valveresourceformat\ValveResourceFormat\Resource\Resource.cs:line 226
+   at Decompiler.Decompiler.ProcessFile(String path, Stream stream) in C:\projects\valveresourceformat\Decompiler\Decompiler.cs:line 269
+
+---------------
+File: F:\DFined\Design\ParserPatcher\local\7657751\panorama\images\econ\items\nevermore\shadowfiend_demon_eater_png.vtex_c
+Exception: System.ArgumentException: Unrecognized block type 'RED2'
+   at ValveResourceFormat.Resource.ConstructFromType(String input)
+   at ValveResourceFormat.Resource.Read(Stream input) in C:\projects\valveresourceformat\ValveResourceFormat\Resource\Resource.cs:line 226
+   at Decompiler.Decompiler.ProcessFile(String path, Stream stream) in C:\projects\valveresourceformat\Decompiler\Decompiler.cs:line 269
+
+---------------
+File: F:\DFined\Design\ParserPatcher\local\7657751\panorama\images\econ\items\drow\dread_retribution\drow_arcana_weapon_png.vtex_c
+Exception: System.ArgumentException: Unrecognized block type 'RED2'
+   at ValveResourceFormat.Resource.ConstructFromType(String input)
+   at ValveResourceFormat.Resource.Read(Stream input) in C:\projects\valveresourceformat\ValveResourceFormat\Resource\Resource.cs:line 226
+   at Decompiler.Decompiler.ProcessFile(String path, Stream stream) in C:\projects\valveresourceformat\Decompiler\Decompiler.cs:line 269
+
+---------------
+File: F:\DFined\Design\ParserPatcher\local\7657751\panorama\images\econ\items\drow\dread_retribution\drow_arcana_arms_png.vtex_c
+Exception: System.ArgumentException: Unrecognized block type 'RED2'
+   at ValveResourceFormat.Resource.ConstructFromType(String input)
+   at ValveResourceFormat.Resource.Read(Stream input) in C:\projects\valveresourceformat\ValveResourceFormat\Resource\Resource.cs:line 226
+   at Decompiler.Decompiler.ProcessFile(String path, Stream stream) in C:\projects\valveresourceformat\Decompiler\Decompiler.cs:line 269
+
+---------------
+File: F:\DFined\Design\ParserPatcher\local\7657751\panorama\images\econ\items\queenofpain\ti8_qop_bat_queen_legs\ti8_qop_bat_queen_legs_png.vtex_c
+Exception: System.ArgumentException: Unrecognized block type 'RED2'
+   at ValveResourceFormat.Resource.ConstructFromType(String input)
+   at ValveResourceFormat.Resource.Read(Stream input) in C:\projects\valveresourceformat\ValveResourceFormat\Resource\Resource.cs:line 226
+   at Decompiler.Decompiler.ProcessFile(String path, Stream stream) in C:\projects\valveresourceformat\Decompiler\Decompiler.cs:line 269
+
+---------------
+File: F:\DFined\Design\ParserPatcher\local\7657751\panorama\images\econ\items\queenofpain\ti8_qop_bat_queen_legs\ti8_qop_bat_queen_legs_png.vtex_c
+Exception: System.ArgumentException: Unrecognized block type 'RED2'
+   at ValveResourceFormat.Resource.ConstructFromType(String input)
+   at ValveResourceFormat.Resource.Read(Stream input) in C:\projects\valveresourceformat\ValveResourceFormat\Resource\Resource.cs:line 226
+   at Decompiler.Decompiler.ProcessFile(String path, Stream stream) in C:\projects\valveresourceformat\Decompiler\Decompiler.cs:line 269
+
+---------------
+File: F:\DFined\Design\ParserPatcher\local\7657751\panorama\images\econ\items\marci\the_gift_of_new_year_armor\the_gift_of_new_year_armor_png.vtex_c
+Exception: System.ArgumentException: Unrecognized block type 'RED2'
+   at ValveResourceFormat.Resource.ConstructFromType(String input)
+   at ValveResourceFormat.Resource.Read(Stream input) in C:\projects\valveresourceformat\ValveResourceFormat\Resource\Resource.cs:line 226
+   at Decompiler.Decompiler.ProcessFile(String path, Stream stream) in C:\projects\valveresourceformat\Decompiler\Decompiler.cs:line 269
+
+---------------
+File: F:\DFined\Design\ParserPatcher\local\7657751\panorama\images\econ\items\marci\the_gift_of_new_year_back\the_gift_of_new_year_back_png.vtex_c
+Exception: System.ArgumentException: Unrecognized block type 'RED2'
+   at ValveResourceFormat.Resource.ConstructFromType(String input)
+   at ValveResourceFormat.Resource.Read(Stream input) in C:\projects\valveresourceformat\ValveResourceFormat\Resource\Resource.cs:line 226
+   at Decompiler.Decompiler.ProcessFile(String path, Stream stream) in C:\projects\valveresourceformat\Decompiler\Decompiler.cs:line 269
+
+---------------
+File: F:\DFined\Design\ParserPatcher\local\7657751\panorama\images\econ\items\marci\the_gift_of_new_year_head\the_gift_of_new_year_head_png.vtex_c
+Exception: System.ArgumentException: Unrecognized block type 'RED2'
+   at ValveResourceFormat.Resource.ConstructFromType(String input)
+   at ValveResourceFormat.Resource.Read(Stream input) in C:\projects\valveresourceformat\ValveResourceFormat\Resource\Resource.cs:line 226
+   at Decompiler.Decompiler.ProcessFile(String path, Stream stream) in C:\projects\valveresourceformat\Decompiler\Decompiler.cs:line 269
+
+---------------
+File: F:\DFined\Design\ParserPatcher\local\7657751\panorama\images\econ\items\marci\the_gift_of_new_year_shoudler\the_gift_of_new_year_shoudler_png.vtex_c
+Exception: System.ArgumentException: Unrecognized block type 'RED2'
+   at ValveResourceFormat.Resource.ConstructFromType(String input)
+   at ValveResourceFormat.Resource.Read(Stream input) in C:\projects\valveresourceformat\ValveResourceFormat\Resource\Resource.cs:line 226
+   at Decompiler.Decompiler.ProcessFile(String path, Stream stream) in C:\projects\valveresourceformat\Decompiler\Decompiler.cs:line 269
+
+---------------
+File: F:\DFined\Design\ParserPatcher\local\7657751\panorama\images\econ\items\marci\the_gift_of_new_year_armor\the_gift_of_new_year_armor_png.vtex_c
+Exception: System.ArgumentException: Unrecognized block type 'RED2'
+   at ValveResourceFormat.Resource.ConstructFromType(String input)
+   at ValveResourceFormat.Resource.Read(Stream input) in C:\projects\valveresourceformat\ValveResourceFormat\Resource\Resource.cs:line 226
+   at Decompiler.Decompiler.ProcessFile(String path, Stream stream) in C:\projects\valveresourceformat\Decompiler\Decompiler.cs:line 269
+
+---------------
+File: F:\DFined\Design\ParserPatcher\local\7657751\panorama\images\econ\items\marci\the_gift_of_new_year_back\the_gift_of_new_year_back_png.vtex_c
+Exception: System.ArgumentException: Unrecognized block type 'RED2'
+   at ValveResourceFormat.Resource.ConstructFromType(String input)
+   at ValveResourceFormat.Resource.Read(Stream input) in C:\projects\valveresourceformat\ValveResourceFormat\Resource\Resource.cs:line 226
+   at Decompiler.Decompiler.ProcessFile(String path, Stream stream) in C:\projects\valveresourceformat\Decompiler\Decompiler.cs:line 269
+
+---------------
+File: F:\DFined\Design\ParserPatcher\local\7657751\panorama\images\econ\items\marci\the_gift_of_new_year_head\the_gift_of_new_year_head_png.vtex_c
+Exception: System.ArgumentException: Unrecognized block type 'RED2'
+   at ValveResourceFormat.Resource.ConstructFromType(String input)
+   at ValveResourceFormat.Resource.Read(Stream input) in C:\projects\valveresourceformat\ValveResourceFormat\Resource\Resource.cs:line 226
+   at Decompiler.Decompiler.ProcessFile(String path, Stream stream) in C:\projects\valveresourceformat\Decompiler\Decompiler.cs:line 269
+
+---------------
+File: F:\DFined\Design\ParserPatcher\local\7657751\panorama\images\econ\items\marci\the_gift_of_new_year_shoudler\the_gift_of_new_year_shoudler_png.vtex_c
+Exception: System.ArgumentException: Unrecognized block type 'RED2'
+   at ValveResourceFormat.Resource.ConstructFromType(String input)
+   at ValveResourceFormat.Resource.Read(Stream input) in C:\projects\valveresourceformat\ValveResourceFormat\Resource\Resource.cs:line 226
+   at Decompiler.Decompiler.ProcessFile(String path, Stream stream) in C:\projects\valveresourceformat\Decompiler\Decompiler.cs:line 269
+
+---------------
+File: F:\DFined\Design\ParserPatcher\local\7657751\panorama\images\econ\items\marci\the_gift_of_new_year_armor\the_gift_of_new_year_armor_png.vtex_c
+Exception: System.ArgumentException: Unrecognized block type 'RED2'
+   at ValveResourceFormat.Resource.ConstructFromType(String input)
+   at ValveResourceFormat.Resource.Read(Stream input) in C:\projects\valveresourceformat\ValveResourceFormat\Resource\Resource.cs:line 226
+   at Decompiler.Decompiler.ProcessFile(String path, Stream stream) in C:\projects\valveresourceformat\Decompiler\Decompiler.cs:line 269
+
+---------------
+File: F:\DFined\Design\ParserPatcher\local\7657751\panorama\images\econ\items\marci\the_gift_of_new_year_back\the_gift_of_new_year_back_png.vtex_c
+Exception: System.ArgumentException: Unrecognized block type 'RED2'
+   at ValveResourceFormat.Resource.ConstructFromType(String input)
+   at ValveResourceFormat.Resource.Read(Stream input) in C:\projects\valveresourceformat\ValveResourceFormat\Resource\Resource.cs:line 226
+   at Decompiler.Decompiler.ProcessFile(String path, Stream stream) in C:\projects\valveresourceformat\Decompiler\Decompiler.cs:line 269
+
+---------------
+File: F:\DFined\Design\ParserPatcher\local\7657751\panorama\images\econ\items\marci\the_gift_of_new_year_head\the_gift_of_new_year_head_png.vtex_c
+Exception: System.ArgumentException: Unrecognized block type 'RED2'
+   at ValveResourceFormat.Resource.ConstructFromType(String input)
+   at ValveResourceFormat.Resource.Read(Stream input) in C:\projects\valveresourceformat\ValveResourceFormat\Resource\Resource.cs:line 226
+   at Decompiler.Decompiler.ProcessFile(String path, Stream stream) in C:\projects\valveresourceformat\Decompiler\Decompiler.cs:line 269
+
+---------------
+File: F:\DFined\Design\ParserPatcher\local\7657751\panorama\images\econ\items\marci\the_gift_of_new_year_shoudler\the_gift_of_new_year_shoudler_png.vtex_c
+Exception: System.ArgumentException: Unrecognized block type 'RED2'
+   at ValveResourceFormat.Resource.ConstructFromType(String input)
+   at ValveResourceFormat.Resource.Read(Stream input) in C:\projects\valveresourceformat\ValveResourceFormat\Resource\Resource.cs:line 226
+   at Decompiler.Decompiler.ProcessFile(String path, Stream stream) in C:\projects\valveresourceformat\Decompiler\Decompiler.cs:line 269
+
+---------------
+File: F:\DFined\Design\ParserPatcher\local\7657751\panorama\images\econ\items\marci\the_gift_of_new_year_armor\the_gift_of_new_year_armor_png.vtex_c
+Exception: System.ArgumentException: Unrecognized block type 'RED2'
+   at ValveResourceFormat.Resource.ConstructFromType(String input)
+   at ValveResourceFormat.Resource.Read(Stream input) in C:\projects\valveresourceformat\ValveResourceFormat\Resource\Resource.cs:line 226
+   at Decompiler.Decompiler.ProcessFile(String path, Stream stream) in C:\projects\valveresourceformat\Decompiler\Decompiler.cs:line 269
+
+---------------
+File: F:\DFined\Design\ParserPatcher\local\7657751\panorama\images\econ\items\marci\the_gift_of_new_year_back\the_gift_of_new_year_back_png.vtex_c
+Exception: System.ArgumentException: Unrecognized block type 'RED2'
+   at ValveResourceFormat.Resource.ConstructFromType(String input)
+   at ValveResourceFormat.Resource.Read(Stream input) in C:\projects\valveresourceformat\ValveResourceFormat\Resource\Resource.cs:line 226
+   at Decompiler.Decompiler.ProcessFile(String path, Stream stream) in C:\projects\valveresourceformat\Decompiler\Decompiler.cs:line 269
+
+---------------
+File: F:\DFined\Design\ParserPatcher\local\7657751\panorama\images\econ\items\marci\the_gift_of_new_year_head\the_gift_of_new_year_head_png.vtex_c
+Exception: System.ArgumentException: Unrecognized block type 'RED2'
+   at ValveResourceFormat.Resource.ConstructFromType(String input)
+   at ValveResourceFormat.Resource.Read(Stream input) in C:\projects\valveresourceformat\ValveResourceFormat\Resource\Resource.cs:line 226
+   at Decompiler.Decompiler.ProcessFile(String path, Stream stream) in C:\projects\valveresourceformat\Decompiler\Decompiler.cs:line 269
+
+---------------
+File: F:\DFined\Design\ParserPatcher\local\7657751\panorama\images\econ\items\marci\the_gift_of_new_year_shoudler\the_gift_of_new_year_shoudler_png.vtex_c
+Exception: System.ArgumentException: Unrecognized block type 'RED2'
+   at ValveResourceFormat.Resource.ConstructFromType(String input)
+   at ValveResourceFormat.Resource.Read(Stream input) in C:\projects\valveresourceformat\ValveResourceFormat\Resource\Resource.cs:line 226
+   at Decompiler.Decompiler.ProcessFile(String path, Stream stream) in C:\projects\valveresourceformat\Decompiler\Decompiler.cs:line 269
+
+---------------
+File: F:\DFined\Design\ParserPatcher\local\7657751\panorama\images\econ\items\marci\the_gift_of_new_year_armor\the_gift_of_new_year_armor_png.vtex_c
+Exception: System.ArgumentException: Unrecognized block type 'RED2'
+   at ValveResourceFormat.Resource.ConstructFromType(String input)
+   at ValveResourceFormat.Resource.Read(Stream input) in C:\projects\valveresourceformat\ValveResourceFormat\Resource\Resource.cs:line 226
+   at Decompiler.Decompiler.ProcessFile(String path, Stream stream) in C:\projects\valveresourceformat\Decompiler\Decompiler.cs:line 269
+
+---------------
+File: F:\DFined\Design\ParserPatcher\local\7657751\panorama\images\econ\items\marci\the_gift_of_new_year_back\the_gift_of_new_year_back_png.vtex_c
+Exception: System.ArgumentException: Unrecognized block type 'RED2'
+   at ValveResourceFormat.Resource.ConstructFromType(String input)
+   at ValveResourceFormat.Resource.Read(Stream input) in C:\projects\valveresourceformat\ValveResourceFormat\Resource\Resource.cs:line 226
+   at Decompiler.Decompiler.ProcessFile(String path, Stream stream) in C:\projects\valveresourceformat\Decompiler\Decompiler.cs:line 269
+
+---------------
+File: F:\DFined\Design\ParserPatcher\local\7657751\panorama\images\econ\items\marci\the_gift_of_new_year_head\the_gift_of_new_year_head_png.vtex_c
+Exception: System.ArgumentException: Unrecognized block type 'RED2'
+   at ValveResourceFormat.Resource.ConstructFromType(String input)
+   at ValveResourceFormat.Resource.Read(Stream input) in C:\projects\valveresourceformat\ValveResourceFormat\Resource\Resource.cs:line 226
+   at Decompiler.Decompiler.ProcessFile(String path, Stream stream) in C:\projects\valveresourceformat\Decompiler\Decompiler.cs:line 269
+
+---------------
+File: F:\DFined\Design\ParserPatcher\local\7657751\panorama\images\econ\items\marci\the_gift_of_new_year_shoudler\the_gift_of_new_year_shoudler_png.vtex_c
+Exception: System.ArgumentException: Unrecognized block type 'RED2'
+   at ValveResourceFormat.Resource.ConstructFromType(String input)
+   at ValveResourceFormat.Resource.Read(Stream input) in C:\projects\valveresourceformat\ValveResourceFormat\Resource\Resource.cs:line 226
+   at Decompiler.Decompiler.ProcessFile(String path, Stream stream) in C:\projects\valveresourceformat\Decompiler\Decompiler.cs:line 269
+
+---------------
+File: F:\DFined\Design\ParserPatcher\local\7657751\panorama\images\econ\items\queenofpain\ti8_qop_bat_queen_legs\ti8_qop_bat_queen_legs_png.vtex_c
+Exception: System.ArgumentException: Unrecognized block type 'RED2'
+   at ValveResourceFormat.Resource.ConstructFromType(String input)
+   at ValveResourceFormat.Resource.Read(Stream input) in C:\projects\valveresourceformat\ValveResourceFormat\Resource\Resource.cs:line 226
+   at Decompiler.Decompiler.ProcessFile(String path, Stream stream) in C:\projects\valveresourceformat\Decompiler\Decompiler.cs:line 269
+
+---------------
+File: F:\DFined\Design\ParserPatcher\local\7657751\panorama\images\econ\items\queenofpain\ti8_qop_bat_queen_legs\ti8_qop_bat_queen_legs_png.vtex_c
+Exception: System.ArgumentException: Unrecognized block type 'RED2'
+   at ValveResourceFormat.Resource.ConstructFromType(String input)
+   at ValveResourceFormat.Resource.Read(Stream input) in C:\projects\valveresourceformat\ValveResourceFormat\Resource\Resource.cs:line 226
+   at Decompiler.Decompiler.ProcessFile(String path, Stream stream) in C:\projects\valveresourceformat\Decompiler\Decompiler.cs:line 269
+
+---------------
+File: F:\DFined\Design\ParserPatcher\local\7657751\panorama\images\econ\items\omniknight\light_hammer\mesh\light_hammer_model_png.vtex_c
+Exception: System.ArgumentException: Unrecognized block type 'RED2'
+   at ValveResourceFormat.Resource.ConstructFromType(String input)
+   at ValveResourceFormat.Resource.Read(Stream input) in C:\projects\valveresourceformat\ValveResourceFormat\Resource\Resource.cs:line 226
+   at Decompiler.Decompiler.ProcessFile(String path, Stream stream) in C:\projects\valveresourceformat\Decompiler\Decompiler.cs:line 269
+
+---------------
+File: F:\DFined\Design\ParserPatcher\local\7657751\panorama\images\econ\items\io\io_ti7\io_ti7_png.vtex_c
+Exception: System.ArgumentException: Unrecognized block type 'RED2'
+   at ValveResourceFormat.Resource.ConstructFromType(String input)
+   at ValveResourceFormat.Resource.Read(Stream input) in C:\projects\valveresourceformat\ValveResourceFormat\Resource\Resource.cs:line 226
+   at Decompiler.Decompiler.ProcessFile(String path, Stream stream) in C:\projects\valveresourceformat\Decompiler\Decompiler.cs:line 269
+
+---------------
+File: F:\DFined\Design\ParserPatcher\local\7657751\panorama\images\econ\items\juggernaut\arcana\juggernaut_arcana_mask_style1_png.vtex_c
+Exception: System.ArgumentException: Unrecognized block type 'RED2'
+   at ValveResourceFormat.Resource.ConstructFromType(String input)
+   at ValveResourceFormat.Resource.Read(Stream input) in C:\projects\valveresourceformat\ValveResourceFormat\Resource\Resource.cs:line 226
+   at Decompiler.Decompiler.ProcessFile(String path, Stream stream) in C:\projects\valveresourceformat\Decompiler\Decompiler.cs:line 269
+
+---------------
+File: F:\DFined\Design\ParserPatcher\local\7657751\panorama\images\econ\voicepack\juggernaut_arcana_voicepack_png.vtex_c
+Exception: System.ArgumentException: Unrecognized block type 'RED2'
+   at ValveResourceFormat.Resource.ConstructFromType(String input)
+   at ValveResourceFormat.Resource.Read(Stream input) in C:\projects\valveresourceformat\ValveResourceFormat\Resource\Resource.cs:line 226
+   at Decompiler.Decompiler.ProcessFile(String path, Stream stream) in C:\projects\valveresourceformat\Decompiler\Decompiler.cs:line 269
+
+---------------
+File: F:\DFined\Design\ParserPatcher\local\7657751\panorama\images\econ\items\faceless_void\faceless_void_arcana\faceless_void_arcana_belt_png.vtex_c
+Exception: System.ArgumentException: Unrecognized block type 'RED2'
+   at ValveResourceFormat.Resource.ConstructFromType(String input)
+   at ValveResourceFormat.Resource.Read(Stream input) in C:\projects\valveresourceformat\ValveResourceFormat\Resource\Resource.cs:line 226
+   at Decompiler.Decompiler.ProcessFile(String path, Stream stream) in C:\projects\valveresourceformat\Decompiler\Decompiler.cs:line 269
+
+---------------
+File: F:\DFined\Design\ParserPatcher\local\7657751\panorama\images\econ\items\faceless_void\faceless_void_arcana\faceless_void_arcana_bracer_png.vtex_c
+Exception: System.ArgumentException: Unrecognized block type 'RED2'
+   at ValveResourceFormat.Resource.ConstructFromType(String input)
+   at ValveResourceFormat.Resource.Read(Stream input) in C:\projects\valveresourceformat\ValveResourceFormat\Resource\Resource.cs:line 226
+   at Decompiler.Decompiler.ProcessFile(String path, Stream stream) in C:\projects\valveresourceformat\Decompiler\Decompiler.cs:line 269
+
+---------------
+File: F:\DFined\Design\ParserPatcher\local\7657751\panorama\images\econ\items\faceless_void\faceless_void_arcana\faceless_void_arcana_png.vtex_c
+Exception: System.ArgumentException: Unrecognized block type 'RED2'
+   at ValveResourceFormat.Resource.ConstructFromType(String input)
+   at ValveResourceFormat.Resource.Read(Stream input) in C:\projects\valveresourceformat\ValveResourceFormat\Resource\Resource.cs:line 226
+   at Decompiler.Decompiler.ProcessFile(String path, Stream stream) in C:\projects\valveresourceformat\Decompiler\Decompiler.cs:line 269
+
+---------------
+File: F:\DFined\Design\ParserPatcher\local\7657751\panorama\images\econ\items\faceless_void\faceless_void_arcana\faceless_void_arcana_shoulder_png.vtex_c
+Exception: System.ArgumentException: Unrecognized block type 'RED2'
+   at ValveResourceFormat.Resource.ConstructFromType(String input)
+   at ValveResourceFormat.Resource.Read(Stream input) in C:\projects\valveresourceformat\ValveResourceFormat\Resource\Resource.cs:line 226
+   at Decompiler.Decompiler.ProcessFile(String path, Stream stream) in C:\projects\valveresourceformat\Decompiler\Decompiler.cs:line 269
+
+---------------
+File: F:\DFined\Design\ParserPatcher\local\7657751\panorama\images\econ\items\faceless_void\faceless_void_arcana\faceless_void_arcana_weapon_png.vtex_c
+Exception: System.ArgumentException: Unrecognized block type 'RED2'
+   at ValveResourceFormat.Resource.ConstructFromType(String input)
+   at ValveResourceFormat.Resource.Read(Stream input) in C:\projects\valveresourceformat\ValveResourceFormat\Resource\Resource.cs:line 226
+   at Decompiler.Decompiler.ProcessFile(String path, Stream stream) in C:\projects\valveresourceformat\Decompiler\Decompiler.cs:line 269
+
+---------------
+File: F:\DFined\Design\ParserPatcher\local\7657751\panorama\images\econ\items\nevermore\shadowfiend_demon_eater_png.vtex_c
+Exception: System.ArgumentException: Unrecognized block type 'RED2'
+   at ValveResourceFormat.Resource.ConstructFromType(String input)
+   at ValveResourceFormat.Resource.Read(Stream input) in C:\projects\valveresourceformat\ValveResourceFormat\Resource\Resource.cs:line 226
+   at Decompiler.Decompiler.ProcessFile(String path, Stream stream) in C:\projects\valveresourceformat\Decompiler\Decompiler.cs:line 269
+
+---------------
+File: F:\DFined\Design\ParserPatcher\local\7657751\panorama\images\econ\items\drow\dread_retribution\drow_arcana_weapon_png.vtex_c
+Exception: System.ArgumentException: Unrecognized block type 'RED2'
+   at ValveResourceFormat.Resource.ConstructFromType(String input)
+   at ValveResourceFormat.Resource.Read(Stream input) in C:\projects\valveresourceformat\ValveResourceFormat\Resource\Resource.cs:line 226
+   at Decompiler.Decompiler.ProcessFile(String path, Stream stream) in C:\projects\valveresourceformat\Decompiler\Decompiler.cs:line 269
+
+---------------
+File: F:\DFined\Design\ParserPatcher\local\7657751\panorama\images\econ\items\drow\dread_retribution\drow_arcana_arms_png.vtex_c
+Exception: System.ArgumentException: Unrecognized block type 'RED2'
+   at ValveResourceFormat.Resource.ConstructFromType(String input)
+   at ValveResourceFormat.Resource.Read(Stream input) in C:\projects\valveresourceformat\ValveResourceFormat\Resource\Resource.cs:line 226
+   at Decompiler.Decompiler.ProcessFile(String path, Stream stream) in C:\projects\valveresourceformat\Decompiler\Decompiler.cs:line 269
+
+---------------
+File: F:\DFined\Design\ParserPatcher\local\7657751\panorama\images\econ\items\drow\dread_retribution\drow_arcana_back_png.vtex_c
+Exception: System.ArgumentException: Unrecognized block type 'RED2'
+   at ValveResourceFormat.Resource.ConstructFromType(String input)
+   at ValveResourceFormat.Resource.Read(Stream input) in C:\projects\valveresourceformat\ValveResourceFormat\Resource\Resource.cs:line 226
+   at Decompiler.Decompiler.ProcessFile(String path, Stream stream) in C:\projects\valveresourceformat\Decompiler\Decompiler.cs:line 269
+
+---------------
+File: F:\DFined\Design\ParserPatcher\local\7657751\panorama\images\econ\items\drow\dread_retribution\drow_arcana_head_png.vtex_c
+Exception: System.ArgumentException: Unrecognized block type 'RED2'
+   at ValveResourceFormat.Resource.ConstructFromType(String input)
+   at ValveResourceFormat.Resource.Read(Stream input) in C:\projects\valveresourceformat\ValveResourceFormat\Resource\Resource.cs:line 226
+   at Decompiler.Decompiler.ProcessFile(String path, Stream stream) in C:\projects\valveresourceformat\Decompiler\Decompiler.cs:line 269
+
+---------------
+File: F:\DFined\Design\ParserPatcher\local\7657751\panorama\images\econ\items\drow\dread_retribution\drow_arcana_legs_png.vtex_c
+Exception: System.ArgumentException: Unrecognized block type 'RED2'
+   at ValveResourceFormat.Resource.ConstructFromType(String input)
+   at ValveResourceFormat.Resource.Read(Stream input) in C:\projects\valveresourceformat\ValveResourceFormat\Resource\Resource.cs:line 226
+   at Decompiler.Decompiler.ProcessFile(String path, Stream stream) in C:\projects\valveresourceformat\Decompiler\Decompiler.cs:line 269
+
+---------------
+File: F:\DFined\Design\ParserPatcher\local\7657751\panorama\images\econ\items\drow\dread_retribution\drow_arcana_quiver_png.vtex_c
+Exception: System.ArgumentException: Unrecognized block type 'RED2'
+   at ValveResourceFormat.Resource.ConstructFromType(String input)
+   at ValveResourceFormat.Resource.Read(Stream input) in C:\projects\valveresourceformat\ValveResourceFormat\Resource\Resource.cs:line 226
+   at Decompiler.Decompiler.ProcessFile(String path, Stream stream) in C:\projects\valveresourceformat\Decompiler\Decompiler.cs:line 269
+
+---------------
+File: F:\DFined\Design\ParserPatcher\local\7657751\panorama\images\econ\items\drow\dread_retribution\drow_arcana_shoulder_png.vtex_c
+Exception: System.ArgumentException: Unrecognized block type 'RED2'
+   at ValveResourceFormat.Resource.ConstructFromType(String input)
+   at ValveResourceFormat.Resource.Read(Stream input) in C:\projects\valveresourceformat\ValveResourceFormat\Resource\Resource.cs:line 226
+   at Decompiler.Decompiler.ProcessFile(String path, Stream stream) in C:\projects\valveresourceformat\Decompiler\Decompiler.cs:line 269
+
+---------------
+File: F:\DFined\Design\ParserPatcher\local\7657751\panorama\images\econ\items\pudge\arcana\pudge_arcana_back_png.vtex_c
+Exception: System.ArgumentException: Unrecognized block type 'RED2'
+   at ValveResourceFormat.Resource.ConstructFromType(String input)
+   at ValveResourceFormat.Resource.Read(Stream input) in C:\projects\valveresourceformat\ValveResourceFormat\Resource\Resource.cs:line 226
+   at Decompiler.Decompiler.ProcessFile(String path, Stream stream) in C:\projects\valveresourceformat\Decompiler\Decompiler.cs:line 269
+
+---------------
+File: F:\DFined\Design\ParserPatcher\local\7657751\panorama\images\econ\heroes\terrorblade\arcana_terrorblade_png.vtex_c
+Exception: System.ArgumentException: Unrecognized block type 'RED2'
+   at ValveResourceFormat.Resource.ConstructFromType(String input)
+   at ValveResourceFormat.Resource.Read(Stream input) in C:\projects\valveresourceformat\ValveResourceFormat\Resource\Resource.cs:line 226
+   at Decompiler.Decompiler.ProcessFile(String path, Stream stream) in C:\projects\valveresourceformat\Decompiler\Decompiler.cs:line 269
+
+---------------
+File: F:\DFined\Design\ParserPatcher\local\7657751\panorama\images\econ\items\monkey_king\monkey_king_arcana_head\monkey_king_arcana_png.vtex_c
+Exception: System.ArgumentException: Unrecognized block type 'RED2'
+   at ValveResourceFormat.Resource.ConstructFromType(String input)
+   at ValveResourceFormat.Resource.Read(Stream input) in C:\projects\valveresourceformat\ValveResourceFormat\Resource\Resource.cs:line 226
+   at Decompiler.Decompiler.ProcessFile(String path, Stream stream) in C:\projects\valveresourceformat\Decompiler\Decompiler.cs:line 269
+
+---------------
+File: F:\DFined\Design\ParserPatcher\local\7657751\panorama\images\econ\items\phantom_assassin\manifold_paradox\arcana_pa_png.vtex_c
+Exception: System.ArgumentException: Unrecognized block type 'RED2'
+   at ValveResourceFormat.Resource.ConstructFromType(String input)
+   at ValveResourceFormat.Resource.Read(Stream input) in C:\projects\valveresourceformat\ValveResourceFormat\Resource\Resource.cs:line 226
+   at Decompiler.Decompiler.ProcessFile(String path, Stream stream) in C:\projects\valveresourceformat\Decompiler\Decompiler.cs:line 269
+
+---------------
+File: F:\DFined\Design\ParserPatcher\local\7657751\panorama\images\econ\items\spectre\spectre_arcana\spectre_arcana_head_png.vtex_c
+Exception: System.ArgumentException: Unrecognized block type 'RED2'
+   at ValveResourceFormat.Resource.ConstructFromType(String input)
+   at ValveResourceFormat.Resource.Read(Stream input) in C:\projects\valveresourceformat\ValveResourceFormat\Resource\Resource.cs:line 226
+   at Decompiler.Decompiler.ProcessFile(String path, Stream stream) in C:\projects\valveresourceformat\Decompiler\Decompiler.cs:line 269
+
+---------------
+File: F:\DFined\Design\ParserPatcher\local\7657751\panorama\images\econ\items\spectre\spectre_arcana\spectre_arcana_skirt_png.vtex_c
+Exception: System.ArgumentException: Unrecognized block type 'RED2'
+   at ValveResourceFormat.Resource.ConstructFromType(String input)
+   at ValveResourceFormat.Resource.Read(Stream input) in C:\projects\valveresourceformat\ValveResourceFormat\Resource\Resource.cs:line 226
+   at Decompiler.Decompiler.ProcessFile(String path, Stream stream) in C:\projects\valveresourceformat\Decompiler\Decompiler.cs:line 269
+
+---------------
+File: F:\DFined\Design\ParserPatcher\local\7657751\panorama\images\econ\items\spectre\spectre_arcana\spectre_arcana_misc_png.vtex_c
+Exception: System.ArgumentException: Unrecognized block type 'RED2'
+   at ValveResourceFormat.Resource.ConstructFromType(String input)
+   at ValveResourceFormat.Resource.Read(Stream input) in C:\projects\valveresourceformat\ValveResourceFormat\Resource\Resource.cs:line 226
+   at Decompiler.Decompiler.ProcessFile(String path, Stream stream) in C:\projects\valveresourceformat\Decompiler\Decompiler.cs:line 269
+
+---------------
+File: F:\DFined\Design\ParserPatcher\local\7657751\panorama\images\econ\items\spectre\spectre_arcana\spectre_arcana_shoulder_png.vtex_c
+Exception: System.ArgumentException: Unrecognized block type 'RED2'
+   at ValveResourceFormat.Resource.ConstructFromType(String input)
+   at ValveResourceFormat.Resource.Read(Stream input) in C:\projects\valveresourceformat\ValveResourceFormat\Resource\Resource.cs:line 226
+   at Decompiler.Decompiler.ProcessFile(String path, Stream stream) in C:\projects\valveresourceformat\Decompiler\Decompiler.cs:line 269
+
+---------------
+File: F:\DFined\Design\ParserPatcher\local\7657751\panorama\images\econ\items\spectre\spectre_arcana\spectre_arcana_voice_png.vtex_c
+Exception: System.ArgumentException: Unrecognized block type 'RED2'
+   at ValveResourceFormat.Resource.ConstructFromType(String input)
+   at ValveResourceFormat.Resource.Read(Stream input) in C:\projects\valveresourceformat\ValveResourceFormat\Resource\Resource.cs:line 226
+   at Decompiler.Decompiler.ProcessFile(String path, Stream stream) in C:\projects\valveresourceformat\Decompiler\Decompiler.cs:line 269
+
+---------------
+File: F:\DFined\Design\ParserPatcher\local\7657751\panorama\images\econ\items\spectre\spectre_arcana\spectre_arcana_weapon_png.vtex_c
+Exception: System.ArgumentException: Unrecognized block type 'RED2'
+   at ValveResourceFormat.Resource.ConstructFromType(String input)
+   at ValveResourceFormat.Resource.Read(Stream input) in C:\projects\valveresourceformat\ValveResourceFormat\Resource\Resource.cs:line 226
+   at Decompiler.Decompiler.ProcessFile(String path, Stream stream) in C:\projects\valveresourceformat\Decompiler\Decompiler.cs:line 269
+
+---------------
+File: F:\DFined\Design\ParserPatcher\local\7657751\panorama\images\econ\items\spectre\spectre_arcana\spectre_arcana_voice_png.vtex_c
+Exception: System.ArgumentException: Unrecognized block type 'RED2'
+   at ValveResourceFormat.Resource.ConstructFromType(String input)
+   at ValveResourceFormat.Resource.Read(Stream input) in C:\projects\valveresourceformat\ValveResourceFormat\Resource\Resource.cs:line 226
+   at Decompiler.Decompiler.ProcessFile(String path, Stream stream) in C:\projects\valveresourceformat\Decompiler\Decompiler.cs:line 269
+
+---------------
+File: F:\DFined\Design\ParserPatcher\local\7657751\panorama\images\econ\items\spectre\spectre_arcana\spectre_arcana_weapon_png.vtex_c
+Exception: System.ArgumentException: Unrecognized block type 'RED2'
+   at ValveResourceFormat.Resource.ConstructFromType(String input)
+   at ValveResourceFormat.Resource.Read(Stream input) in C:\projects\valveresourceformat\ValveResourceFormat\Resource\Resource.cs:line 226
+   at Decompiler.Decompiler.ProcessFile(String path, Stream stream) in C:\projects\valveresourceformat\Decompiler\Decompiler.cs:line 269
+
+---------------
+File: F:\DFined\Design\ParserPatcher\local\7657751\panorama\images\econ\items\drow\dread_retribution\drow_arcana_back_png.vtex_c
+Exception: System.ArgumentException: Unrecognized block type 'RED2'
+   at ValveResourceFormat.Resource.ConstructFromType(String input)
+   at ValveResourceFormat.Resource.Read(Stream input) in C:\projects\valveresourceformat\ValveResourceFormat\Resource\Resource.cs:line 226
+   at Decompiler.Decompiler.ProcessFile(String path, Stream stream) in C:\projects\valveresourceformat\Decompiler\Decompiler.cs:line 269
+
+---------------
+File: F:\DFined\Design\ParserPatcher\local\7657751\panorama\images\econ\items\drow\dread_retribution\drow_arcana_head_png.vtex_c
+Exception: System.ArgumentException: Unrecognized block type 'RED2'
+   at ValveResourceFormat.Resource.ConstructFromType(String input)
+   at ValveResourceFormat.Resource.Read(Stream input) in C:\projects\valveresourceformat\ValveResourceFormat\Resource\Resource.cs:line 226
+   at Decompiler.Decompiler.ProcessFile(String path, Stream stream) in C:\projects\valveresourceformat\Decompiler\Decompiler.cs:line 269
+
+---------------
+File: F:\DFined\Design\ParserPatcher\local\7657751\panorama\images\econ\items\drow\dread_retribution\drow_arcana_legs_png.vtex_c
+Exception: System.ArgumentException: Unrecognized block type 'RED2'
+   at ValveResourceFormat.Resource.ConstructFromType(String input)
+   at ValveResourceFormat.Resource.Read(Stream input) in C:\projects\valveresourceformat\ValveResourceFormat\Resource\Resource.cs:line 226
+   at Decompiler.Decompiler.ProcessFile(String path, Stream stream) in C:\projects\valveresourceformat\Decompiler\Decompiler.cs:line 269
+
+---------------
+File: F:\DFined\Design\ParserPatcher\local\7657751\panorama\images\econ\items\drow\dread_retribution\drow_arcana_quiver_png.vtex_c
+Exception: System.ArgumentException: Unrecognized block type 'RED2'
+   at ValveResourceFormat.Resource.ConstructFromType(String input)
+   at ValveResourceFormat.Resource.Read(Stream input) in C:\projects\valveresourceformat\ValveResourceFormat\Resource\Resource.cs:line 226
+   at Decompiler.Decompiler.ProcessFile(String path, Stream stream) in C:\projects\valveresourceformat\Decompiler\Decompiler.cs:line 269
+
+---------------
+File: F:\DFined\Design\ParserPatcher\local\7657751\panorama\images\econ\items\drow\dread_retribution\drow_arcana_shoulder_png.vtex_c
+Exception: System.ArgumentException: Unrecognized block type 'RED2'
+   at ValveResourceFormat.Resource.ConstructFromType(String input)
+   at ValveResourceFormat.Resource.Read(Stream input) in C:\projects\valveresourceformat\ValveResourceFormat\Resource\Resource.cs:line 226
+   at Decompiler.Decompiler.ProcessFile(String path, Stream stream) in C:\projects\valveresourceformat\Decompiler\Decompiler.cs:line 269
+
+---------------
+File: F:\DFined\Design\ParserPatcher\local\7657751\panorama\images\econ\items\pudge\arcana\pudge_arcana_back_png.vtex_c
+Exception: System.ArgumentException: Unrecognized block type 'RED2'
+   at ValveResourceFormat.Resource.ConstructFromType(String input)
+   at ValveResourceFormat.Resource.Read(Stream input) in C:\projects\valveresourceformat\ValveResourceFormat\Resource\Resource.cs:line 226
+   at Decompiler.Decompiler.ProcessFile(String path, Stream stream) in C:\projects\valveresourceformat\Decompiler\Decompiler.cs:line 269
+
+---------------
+File: F:\DFined\Design\ParserPatcher\local\7657751\panorama\images\econ\heroes\terrorblade\arcana_terrorblade_png.vtex_c
+Exception: System.ArgumentException: Unrecognized block type 'RED2'
+   at ValveResourceFormat.Resource.ConstructFromType(String input)
+   at ValveResourceFormat.Resource.Read(Stream input) in C:\projects\valveresourceformat\ValveResourceFormat\Resource\Resource.cs:line 226
+   at Decompiler.Decompiler.ProcessFile(String path, Stream stream) in C:\projects\valveresourceformat\Decompiler\Decompiler.cs:line 269
+
+---------------
+File: F:\DFined\Design\ParserPatcher\local\7657751\panorama\images\econ\items\monkey_king\monkey_king_arcana_head\monkey_king_arcana_png.vtex_c
+Exception: System.ArgumentException: Unrecognized block type 'RED2'
+   at ValveResourceFormat.Resource.ConstructFromType(String input)
+   at ValveResourceFormat.Resource.Read(Stream input) in C:\projects\valveresourceformat\ValveResourceFormat\Resource\Resource.cs:line 226
+   at Decompiler.Decompiler.ProcessFile(String path, Stream stream) in C:\projects\valveresourceformat\Decompiler\Decompiler.cs:line 269
+
+---------------
+File: F:\DFined\Design\ParserPatcher\local\7657751\panorama\images\econ\items\phantom_assassin\manifold_paradox\arcana_pa_png.vtex_c
+Exception: System.ArgumentException: Unrecognized block type 'RED2'
+   at ValveResourceFormat.Resource.ConstructFromType(String input)
+   at ValveResourceFormat.Resource.Read(Stream input) in C:\projects\valveresourceformat\ValveResourceFormat\Resource\Resource.cs:line 226
+   at Decompiler.Decompiler.ProcessFile(String path, Stream stream) in C:\projects\valveresourceformat\Decompiler\Decompiler.cs:line 269
+
+---------------
+File: F:\DFined\Design\ParserPatcher\local\7657751\panorama\images\econ\items\spectre\spectre_arcana\spectre_arcana_head_png.vtex_c
+Exception: System.ArgumentException: Unrecognized block type 'RED2'
+   at ValveResourceFormat.Resource.ConstructFromType(String input)
+   at ValveResourceFormat.Resource.Read(Stream input) in C:\projects\valveresourceformat\ValveResourceFormat\Resource\Resource.cs:line 226
+   at Decompiler.Decompiler.ProcessFile(String path, Stream stream) in C:\projects\valveresourceformat\Decompiler\Decompiler.cs:line 269
+
+---------------
+File: F:\DFined\Design\ParserPatcher\local\7657751\panorama\images\econ\items\spectre\spectre_arcana\spectre_arcana_skirt_png.vtex_c
+Exception: System.ArgumentException: Unrecognized block type 'RED2'
+   at ValveResourceFormat.Resource.ConstructFromType(String input)
+   at ValveResourceFormat.Resource.Read(Stream input) in C:\projects\valveresourceformat\ValveResourceFormat\Resource\Resource.cs:line 226
+   at Decompiler.Decompiler.ProcessFile(String path, Stream stream) in C:\projects\valveresourceformat\Decompiler\Decompiler.cs:line 269
+
+---------------
+File: F:\DFined\Design\ParserPatcher\local\7657751\panorama\images\econ\items\spectre\spectre_arcana\spectre_arcana_misc_png.vtex_c
+Exception: System.ArgumentException: Unrecognized block type 'RED2'
+   at ValveResourceFormat.Resource.ConstructFromType(String input)
+   at ValveResourceFormat.Resource.Read(Stream input) in C:\projects\valveresourceformat\ValveResourceFormat\Resource\Resource.cs:line 226
+   at Decompiler.Decompiler.ProcessFile(String path, Stream stream) in C:\projects\valveresourceformat\Decompiler\Decompiler.cs:line 269
+
+---------------
+File: F:\DFined\Design\ParserPatcher\local\7657751\panorama\images\econ\items\spectre\spectre_arcana\spectre_arcana_shoulder_png.vtex_c
+Exception: System.ArgumentException: Unrecognized block type 'RED2'
+   at ValveResourceFormat.Resource.ConstructFromType(String input)
+   at ValveResourceFormat.Resource.Read(Stream input) in C:\projects\valveresourceformat\ValveResourceFormat\Resource\Resource.cs:line 226
+   at Decompiler.Decompiler.ProcessFile(String path, Stream stream) in C:\projects\valveresourceformat\Decompiler\Decompiler.cs:line 269
+
+---------------
+File: F:\DFined\Design\ParserPatcher\local\7657751\panorama\images\econ\items\queenofpain\ti8_qop_bat_queen_legs\ti8_qop_bat_queen_legs_png.vtex_c
+Exception: System.ArgumentException: Unrecognized block type 'RED2'
+   at ValveResourceFormat.Resource.ConstructFromType(String input)
+   at ValveResourceFormat.Resource.Read(Stream input) in C:\projects\valveresourceformat\ValveResourceFormat\Resource\Resource.cs:line 226
+   at Decompiler.Decompiler.ProcessFile(String path, Stream stream) in C:\projects\valveresourceformat\Decompiler\Decompiler.cs:line 269
+
+---------------
+File: F:\DFined\Design\ParserPatcher\local\7657751\panorama\images\econ\items\queenofpain\ti8_qop_bat_queen_legs\ti8_qop_bat_queen_legs_png.vtex_c
+Exception: System.ArgumentException: Unrecognized block type 'RED2'
+   at ValveResourceFormat.Resource.ConstructFromType(String input)
+   at ValveResourceFormat.Resource.Read(Stream input) in C:\projects\valveresourceformat\ValveResourceFormat\Resource\Resource.cs:line 226
+   at Decompiler.Decompiler.ProcessFile(String path, Stream stream) in C:\projects\valveresourceformat\Decompiler\Decompiler.cs:line 269
+
+---------------
+File: F:\DFined\Design\ParserPatcher\local\7657751\panorama\images\econ\items\io\io_ti7\io_ti7_png.vtex_c
+Exception: System.ArgumentException: Unrecognized block type 'RED2'
+   at ValveResourceFormat.Resource.ConstructFromType(String input)
+   at ValveResourceFormat.Resource.Read(Stream input) in C:\projects\valveresourceformat\ValveResourceFormat\Resource\Resource.cs:line 226
+   at Decompiler.Decompiler.ProcessFile(String path, Stream stream) in C:\projects\valveresourceformat\Decompiler\Decompiler.cs:line 269
+
+---------------
+File: F:\DFined\Design\ParserPatcher\local\7657751\panorama\images\econ\items\juggernaut\arcana\juggernaut_arcana_mask_style1_png.vtex_c
+Exception: System.ArgumentException: Unrecognized block type 'RED2'
+   at ValveResourceFormat.Resource.ConstructFromType(String input)
+   at ValveResourceFormat.Resource.Read(Stream input) in C:\projects\valveresourceformat\ValveResourceFormat\Resource\Resource.cs:line 226
+   at Decompiler.Decompiler.ProcessFile(String path, Stream stream) in C:\projects\valveresourceformat\Decompiler\Decompiler.cs:line 269
+
+---------------
+File: F:\DFined\Design\ParserPatcher\local\7657751\panorama\images\econ\voicepack\juggernaut_arcana_voicepack_png.vtex_c
+Exception: System.ArgumentException: Unrecognized block type 'RED2'
+   at ValveResourceFormat.Resource.ConstructFromType(String input)
+   at ValveResourceFormat.Resource.Read(Stream input) in C:\projects\valveresourceformat\ValveResourceFormat\Resource\Resource.cs:line 226
+   at Decompiler.Decompiler.ProcessFile(String path, Stream stream) in C:\projects\valveresourceformat\Decompiler\Decompiler.cs:line 269
+
+---------------
+File: F:\DFined\Design\ParserPatcher\local\7657751\panorama\images\econ\items\faceless_void\faceless_void_arcana\faceless_void_arcana_belt_png.vtex_c
+Exception: System.ArgumentException: Unrecognized block type 'RED2'
+   at ValveResourceFormat.Resource.ConstructFromType(String input)
+   at ValveResourceFormat.Resource.Read(Stream input) in C:\projects\valveresourceformat\ValveResourceFormat\Resource\Resource.cs:line 226
+   at Decompiler.Decompiler.ProcessFile(String path, Stream stream) in C:\projects\valveresourceformat\Decompiler\Decompiler.cs:line 269
+
+---------------
+File: F:\DFined\Design\ParserPatcher\local\7657751\panorama\images\econ\items\faceless_void\faceless_void_arcana\faceless_void_arcana_bracer_png.vtex_c
+Exception: System.ArgumentException: Unrecognized block type 'RED2'
+   at ValveResourceFormat.Resource.ConstructFromType(String input)
+   at ValveResourceFormat.Resource.Read(Stream input) in C:\projects\valveresourceformat\ValveResourceFormat\Resource\Resource.cs:line 226
+   at Decompiler.Decompiler.ProcessFile(String path, Stream stream) in C:\projects\valveresourceformat\Decompiler\Decompiler.cs:line 269
+
+---------------
+File: F:\DFined\Design\ParserPatcher\local\7657751\panorama\images\econ\items\faceless_void\faceless_void_arcana\faceless_void_arcana_png.vtex_c
+Exception: System.ArgumentException: Unrecognized block type 'RED2'
+   at ValveResourceFormat.Resource.ConstructFromType(String input)
+   at ValveResourceFormat.Resource.Read(Stream input) in C:\projects\valveresourceformat\ValveResourceFormat\Resource\Resource.cs:line 226
+   at Decompiler.Decompiler.ProcessFile(String path, Stream stream) in C:\projects\valveresourceformat\Decompiler\Decompiler.cs:line 269
+
+---------------
+File: F:\DFined\Design\ParserPatcher\local\7657751\panorama\images\econ\items\faceless_void\faceless_void_arcana\faceless_void_arcana_shoulder_png.vtex_c
+Exception: System.ArgumentException: Unrecognized block type 'RED2'
+   at ValveResourceFormat.Resource.ConstructFromType(String input)
+   at ValveResourceFormat.Resource.Read(Stream input) in C:\projects\valveresourceformat\ValveResourceFormat\Resource\Resource.cs:line 226
+   at Decompiler.Decompiler.ProcessFile(String path, Stream stream) in C:\projects\valveresourceformat\Decompiler\Decompiler.cs:line 269
+
+---------------
+File: F:\DFined\Design\ParserPatcher\local\7657751\panorama\images\econ\items\faceless_void\faceless_void_arcana\faceless_void_arcana_weapon_png.vtex_c
+Exception: System.ArgumentException: Unrecognized block type 'RED2'
+   at ValveResourceFormat.Resource.ConstructFromType(String input)
+   at ValveResourceFormat.Resource.Read(Stream input) in C:\projects\valveresourceformat\ValveResourceFormat\Resource\Resource.cs:line 226
+   at Decompiler.Decompiler.ProcessFile(String path, Stream stream) in C:\projects\valveresourceformat\Decompiler\Decompiler.cs:line 269
+
+---------------
+File: F:\DFined\Design\ParserPatcher\local\7657751\panorama\images\econ\items\nevermore\shadowfiend_demon_eater_png.vtex_c
+Exception: System.ArgumentException: Unrecognized block type 'RED2'
+   at ValveResourceFormat.Resource.ConstructFromType(String input)
+   at ValveResourceFormat.Resource.Read(Stream input) in C:\projects\valveresourceformat\ValveResourceFormat\Resource\Resource.cs:line 226
+   at Decompiler.Decompiler.ProcessFile(String path, Stream stream) in C:\projects\valveresourceformat\Decompiler\Decompiler.cs:line 269
+
+---------------
+File: F:\DFined\Design\ParserPatcher\local\7657751\panorama\images\econ\items\drow\dread_retribution\drow_arcana_weapon_png.vtex_c
+Exception: System.ArgumentException: Unrecognized block type 'RED2'
+   at ValveResourceFormat.Resource.ConstructFromType(String input)
+   at ValveResourceFormat.Resource.Read(Stream input) in C:\projects\valveresourceformat\ValveResourceFormat\Resource\Resource.cs:line 226
+   at Decompiler.Decompiler.ProcessFile(String path, Stream stream) in C:\projects\valveresourceformat\Decompiler\Decompiler.cs:line 269
+
+---------------
+File: F:\DFined\Design\ParserPatcher\local\7657751\panorama\images\econ\items\drow\dread_retribution\drow_arcana_arms_png.vtex_c
+Exception: System.ArgumentException: Unrecognized block type 'RED2'
+   at ValveResourceFormat.Resource.ConstructFromType(String input)
+   at ValveResourceFormat.Resource.Read(Stream input) in C:\projects\valveresourceformat\ValveResourceFormat\Resource\Resource.cs:line 226
+   at Decompiler.Decompiler.ProcessFile(String path, Stream stream) in C:\projects\valveresourceformat\Decompiler\Decompiler.cs:line 269
+
+---------------
+File: F:\DFined\Design\ParserPatcher\local\7657751\panorama\images\econ\items\queenofpain\ti8_qop_bat_queen_legs\ti8_qop_bat_queen_legs_png.vtex_c
+Exception: System.ArgumentException: Unrecognized block type 'RED2'
+   at ValveResourceFormat.Resource.ConstructFromType(String input)
+   at ValveResourceFormat.Resource.Read(Stream input) in C:\projects\valveresourceformat\ValveResourceFormat\Resource\Resource.cs:line 226
+   at Decompiler.Decompiler.ProcessFile(String path, Stream stream) in C:\projects\valveresourceformat\Decompiler\Decompiler.cs:line 269
+
+---------------
+File: F:\DFined\Design\ParserPatcher\local\7657751\panorama\images\econ\items\io\io_ti7\io_ti7_png.vtex_c
+Exception: System.ArgumentException: Unrecognized block type 'RED2'
+   at ValveResourceFormat.Resource.ConstructFromType(String input)
+   at ValveResourceFormat.Resource.Read(Stream input) in C:\projects\valveresourceformat\ValveResourceFormat\Resource\Resource.cs:line 226
+   at Decompiler.Decompiler.ProcessFile(String path, Stream stream) in C:\projects\valveresourceformat\Decompiler\Decompiler.cs:line 269
+
+---------------
+File: F:\DFined\Design\ParserPatcher\local\7657751\panorama\images\econ\items\juggernaut\arcana\juggernaut_arcana_mask_style1_png.vtex_c
+Exception: System.ArgumentException: Unrecognized block type 'RED2'
+   at ValveResourceFormat.Resource.ConstructFromType(String input)
+   at ValveResourceFormat.Resource.Read(Stream input) in C:\projects\valveresourceformat\ValveResourceFormat\Resource\Resource.cs:line 226
+   at Decompiler.Decompiler.ProcessFile(String path, Stream stream) in C:\projects\valveresourceformat\Decompiler\Decompiler.cs:line 269
+
+---------------
+File: F:\DFined\Design\ParserPatcher\local\7657751\panorama\images\econ\voicepack\juggernaut_arcana_voicepack_png.vtex_c
+Exception: System.ArgumentException: Unrecognized block type 'RED2'
+   at ValveResourceFormat.Resource.ConstructFromType(String input)
+   at ValveResourceFormat.Resource.Read(Stream input) in C:\projects\valveresourceformat\ValveResourceFormat\Resource\Resource.cs:line 226
+   at Decompiler.Decompiler.ProcessFile(String path, Stream stream) in C:\projects\valveresourceformat\Decompiler\Decompiler.cs:line 269
+
+---------------
+File: F:\DFined\Design\ParserPatcher\local\7657751\panorama\images\econ\items\faceless_void\faceless_void_arcana\faceless_void_arcana_belt_png.vtex_c
+Exception: System.ArgumentException: Unrecognized block type 'RED2'
+   at ValveResourceFormat.Resource.ConstructFromType(String input)
+   at ValveResourceFormat.Resource.Read(Stream input) in C:\projects\valveresourceformat\ValveResourceFormat\Resource\Resource.cs:line 226
+   at Decompiler.Decompiler.ProcessFile(String path, Stream stream) in C:\projects\valveresourceformat\Decompiler\Decompiler.cs:line 269
+
+---------------
+File: F:\DFined\Design\ParserPatcher\local\7657751\panorama\images\econ\items\faceless_void\faceless_void_arcana\faceless_void_arcana_bracer_png.vtex_c
+Exception: System.ArgumentException: Unrecognized block type 'RED2'
+   at ValveResourceFormat.Resource.ConstructFromType(String input)
+   at ValveResourceFormat.Resource.Read(Stream input) in C:\projects\valveresourceformat\ValveResourceFormat\Resource\Resource.cs:line 226
+   at Decompiler.Decompiler.ProcessFile(String path, Stream stream) in C:\projects\valveresourceformat\Decompiler\Decompiler.cs:line 269
+
+---------------
+File: F:\DFined\Design\ParserPatcher\local\7657751\panorama\images\econ\items\faceless_void\faceless_void_arcana\faceless_void_arcana_png.vtex_c
+Exception: System.ArgumentException: Unrecognized block type 'RED2'
+   at ValveResourceFormat.Resource.ConstructFromType(String input)
+   at ValveResourceFormat.Resource.Read(Stream input) in C:\projects\valveresourceformat\ValveResourceFormat\Resource\Resource.cs:line 226
+   at Decompiler.Decompiler.ProcessFile(String path, Stream stream) in C:\projects\valveresourceformat\Decompiler\Decompiler.cs:line 269
+
+---------------
+File: F:\DFined\Design\ParserPatcher\local\7657751\panorama\images\econ\items\faceless_void\faceless_void_arcana\faceless_void_arcana_shoulder_png.vtex_c
+Exception: System.ArgumentException: Unrecognized block type 'RED2'
+   at ValveResourceFormat.Resource.ConstructFromType(String input)
+   at ValveResourceFormat.Resource.Read(Stream input) in C:\projects\valveresourceformat\ValveResourceFormat\Resource\Resource.cs:line 226
+   at Decompiler.Decompiler.ProcessFile(String path, Stream stream) in C:\projects\valveresourceformat\Decompiler\Decompiler.cs:line 269
+
+---------------
+File: F:\DFined\Design\ParserPatcher\local\7657751\panorama\images\econ\items\faceless_void\faceless_void_arcana\faceless_void_arcana_weapon_png.vtex_c
+Exception: System.ArgumentException: Unrecognized block type 'RED2'
+   at ValveResourceFormat.Resource.ConstructFromType(String input)
+   at ValveResourceFormat.Resource.Read(Stream input) in C:\projects\valveresourceformat\ValveResourceFormat\Resource\Resource.cs:line 226
+   at Decompiler.Decompiler.ProcessFile(String path, Stream stream) in C:\projects\valveresourceformat\Decompiler\Decompiler.cs:line 269
+
+---------------
+File: F:\DFined\Design\ParserPatcher\local\7657751\panorama\images\econ\items\nevermore\shadowfiend_demon_eater_png.vtex_c
+Exception: System.ArgumentException: Unrecognized block type 'RED2'
+   at ValveResourceFormat.Resource.ConstructFromType(String input)
+   at ValveResourceFormat.Resource.Read(Stream input) in C:\projects\valveresourceformat\ValveResourceFormat\Resource\Resource.cs:line 226
+   at Decompiler.Decompiler.ProcessFile(String path, Stream stream) in C:\projects\valveresourceformat\Decompiler\Decompiler.cs:line 269
+
+---------------
+File: F:\DFined\Design\ParserPatcher\local\7657751\panorama\images\econ\items\drow\dread_retribution\drow_arcana_weapon_png.vtex_c
+Exception: System.ArgumentException: Unrecognized block type 'RED2'
+   at ValveResourceFormat.Resource.ConstructFromType(String input)
+   at ValveResourceFormat.Resource.Read(Stream input) in C:\projects\valveresourceformat\ValveResourceFormat\Resource\Resource.cs:line 226
+   at Decompiler.Decompiler.ProcessFile(String path, Stream stream) in C:\projects\valveresourceformat\Decompiler\Decompiler.cs:line 269
+
+---------------
+File: F:\DFined\Design\ParserPatcher\local\7657751\panorama\images\econ\items\drow\dread_retribution\drow_arcana_arms_png.vtex_c
+Exception: System.ArgumentException: Unrecognized block type 'RED2'
+   at ValveResourceFormat.Resource.ConstructFromType(String input)
+   at ValveResourceFormat.Resource.Read(Stream input) in C:\projects\valveresourceformat\ValveResourceFormat\Resource\Resource.cs:line 226
+   at Decompiler.Decompiler.ProcessFile(String path, Stream stream) in C:\projects\valveresourceformat\Decompiler\Decompiler.cs:line 269
+
+---------------
+File: F:\DFined\Design\ParserPatcher\local\7657751\panorama\images\econ\items\io\io_ti7\io_ti7_png.vtex_c
+Exception: System.ArgumentException: Unrecognized block type 'RED2'
+   at ValveResourceFormat.Resource.ConstructFromType(String input)
+   at ValveResourceFormat.Resource.Read(Stream input) in C:\projects\valveresourceformat\ValveResourceFormat\Resource\Resource.cs:line 226
+   at Decompiler.Decompiler.ProcessFile(String path, Stream stream) in C:\projects\valveresourceformat\Decompiler\Decompiler.cs:line 269
+
+---------------
+File: F:\DFined\Design\ParserPatcher\local\7657751\panorama\images\econ\items\juggernaut\arcana\juggernaut_arcana_mask_style1_png.vtex_c
+Exception: System.ArgumentException: Unrecognized block type 'RED2'
+   at ValveResourceFormat.Resource.ConstructFromType(String input)
+   at ValveResourceFormat.Resource.Read(Stream input) in C:\projects\valveresourceformat\ValveResourceFormat\Resource\Resource.cs:line 226
+   at Decompiler.Decompiler.ProcessFile(String path, Stream stream) in C:\projects\valveresourceformat\Decompiler\Decompiler.cs:line 269
+
+---------------
+File: F:\DFined\Design\ParserPatcher\local\7657751\panorama\images\econ\voicepack\juggernaut_arcana_voicepack_png.vtex_c
+Exception: System.ArgumentException: Unrecognized block type 'RED2'
+   at ValveResourceFormat.Resource.ConstructFromType(String input)
+   at ValveResourceFormat.Resource.Read(Stream input) in C:\projects\valveresourceformat\ValveResourceFormat\Resource\Resource.cs:line 226
+   at Decompiler.Decompiler.ProcessFile(String path, Stream stream) in C:\projects\valveresourceformat\Decompiler\Decompiler.cs:line 269
+
+---------------
+File: F:\DFined\Design\ParserPatcher\local\7657751\panorama\images\econ\items\faceless_void\faceless_void_arcana\faceless_void_arcana_belt_png.vtex_c
+Exception: System.ArgumentException: Unrecognized block type 'RED2'
+   at ValveResourceFormat.Resource.ConstructFromType(String input)
+   at ValveResourceFormat.Resource.Read(Stream input) in C:\projects\valveresourceformat\ValveResourceFormat\Resource\Resource.cs:line 226
+   at Decompiler.Decompiler.ProcessFile(String path, Stream stream) in C:\projects\valveresourceformat\Decompiler\Decompiler.cs:line 269
+
+---------------
+File: F:\DFined\Design\ParserPatcher\local\7657751\panorama\images\econ\items\faceless_void\faceless_void_arcana\faceless_void_arcana_bracer_png.vtex_c
+Exception: System.ArgumentException: Unrecognized block type 'RED2'
+   at ValveResourceFormat.Resource.ConstructFromType(String input)
+   at ValveResourceFormat.Resource.Read(Stream input) in C:\projects\valveresourceformat\ValveResourceFormat\Resource\Resource.cs:line 226
+   at Decompiler.Decompiler.ProcessFile(String path, Stream stream) in C:\projects\valveresourceformat\Decompiler\Decompiler.cs:line 269
+
+---------------
+File: F:\DFined\Design\ParserPatcher\local\7657751\panorama\images\econ\items\faceless_void\faceless_void_arcana\faceless_void_arcana_png.vtex_c
+Exception: System.ArgumentException: Unrecognized block type 'RED2'
+   at ValveResourceFormat.Resource.ConstructFromType(String input)
+   at ValveResourceFormat.Resource.Read(Stream input) in C:\projects\valveresourceformat\ValveResourceFormat\Resource\Resource.cs:line 226
+   at Decompiler.Decompiler.ProcessFile(String path, Stream stream) in C:\projects\valveresourceformat\Decompiler\Decompiler.cs:line 269
+
+---------------
+File: F:\DFined\Design\ParserPatcher\local\7657751\panorama\images\econ\items\faceless_void\faceless_void_arcana\faceless_void_arcana_shoulder_png.vtex_c
+Exception: System.ArgumentException: Unrecognized block type 'RED2'
+   at ValveResourceFormat.Resource.ConstructFromType(String input)
+   at ValveResourceFormat.Resource.Read(Stream input) in C:\projects\valveresourceformat\ValveResourceFormat\Resource\Resource.cs:line 226
+   at Decompiler.Decompiler.ProcessFile(String path, Stream stream) in C:\projects\valveresourceformat\Decompiler\Decompiler.cs:line 269
+
+---------------
+File: F:\DFined\Design\ParserPatcher\local\7657751\panorama\images\econ\items\faceless_void\faceless_void_arcana\faceless_void_arcana_weapon_png.vtex_c
+Exception: System.ArgumentException: Unrecognized block type 'RED2'
+   at ValveResourceFormat.Resource.ConstructFromType(String input)
+   at ValveResourceFormat.Resource.Read(Stream input) in C:\projects\valveresourceformat\ValveResourceFormat\Resource\Resource.cs:line 226
+   at Decompiler.Decompiler.ProcessFile(String path, Stream stream) in C:\projects\valveresourceformat\Decompiler\Decompiler.cs:line 269
+
+---------------
+File: F:\DFined\Design\ParserPatcher\local\7657751\panorama\images\econ\items\nevermore\shadowfiend_demon_eater_png.vtex_c
+Exception: System.ArgumentException: Unrecognized block type 'RED2'
+   at ValveResourceFormat.Resource.ConstructFromType(String input)
+   at ValveResourceFormat.Resource.Read(Stream input) in C:\projects\valveresourceformat\ValveResourceFormat\Resource\Resource.cs:line 226
+   at Decompiler.Decompiler.ProcessFile(String path, Stream stream) in C:\projects\valveresourceformat\Decompiler\Decompiler.cs:line 269
+
+---------------
+File: F:\DFined\Design\ParserPatcher\local\7657751\panorama\images\econ\items\nevermore\shadowfiend_demon_eater_png.vtex_c
+Exception: System.ArgumentException: Unrecognized block type 'RED2'
+   at ValveResourceFormat.Resource.ConstructFromType(String input)
+   at ValveResourceFormat.Resource.Read(Stream input) in C:\projects\valveresourceformat\ValveResourceFormat\Resource\Resource.cs:line 226
+   at Decompiler.Decompiler.ProcessFile(String path, Stream stream) in C:\projects\valveresourceformat\Decompiler\Decompiler.cs:line 269
+

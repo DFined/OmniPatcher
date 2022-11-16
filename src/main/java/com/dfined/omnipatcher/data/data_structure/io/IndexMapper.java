@@ -3,7 +3,7 @@ package com.dfined.omnipatcher.data.data_structure.io;
 import com.dfined.omnipatcher.application.OmniPatcher;
 import com.dfined.omnipatcher.data.data_structure.DataMap;
 import com.dfined.omnipatcher.data.data_structure.HashDataMap;
-import com.dfined.omnipatcher.data.data_structure.NamedString;
+import com.dfined.omnipatcher.v2.format.raw.NamedString;
 import javafx.application.Platform;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;

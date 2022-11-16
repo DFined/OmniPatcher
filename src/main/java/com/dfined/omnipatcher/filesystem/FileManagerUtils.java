@@ -1,9 +1,9 @@
 package com.dfined.omnipatcher.filesystem;
 
 import com.dfined.omnipatcher.application.ApplicationSettings;
-import com.dfined.omnipatcher.application.Globals;
+import com.dfined.omnipatcher.v2.Globals;
 import com.dfined.omnipatcher.application.OmniPatcher;
-import com.dfined.omnipatcher.application.error.ExceptionInfo;
+import com.dfined.omnipatcher.v2.error.ExceptionInfo;
 import org.apache.commons.io.FileUtils;
 
 import java.io.File;

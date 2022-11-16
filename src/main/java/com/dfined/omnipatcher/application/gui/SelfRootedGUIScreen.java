@@ -1,6 +1,7 @@
 package com.dfined.omnipatcher.application.gui;
 
 import com.dfined.omnipatcher.application.OmniPatcher;
+import com.dfined.omnipatcher.v2.ui.GUIScreen;
 import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -9,7 +10,7 @@ import org.apache.logging.log4j.Logger;
 
 import java.io.IOException;
 
-public interface SelfRootedGUIScreen extends GUIScreen{
+public interface SelfRootedGUIScreen extends GUIScreen {
     @Override
     default Parent create(){
         String adress = getFXMLAddress();
