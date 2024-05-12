@@ -1,31 +1,34 @@
 package com.dfined.omnipatcher.v2.model;
 
-import com.dfined.omnipatcher.data.annotations.DefaultValue;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
 
+import java.util.Objects;
+
 @Data
 @AllArgsConstructor
-public class WearableItemSlot extends Slot {
-    public static final String UNKNOWN_SLOT = "slot-not-found";
+public class WearableItemSlot {
+
     @ToString.Exclude
     Hero hero;
-    String name;
-    String showInLoadout;
-    int index;
-
-    @ToString.Exclude
-    @EqualsAndHashCode.Exclude
-    @DefaultValue("")
-    WearableItem defaultItem = null;
+    String slot;
 
     public boolean isValidSlot(){
-        return isReal() && showInLoadout.equals("1") && !name.contains("taunt");
+        return !slot.contains("taunt");
     }
 
-    public boolean isReal() {
-        return index != -1;
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        WearableItemSlot that = (WearableItemSlot) o;
+        return Objects.equals(hero.getName(), that.hero.getName()) && Objects.equals(slot, that.slot);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(hero.getName(), slot);
     }
 }

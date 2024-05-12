@@ -4,6 +4,7 @@ import com.dfined.omnipatcher.application.gui.SelfRootedGUIScreen;
 import com.dfined.omnipatcher.application.gui.VBoxWithSelection;
 import com.dfined.omnipatcher.v2.DFUtil;
 import com.dfined.omnipatcher.v2.Globals;
+import com.dfined.omnipatcher.v2.InterfaceUtils;
 import com.dfined.omnipatcher.v2.OmniPatcherV2;
 import com.dfined.omnipatcher.v2.error.ExceptionInfo;
 import com.dfined.omnipatcher.v2.filesystem.ValveResourceManager;
@@ -57,8 +58,6 @@ public class OmniPatcherUi extends AnchorPane implements SelfRootedGUIScreen {
     @FXML
     Label pageInfoLabel;
     @FXML
-    CheckBox workshopCheck;
-    @FXML
     ProgressBar wearableSearchProgressBar;
     @FXML
     BorderPane loadingProgressOverlay;
@@ -104,7 +103,7 @@ public class OmniPatcherUi extends AnchorPane implements SelfRootedGUIScreen {
         var hero = heroSelector.getSelectionModel().getSelectedItem();
         List<String> slots = new ArrayList<>();
         if (heroSelector.getSelectionModel().getSelectedIndex() > 0) {
-            slots = DFUtil.convert(Globals.getHeroByQualifiedName(hero).getValidSlots().values(), WearableItemSlot::getName);
+            slots = DFUtil.convert(Globals.getHeroByQualifiedName(hero).getValidSlots().values(), WearableItemSlot::getSlot);
         }
         slots.add(0, ANY_SELECTOR_ELEMENT);
         slotSelector.setItems(FXCollections.observableList(slots));
@@ -116,7 +115,7 @@ public class OmniPatcherUi extends AnchorPane implements SelfRootedGUIScreen {
         setWearableProgress(0);
         var rarities = DFUtil.convert(raritiesSelector.getCheckModel().getCheckedItems(), ItemRarity::valueOf);
         var pageSize = pageSize();
-        var items = Globals.getItems(getValueWithAny(heroSelector), getValueWithAny(slotSelector), itemNameSelector.getText(), rarities, workshopCheck.isSelected());
+        var items = Globals.getItems(getValueWithAny(heroSelector), getValueWithAny(slotSelector), itemNameSelector.getText(), rarities, false);
         itemsResult = Lists.partition(items, pageSize);
         int pageCount = itemsResult.size();
         updatePageInfo(0, pageCount);
@@ -125,9 +124,9 @@ public class OmniPatcherUi extends AnchorPane implements SelfRootedGUIScreen {
 
     @FXML
     public void onDetailsHeroSelect() {
-        if(detailsSelectHero.getSelectionModel().getSelectedItem() != null) {
+        if (detailsSelectHero.getSelectionModel().getSelectedItem() != null) {
             var hero = Globals.getHeroByQualifiedName(detailsSelectHero.getSelectionModel().getSelectedItem());
-            detailsSelectSlot.setItems(FXCollections.observableList(DFUtil.convert(hero.getValidSlots().values(), WearableItemSlot::getName)));
+            detailsSelectSlot.setItems(FXCollections.observableList(DFUtil.convert(hero.getValidSlots().values(), WearableItemSlot::getSlot)));
             detailsSelectSlot.getSelectionModel().selectFirst();
         }
     }
@@ -139,9 +138,9 @@ public class OmniPatcherUi extends AnchorPane implements SelfRootedGUIScreen {
             var slot = Globals.getHeroByQualifiedName(detailsSelectHero.getSelectionModel().getSelectedItem()).getSlots().get(
                     detailsSelectSlot.getSelectionModel().getSelectedItem()
             );
-            if (!ItemsToInstall.getInstance().isItemEnqueued(slot)) {
-                var uninst = ItemsToInstall.getInstance().install(slot, item);
-                if(uninst != null){
+            if (!ItemsToInstall.getInstance().getWearables().isItemEnqueued(slot)) {
+                var uninst = ItemsToInstall.getInstance().getWearables().install(new WearableInstallInfo(slot, item));
+                if (uninst != null) {
                     installQueue.deselect();
                     installQueue.getChildren().remove(installQueue.getSelected());
                 }
@@ -155,13 +154,16 @@ public class OmniPatcherUi extends AnchorPane implements SelfRootedGUIScreen {
     @FXML
     public void onRemoveFromWearableQueue() {
         if (installQueue.getSelected() != null) {
-            var item = installQueue.getSelected().getItem();
             var slot = installQueue.getSelected().getSlot();
-            if (ItemsToInstall.getInstance().isItemEnqueued(slot)) {
-                ItemsToInstall.getInstance().uninstall(slot);
-                installQueue.getChildren().remove(installQueue.getSelected());
-                installQueue.deselect();
-            }
+            uninstallSlot(slot);
+        }
+    }
+
+    private void uninstallSlot(WearableItemSlot slot) {
+        if (ItemsToInstall.getInstance().getWearables().isItemEnqueued(slot)) {
+            ItemsToInstall.getInstance().getWearables().uninstall(slot);
+            installQueue.getChildren().remove(installQueue.getSelected());
+            installQueue.deselect();
         }
     }
 
@@ -184,6 +186,31 @@ public class OmniPatcherUi extends AnchorPane implements SelfRootedGUIScreen {
     public void onPrevPage() {
         page = (int) DFUtil.clamp(0, pageCount - 1, page - 1);
         updatePageInfo(page, pageCount);
+    }
+
+    @FXML
+    public void onRemoveAll() {
+
+    }
+
+    @FXML
+    public void onLoadSet() {
+        InterfaceUtils.loadFiles(ItemsToInstall.class, List.of("opw"));
+
+    }
+
+    @FXML
+    public void onLoadAll() {
+        InterfaceUtils.loadFiles(ItemsToInstall.class, List.of("opw"));
+    }
+
+    @FXML
+    public void onSaveAll() {
+        try {
+            InterfaceUtils.saveFile(ItemsToInstall.getInstance(), "opw");
+        } catch (IOException e){
+            throw new IllegalStateException(new ExceptionInfo().toString(), e);
+        }
     }
 
     private void updatePageInfo(int pageNumber, int pageCount) {
@@ -262,13 +289,13 @@ public class OmniPatcherUi extends AnchorPane implements SelfRootedGUIScreen {
 
         detailsHero.setText(item.getHero().getQualifiedName());
 
-        detailsSlot.setText(item.getSlot().getName());
+        detailsSlot.setText(item.getSlot().getSlot());
 
         detailsSelectHero.setItems(FXCollections.observableList(getHeroSelectorValues(false)));
         detailsSelectHero.getSelectionModel().select(item.getHero().getQualifiedName());
 
-        detailsSelectSlot.setItems(FXCollections.observableList(DFUtil.convert(item.getHero().getValidSlots().values(), WearableItemSlot::getName)));
-        detailsSelectSlot.getSelectionModel().select(item.getSlot().getName());
+        detailsSelectSlot.setItems(FXCollections.observableList(DFUtil.convert(item.getHero().getValidSlots().values(), WearableItemSlot::getSlot)));
+        detailsSelectSlot.getSelectionModel().select(item.getSlot().getSlot());
     }
 
     private void setWearableProgress(double value) {

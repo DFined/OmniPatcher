@@ -5,10 +5,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.Getter;
 import one.util.streamex.StreamEx;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Locale;
+import java.util.*;
 
 public class Globals {
     public static final ObjectMapper OBJECT_MAPPER = new ObjectMapper();
@@ -16,6 +13,7 @@ public class Globals {
     private static final HashMap<String, Hero> HEROES = new HashMap<>();
     private static final HashMap<String, String> HERO_NAMES_MAP = new HashMap<>();
     public static final List<WearableItem> ITEMS = new ArrayList<>();
+    public static final HashMap<WearableItemSlot, WearableItem> DEFAULT_WEARABLE_ITEMS = new HashMap<>();
 
     public static Hero getHero(String name) {
         return HEROES.get(name);
@@ -25,7 +23,7 @@ public class Globals {
         return getHero(HERO_NAMES_MAP.get(name));
     }
 
-    public static void initHeroes(HashMap<String, Hero> heroes) {
+    public static void initHeroes(Map<String, Hero> heroes) {
         HEROES.putAll(heroes);
         StreamEx.of(HEROES.values())
                 .mapToEntry(Hero::getQualifiedName, Hero::getName)
@@ -41,10 +39,9 @@ public class Globals {
 
     private static boolean itemMatches(String heroName, String slotName, String itemName, List<ItemRarity> rarities, boolean allowWorkshopItems, WearableItem item) {
         boolean heroNameMatches = heroName == null || HERO_NAMES_MAP.get(heroName).equals(item.getHero().getName());
-        boolean slotNameMatches = slotName == null || item.getSlot().getName().equals(slotName);
+        boolean slotNameMatches = slotName == null || item.getSlot().getSlot().equals(slotName);
         boolean itemNameMatches = itemName == null || item.getQualifiedName().toLowerCase(Locale.ROOT).contains(itemName.toLowerCase(Locale.ROOT));
         boolean raritiesMatch = rarities == null || rarities.isEmpty() || rarities.contains(item.getRarity());
-        boolean workshopOk = allowWorkshopItems || item.isWorkshopAccepted();
-        return heroNameMatches && slotNameMatches && itemNameMatches && raritiesMatch && workshopOk;
+        return heroNameMatches && slotNameMatches && itemNameMatches && raritiesMatch;
     }
 }

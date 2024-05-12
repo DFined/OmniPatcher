@@ -15,10 +15,9 @@ public class ApplicationSettings {
     private static final String SETTINGS_ENCODING = "UTF-8";
     private static final String GAMEINFO_RELATIVE_PATH = "game/dota/gameinfo.gi";
     private static final String VPK_RELATIVE_PATH = "game/dota/pak01_dir.vpk";
-    private static final String VPK_TARGET_PATH = "game/mods";
+    private static final String VPK_TARGET_PATH = "game/dota_nogaben";
     private static final String VPK_TARGET_NAME = "pak01_dir.vpk";
     private static final Logger log = LogManager.getLogger(OmniPatcher.class.getSimpleName());
-    private static ClassLoader classLoader = ApplicationSettings.class.getClassLoader();
 
     private File localDir = new File(System.getProperty("user.dir"), "/data/local");
     private File tempDir = new File(System.getProperty("user.dir"), "/data/output");

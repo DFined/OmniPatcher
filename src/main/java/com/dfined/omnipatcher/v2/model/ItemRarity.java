@@ -6,6 +6,7 @@ import lombok.Getter;
 @AllArgsConstructor
 @Getter
 public enum ItemRarity {
+    UNKNOWN(0.3f, 0.3f, 0.3f),
     COMMON(0.5f, 0.5f, 0.5f),
     UNCOMMON(0.3f, 0.8f, 0.8f),
     RARE(0.1f, 0.1f, 0.8f),

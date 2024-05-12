@@ -14,8 +14,8 @@ import org.apache.logging.log4j.Logger;
 import java.io.IOException;
 
 public class ItemTile extends HBox {
-    private static final String NORMAL_BACKGROUND_COLOR = "eeeeee";
-    private static final String SELECTED_BACKGROUND_COLOR = "d0d0d0";
+    private static final String NORMAL_BACKGROUND_COLOR = "333333";
+    private static final String SELECTED_BACKGROUND_COLOR = "444444";
     Logger log = LogManager.getLogger(ItemTile.class);
     @FXML
     ImageView icon;

@@ -1,11 +1,8 @@
 package com.dfined.omnipatcher.v2.model;
 
-import com.dfined.omnipatcher.v2.format.mapper.annotation.MapperField;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
-
-import java.util.HashMap;
 
 @Setter
 @Getter

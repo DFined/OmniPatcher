@@ -40,7 +40,6 @@ public class Item extends GameData {
 
     private static final String ICONS_PATH_PREFIX = "/panorama/images/";
     private static final String ICONS_INPUT_EXTENSION = "_png.vtex_c";
-    private static final String ICONS_OUTPUT_EXTENSION = ".png";
 
     @IgnoreDataMapping
     List<VisualModifier> visuals;
@@ -73,7 +72,7 @@ public class Item extends GameData {
         if (imageInventory != null) {
             String iconPath = ICONS_PATH_PREFIX + imageInventory;
             try {
-                image = new Image(new FileInputStream(ValveResourceManager.getIcon(iconPath, ICONS_INPUT_EXTENSION, ICONS_OUTPUT_EXTENSION)));
+                image = new Image(new FileInputStream(ValveResourceManager.getIcon(iconPath, ICONS_INPUT_EXTENSION)));
             } catch (IOException e) {
                 log.warn(String.format("Error loading icon '%s'", iconPath), e);
             }
@@ -91,16 +90,12 @@ public class Item extends GameData {
         //Install main model file if it exists. It might not for items such as personas
         if (modelPlayer != null && targetSlot.getPath()!=null) {
             FileManagerUtils.fromSourceToRepo(modelPlayer + FILE_POSTFIX, outputPath, targetSlot.getPath() + FILE_POSTFIX);
-        }else{
-            System.out.println();
         }
 
         //Install visuals
         for (VisualModifier visual : visuals) {
             if(visual.getAsset()!=null) {
                 FileManagerUtils.fromSourceToRepo(visual.getModifier() + FILE_POSTFIX, outputPath, visual.getAsset() + FILE_POSTFIX);
-            }else{
-                System.out.println();
             }
         }
 
@@ -152,7 +147,7 @@ public class Item extends GameData {
                         settings.getVpkDir().mkdir();
                     }
                     ValveResourceManager.installDirectoryToGame(settings.getTempDir(), settings.getVpkFile());
-                    ValveResourceManager.convertGameinfo(settings.getGameinfoFile());
+//                    ValveResourceManager.convertGameinfo(settings.getGameinfoFile());
                     if(!silent) {
                         JOptionPane.showMessageDialog(null, "Mods installed.", "Mods Installed", JOptionPane.INFORMATION_MESSAGE);
                     }

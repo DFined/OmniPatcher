@@ -1,4 +1,4 @@
-package com.dfined.omnipatcher.v2.format.mapper.annotation;
+package com.dfined.omnipatcher.dalt;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
@@ -7,8 +7,6 @@ import java.lang.annotation.Target;
 
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.FIELD)
-public @interface MapperField {
+public @interface ALTMapping {
     String value() default "";
-    String defaultValue() default "";
-    Class<? extends Enum<?>> enumType();
 }

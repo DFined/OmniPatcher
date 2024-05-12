@@ -3,7 +3,7 @@ package com.dfined.omnipatcher.data.data_structure.io;
 import com.dfined.omnipatcher.application.OmniPatcher;
 import com.dfined.omnipatcher.data.data_structure.DataMap;
 import com.dfined.omnipatcher.data.data_structure.HashDataMap;
-import com.dfined.omnipatcher.v2.format.raw.NamedString;
+import com.dfined.omnipatcher.dalt.Tuple;
 import javafx.application.Platform;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -15,8 +15,8 @@ public abstract class IndexMapper {
     private static final Logger log = LogManager.getLogger(OmniPatcher.class.getSimpleName());
 
     private static Map.Entry<String, Object> parseEntry(LineReader reader, String line, String path) throws IOException {
-        NamedString nameAndR = getNameAndR(line);
-        String fieldName = nameAndR.getName();
+        Tuple<String, String> nameAndR = getNameAndR(line);
+        String fieldName = nameAndR.getKey();
         String remainder = nameAndR.getValue();
         if (remainder != null) {
             //This is a single value
@@ -68,13 +68,13 @@ public abstract class IndexMapper {
         return line.substring(1, line.length() - 1);
     }
 
-    public static NamedString getNameAndR(String name) {
+    public static Tuple<String, String> getNameAndR(String name) {
         String value = null;
         if (name.contains("\"")) {
             String[] values = name.split("\"[ \n\t]*\"");
             name = values[0].trim();
             value = values[1].trim();
         }
-        return new NamedString(name, value);
+        return new Tuple<>(name, value);
     }
 }

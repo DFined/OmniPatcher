@@ -27,19 +27,25 @@ public class CachedVPKFileManager {
     @SuppressWarnings("ResultOfMethodCallIgnored")
     public CachedVPKFileManager(File vpk, File cacheDir, String version) {
         try {
-            var versionCache = new File(cacheDir, version);
-            if (!versionCache.exists() || !versionCache.isDirectory()) {
-                FileUtils.cleanDirectory(cacheDir);
-                versionCache.mkdir();
-            }
-            this.cacheDir = versionCache;
+            this.cacheDir = new File(cacheDir, version);
+            assertExists(cacheDir);
             this.tmpDir = new File(cacheDir, "tmp");
+            assertExists(tmpDir);
             this.persistentDir = new File(cacheDir, "persistent");
+            assertExists(persistentDir);
+
             clearDir(FileStore.TMP);
             vpkArchive = new Archive(vpk);
 
         } catch (IOException e) {
             throw new IllegalStateException(new ExceptionInfo().toString());
+        }
+    }
+
+    private void assertExists(File versionCache) throws IOException {
+        if (!versionCache.exists() || !versionCache.isDirectory()) {
+            FileUtils.deleteDirectory(versionCache);
+            versionCache.mkdir();
         }
     }
 

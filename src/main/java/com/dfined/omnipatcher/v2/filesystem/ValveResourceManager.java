@@ -38,7 +38,7 @@ public class ValveResourceManager {
         Image image = null;
         if (pathInVpk != null) {
             try {
-                image = new Image(new FileInputStream(ValveResourceManager.getIcon(pathInVpk, ICONS_INPUT_EXTENSION, ICONS_OUTPUT_EXTENSION)));
+                image = new Image(new FileInputStream(ValveResourceManager.getIcon(pathInVpk, ICONS_INPUT_EXTENSION)));
             } catch (IOException e) {
                 log.warn(String.format("Error loading icon '%s'", pathInVpk), e);
             }
@@ -46,38 +46,35 @@ public class ValveResourceManager {
         return image;
     }
 
-    public static File getIcon(String name, String formatIn, String formatOut) {
+    public static File getIcon(String name, String formatIn) {
         var fileManager = OmniPatcherV2.FSM;
-        var resultFile = fileManager.getInDir(name + formatOut, FileStore.PERSISTENT);
-        var decompFile = fileManager.getInDir(name + formatOut, FileStore.PERSISTENT);
+        var file = fileManager.getFileForPath(name + formatIn, FileStore.PERSISTENT);
+        var resultFile = new File(file.getAbsolutePath().replace(".vtex_c", ".png"));
 
         if (!resultFile.exists()) {
             try {
-                if (!decompFile.exists()) {
-                    var file = fileManager.getFileForPath(name + formatIn, FileStore.PERSISTENT);
-                    if (file != null && file.exists()) {
-                        Runtime rt = Runtime.getRuntime();
 
-                        Process pr = rt.exec(
-                                String.format(
-                                        "%s -i %s -o %s",
-                                        VALVE_FORMAT_DECOMPILER_LOCATION,
-                                        file.getAbsolutePath(),
-                                        decompFile.getAbsolutePath()
-                                )
-                        );
-                        pr.waitFor(1, TimeUnit.SECONDS);
-                        BufferedReader stream = new BufferedReader(new InputStreamReader(pr.getErrorStream()));
-                        String line = stream.readLine();
-                        while (line != null) {
-                            log.info(line);
-                            line = stream.readLine();
-                        }
+
+                if (file != null && file.exists()) {
+                    Runtime rt = Runtime.getRuntime();
+
+                    Process pr = rt.exec(
+                            String.format(
+                                    "%s -i %s -o %s",
+                                    VALVE_FORMAT_DECOMPILER_LOCATION,
+                                    file.getAbsolutePath(),
+                                    resultFile.getAbsolutePath()
+                            )
+                    );
+                    pr.waitFor(1, TimeUnit.SECONDS);
+                    BufferedReader stream = new BufferedReader(new InputStreamReader(pr.getErrorStream()));
+                    String line = stream.readLine();
+                    while (line != null) {
+                        log.info(line);
+                        line = stream.readLine();
                     }
                 }
-                if(!decompFile.getPath().equals(resultFile.getPath())){
-                    FileUtils.copyFile(decompFile, resultFile);
-                }
+
             } catch (IOException | InterruptedException | IllegalStateException e) {
                 try {
                     FileUtils.copyFile(DEFAULT_IMAGE, resultFile);
@@ -118,10 +115,9 @@ public class ValveResourceManager {
         for (String line : lines) {
             String lineClean = line.trim();
             if (lineClean.startsWith("//")) continue;
-            //if (lineClean.trim().isEmpty()) continue;
-            if (inserts.containsKey(line.trim())) {
-                builder.append(inserts.get(line.trim()) + "\n");
-            }
+//            if (inserts.containsKey(line.trim())) {
+//                builder.append(inserts.get(line.trim()) + "\n");
+//            }
             builder.append(line + "\n");
         }
         var realLength = gameinfoClean.length();

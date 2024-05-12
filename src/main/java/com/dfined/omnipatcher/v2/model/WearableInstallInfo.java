@@ -5,7 +5,7 @@ import lombok.Data;
 
 @Data
 @AllArgsConstructor
-public class WearableInstallInfo implements InstallInfo<WearableItemSlot, WearableItem> {
-    WearableItem item;
+public class WearableInstallInfo {
     WearableItemSlot slot;
+    WearableItem item;
 }

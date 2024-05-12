@@ -1,6 +1,7 @@
 package com.dfined.omnipatcher.v2.ui;
 
 import com.dfined.omnipatcher.application.gui.Selectable;
+import com.dfined.omnipatcher.v2.Globals;
 import com.dfined.omnipatcher.v2.filesystem.ValveResourceManager;
 import com.dfined.omnipatcher.v2.model.WearableItemSlot;
 import com.dfined.omnipatcher.v2.model.WearableItem;
@@ -59,26 +60,25 @@ public class WearableItemResultTile extends BorderPane implements Selectable {
         rarityLabel.setText(rarity.name());
         rarityLabel.setTextFill(Color.color(rarity.getR(), rarity.getG(), rarity.getB()));
 
-        slotLabel.setText(item.getSlot().getName());
+        slotLabel.setText(item.getSlot().getSlot());
 
-        heroLabel.setText(item.getSlot().getHero().getQualifiedName());
+        heroLabel.setText(Globals.getHero(item.getSlot().getHero().getName()).getQualifiedName());
 
         iconImage.setImage(ValveResourceManager.getIcon(ICONS_PATH_PREFIX + item.getImagePath()));
     }
 
     @Override
     public void onSelect() {
-        setColor("888888");
+        setColor("444444");
     }
 
     @Override
     public void onDeselect() {
-        setColor("bbbbbb");
+        setColor("333333");
     }
 
     private void setColor(String color){
         this.setStyle("-fx-background-color: " + color.toString());
         this.styleProperty().setValue(String.format("-fx-background-color : #%s", color));
-
     }
 }
