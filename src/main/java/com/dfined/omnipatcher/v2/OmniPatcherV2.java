@@ -6,6 +6,7 @@ import com.dfined.omnipatcher.v2.filesystem.CachedVPKFileManager;
 import com.dfined.omnipatcher.v2.filesystem.FileStore;
 import com.dfined.omnipatcher.v2.filesystem.GamePathConstants;
 import com.dfined.omnipatcher.v2.filesystem.OPFileUtil;
+import com.dfined.omnipatcher.v2.format.ValveDumpsterFormatWriter;
 import com.dfined.omnipatcher.v2.model.Hero;
 import com.dfined.omnipatcher.v2.model.ItemType;
 import com.dfined.omnipatcher.v2.model.WearableItem;
@@ -54,8 +55,11 @@ public class OmniPatcherV2 extends Application {
                     .toMap(Hero::getName, Function.identity());
             Globals.initHeroes(heroes);
 
-            var itemsRaw = OPFileUtil.readVDF(itemsFile);
-            var items = itemsRaw.findNodesByPaths(Arrays.asList("items", null)).stream()
+            Globals.ROOT_NODE = OPFileUtil.readVDF(itemsFile);
+
+//            var itemsTempFile = new File("test.txt");
+//            ValveDumpsterFormatWriter.write(itemsTempFile, Globals.ROOT_NODE, Map.of());
+            var items = Globals.ROOT_NODE.findNodesByPaths(Arrays.asList("items", null)).stream()
                     .map(WearableItem::fromData)
                     .toList();
             var itemsList = DFUtil.streamExByType(items, WearableItem.class)
@@ -69,7 +73,6 @@ public class OmniPatcherV2 extends Application {
                     .mapValues(values -> DFUtil.groupMapify(values, WearableItem::getSlot))
                     .toMap();
             validateDefaultItems(heroes, defaultItemsByHero);
-//            //TODO cleaner items
             Platform.runLater(() -> gui.addAndOpenScreen(new OmniPatcherUi()));
         } catch (Exception e) {
             throw new IllegalStateException(new ExceptionInfo().toString(), e);
@@ -83,11 +86,11 @@ public class OmniPatcherV2 extends Application {
                 var defaults = defaultItemsByHero.get(hero).getOrDefault(slot, List.of());
                 if (defaults.size() > 1) {
                     //This really, really shouldn't happen ever, but this is valve data soooo
-                    System.out.printf("Error: more than 1 default item for hero %s and slot %s\n", hero.getName(), slot.getSlot());
+                    System.out.printf("Error: more than 1 default item for hero %s and slot %s\n", hero.getName(), slot.getSlotName());
                     continue;
                 }
                 if (defaults.isEmpty()) {
-                    System.out.printf("Error: no default items known for hero %s and slot %s\n", hero.getName(), slot.getSlot());
+                    System.out.printf("Error: no default items known for hero %s and slot %s\n", hero.getName(), slot.getSlotName());
                     continue;
                 }
                 Globals.DEFAULT_WEARABLE_ITEMS.put(slot, defaults.get(0));

@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.gluonhq.charm.glisten.control.ExpansionPanelContainer?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ProgressBar?>
 <?import javafx.scene.control.ScrollPane?>
@@ -25,9 +23,9 @@
 
 <fx:root prefHeight="764.0" prefWidth="1190.0" type="AnchorPane" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <TabPane prefHeight="600.0" prefWidth="1152.0" style="-fx-background: #333333;" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <TabPane prefHeight="600.0" prefWidth="1152.0" style="-fx-background: #333333;" stylesheets="@tab_pane.css" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <tabs>
-          <Tab closable="false">
+          <Tab closable="false" styleClass="default.css">
                <content>
                   <SplitPane dividerPositions="0.33, 0.59" prefHeight="160.0" prefWidth="200.0" stylesheets="@default.css">
                     <items>
@@ -44,7 +42,7 @@
                                                    <children>
                                                       <TextField fx:id="itemNameSelector" promptText="Item name" stylesheets="@default.css" HBox.hgrow="ALWAYS" />
                                                       <Separator orientation="VERTICAL" prefHeight="26.0" prefWidth="68.0" HBox.hgrow="ALWAYS" />
-                                                      <Button alignment="CENTER" graphicTextGap="1.0" mnemonicParsing="false" onAction="#onSearch" prefHeight="26.0" prefWidth="94.0" stylesheets="@button.css" textAlignment="CENTER" HBox.hgrow="ALWAYS">
+                                                      <Button alignment="CENTER" graphicTextGap="1.0" mnemonicParsing="false" onAction="#onSearch" prefHeight="26.0" prefWidth="94.0" stylesheets="@default.css" textAlignment="CENTER" HBox.hgrow="ALWAYS">
                                                          <opaqueInsets>
                                                             <Insets />
                                                          </opaqueInsets>
@@ -62,10 +60,10 @@
                                                    </padding>
                                                 </HBox>
                                                 <Separator prefWidth="200.0" />
-                                                <HBox fillHeight="false" prefWidth="200.0" spacing="10.0">
+                                                <HBox alignment="CENTER" fillHeight="false" prefWidth="200.0" spacing="10.0">
                                                    <children>
                                                       <Label prefHeight="25.0" prefWidth="38.0" text="Hero:" HBox.hgrow="ALWAYS" />
-                                                      <SearchableComboBox fx:id="heroSelector" prefHeight="26.0" prefWidth="131.0" stylesheets="@searchable_combo_box.css" />
+                                                      <SearchableComboBox fx:id="heroSelector" onAction="#onHeroSelected" prefHeight="26.0" prefWidth="131.0" stylesheets="@searchable_combo_box.css" />
                                                       <Label prefHeight="24.0" prefWidth="30.0" text="Slot:" HBox.hgrow="ALWAYS" />
                                                       <SearchableComboBox fx:id="slotSelector" prefHeight="26.0" prefWidth="147.0" stylesheets="@searchable_combo_box.css" />
                                                    </children>
@@ -82,7 +80,7 @@
                                                    <children>
                                                       <CheckComboBox fx:id="raritiesSelector" prefHeight="25.0" prefWidth="141.0" showCheckedCount="true" stylesheets="@check_combo_box.css" title="Rarities" />
                                                       <Label alignment="CENTER" prefHeight="27.0" prefWidth="52.0" text="Page size:" />
-                                                      <TextField fx:id="pageSizeInput" prefHeight="30.0" prefWidth="36.0" promptText="Page size" stylesheets="@default.css" text="20">
+                                                      <TextField fx:id="pageSizeInput" prefWidth="30.0" promptText="Page size" stylesheets="@default.css" text="20">
                                                          <font>
                                                             <Font size="9.0" />
                                                          </font>
@@ -141,7 +139,7 @@
                                     <HBox prefHeight="0.0" prefWidth="200.0">
                                        <children>
                                           <Label fx:id="pageInfoLabel" prefHeight="17.0" prefWidth="146.0" text="Page 1 of 10" />
-                                          <Button minWidth="100.0" mnemonicParsing="false" onAction="#onPrevPage" style="-fx-text-fill: ffffff;" stylesheets="@button.css">
+                                          <Button minWidth="100.0" mnemonicParsing="false" onAction="#onPrevPage" style="-fx-text-fill: ffffff;" stylesheets="@default.css">
                                              <font>
                                                 <Font size="9.0" />
                                              </font>
@@ -154,7 +152,7 @@
                                                 <Insets left="10.0" right="10.0" />
                                              </HBox.margin>
                                           </Separator>
-                                          <Button minWidth="100.0" mnemonicParsing="false" onAction="#onNextPage" stylesheets="@button.css">
+                                          <Button minWidth="100.0" mnemonicParsing="false" onAction="#onNextPage" stylesheets="@default.css">
                                              <font>
                                                 <Font size="9.0" />
                                              </font>
@@ -200,101 +198,46 @@
                                                       </Label>
                                                    </top>
                                                 </BorderPane>
-                                                <HBox prefWidth="200.0">
-                                                   <children>
-                                                      <BorderPane HBox.hgrow="ALWAYS">
-                                                         <left>
-                                                            <Label text="Hero" BorderPane.alignment="CENTER">
-                                                               <font>
-                                                                  <Font size="16.0" />
-                                                               </font>
-                                                            </Label>
-                                                         </left>
-                                                         <right>
-                                                            <Label fx:id="detailsHero" text="detailsHero" BorderPane.alignment="CENTER">
-                                                               <font>
-                                                                  <Font size="16.0" />
-                                                               </font>
-                                                            </Label>
-                                                         </right>
-                                                      </BorderPane>
-                                                   </children>
-                                                </HBox>
-                                                <HBox prefWidth="200.0">
-                                                   <children>
-                                                      <BorderPane HBox.hgrow="ALWAYS">
-                                                         <left>
-                                                            <Label text="Slot" BorderPane.alignment="CENTER">
-                                                               <font>
-                                                                  <Font size="16.0" />
-                                                               </font>
-                                                            </Label>
-                                                         </left>
-                                                         <right>
-                                                            <Label fx:id="detailsSlot" text="detailsSlot" BorderPane.alignment="CENTER">
-                                                               <font>
-                                                                  <Font size="16.0" />
-                                                               </font>
-                                                            </Label>
-                                                         </right>
-                                                      </BorderPane>
-                                                   </children>
-                                                </HBox>
-                                                <BorderPane>
-                                                   <top>
-                                                      <Label text="Install to:" BorderPane.alignment="CENTER">
-                                                         <font>
-                                                            <Font size="16.0" />
-                                                         </font>
-                                                      </Label>
-                                                   </top>
-                                                   <center>
-                                                      <VBox prefWidth="100.0" spacing="5.0" BorderPane.alignment="CENTER">
+                                                <Separator prefWidth="200.0" />
+                                                <SplitPane dividerPositions="0.5" style="-fx-background-color: transparent;" stylesheets="@default.css" VBox.vgrow="NEVER">
+                                                   <items>
+                                                      <VBox alignment="CENTER" style="-fx-background-color: #444444; -fx-border-color: transparent;" stylesheets="@default.css">
                                                          <children>
-                                                            <HBox prefWidth="200.0">
-                                                               <children>
-                                                                  <BorderPane HBox.hgrow="ALWAYS">
-                                                                     <left>
-                                                                        <Label text="Hero" BorderPane.alignment="CENTER">
-                                                                           <font>
-                                                                              <Font size="16.0" />
-                                                                           </font>
-                                                                        </Label>
-                                                                     </left>
-                                                                     <right>
-                                                                        <ComboBox fx:id="detailsSelectHero" onAction="#onDetailsHeroSelect" prefWidth="150.0" promptText="detailsSelectHero" BorderPane.alignment="CENTER" />
-                                                                     </right>
-                                                                  </BorderPane>
-                                                               </children>
-                                                            </HBox>
-                                                            <HBox prefWidth="200.0">
-                                                               <children>
-                                                                  <BorderPane HBox.hgrow="ALWAYS">
-                                                                     <left>
-                                                                        <Label text="Slot" BorderPane.alignment="CENTER">
-                                                                           <font>
-                                                                              <Font size="16.0" />
-                                                                           </font>
-                                                                        </Label>
-                                                                     </left>
-                                                                     <right>
-                                                                        <ComboBox fx:id="detailsSelectSlot" prefWidth="150.0" promptText="detailsSelectSlot" BorderPane.alignment="CENTER" />
-                                                                     </right>
-                                                                  </BorderPane>
-                                                               </children>
-                                                            </HBox>
-                                                            <BorderPane>
-                                                               <center>
-                                                                  <Button minHeight="15.0" mnemonicParsing="false" onAction="#onWearableInstall" prefHeight="15.0" prefWidth="128.0" stylesheets="@button.css">
-                                                                     <graphic>
-                                                                        <Label style="-fx-text-fill: FFFFFF;" stylesheets="@button.css" text="Label" />
-                                                                     </graphic></Button>
-                                                               </center>
-                                                            </BorderPane>
+                                                            <Label text="Hero">
+                                                               <font>
+                                                                  <Font size="16.0" />
+                                                               </font>
+                                                            </Label>
+                                                            <Label text="Slot">
+                                                               <font>
+                                                                  <Font size="16.0" />
+                                                               </font>
+                                                            </Label>
                                                          </children>
                                                       </VBox>
-                                                   </center>
-                                                </BorderPane>
+                                                      <VBox alignment="CENTER">
+                                                         <children>
+                                                            <Label fx:id="detailsHero" text="detailsHero">
+                                                               <font>
+                                                                  <Font size="16.0" />
+                                                               </font>
+                                                            </Label>
+                                                            <Label fx:id="detailsSlot" stylesheets="@default.css" text="detailsSlot">
+                                                               <font>
+                                                                  <Font size="16.0" />
+                                                               </font>
+                                                            </Label>
+                                                         </children>
+                                                      </VBox>
+                                                   </items>
+                                                </SplitPane>
+                                                <Separator prefWidth="200.0" />
+                                                <Button fx:id="quickInstallButton" mnemonicParsing="false" onAction="#onQuickInstall" prefHeight="24.0" prefWidth="89.0" stylesheets="@default.css" text="Button">
+                                                   <graphic>
+                                                      <Label text="Quick install" />
+                                                   </graphic>
+                                                </Button>
+                                                <Label fx:id="unknownSlotLabel" alignment="CENTER" prefHeight="57.0" prefWidth="283.0" style="-fx-text-fill: #bb4444;" text="The slot for this item is unknown. Please select the target slot manually from the right side panel" textAlignment="CENTER" wrapText="true" />
                                              </children>
                                           </VBox>
                                        </content></ScrollPane>
@@ -308,7 +251,7 @@
                                     <HBox prefWidth="200.0">
                                        <children>
                                           <Region prefWidth="200.0" />
-                                          <Button mnemonicParsing="false" onAction="#onLoadSet" prefHeight="27.0" prefWidth="241.0" stylesheets="@button.css">
+                                          <Button alignment="CENTER" minWidth="100.0" mnemonicParsing="false" onAction="#onLoadSet" prefHeight="27.0" stylesheets="@default.css">
                                              <padding>
                                                 <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                                              </padding>
@@ -319,7 +262,7 @@
                                                 <Label prefHeight="7.0" prefWidth="99.0" style="-fx-text-fill: FFFFFF;" text="Load custom set" />
                                              </graphic>
                                           </Button>
-                                          <Button mnemonicParsing="false" onAction="#onLoadAll" prefHeight="27.0" prefWidth="208.0" stylesheets="@button.css">
+                                          <Button alignment="CENTER" minWidth="100.0" mnemonicParsing="false" onAction="#onLoadAll" prefHeight="27.0" stylesheets="@default.css">
                                              <padding>
                                                 <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                                              </padding>
@@ -330,7 +273,7 @@
                                                 <Label style="-fx-text-fill: FFFFFF;" text="Load All" />
                                              </graphic>
                                           </Button>
-                                          <Button mnemonicParsing="false" onAction="#onSaveAll" prefHeight="27.0" prefWidth="191.0" stylesheets="@button.css">
+                                          <Button alignment="CENTER" minWidth="100.0" mnemonicParsing="false" onAction="#onSaveAll" prefHeight="27.0" stylesheets="@default.css">
                                              <padding>
                                                 <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                                              </padding>
@@ -347,18 +290,21 @@
                                     <HBox alignment="CENTER" VBox.vgrow="NEVER">
                                        <children>
                                           <Label prefHeight="25.0" prefWidth="38.0" text="Hero:" />
-                                          <SearchableComboBox fx:id="targetHeroSelector" stylesheets="@searchable_combo_box.css" />
+                                          <SearchableComboBox fx:id="targetHeroSelector" onAction="#onTargetHeroSelected" stylesheets="@searchable_combo_box.css" />
                                        </children>
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" />
+                                       </VBox.margin>
                                     </HBox>
                                     <Separator prefWidth="200.0" />
-                                    <ScrollPane fx:id="installedScrlPane" fitToHeight="true" fitToWidth="true" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+                                    <ScrollPane fx:id="installedScrlPane" fitToHeight="true" fitToWidth="true" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: transparent;" VBox.vgrow="ALWAYS">
                                        <content>
-                                          <ExpansionPanelContainer style="-fx-background-color: #222222;" />
+                                          <VBox fx:id="targetVBox" prefHeight="200.0" prefWidth="100.0" />
                                        </content></ScrollPane>
                                     <HBox prefWidth="200.0">
                                        <children>
                                           <Region prefWidth="200.0" />
-                                          <Button minWidth="300.0" mnemonicParsing="false" onAction="#onRemoveAll" prefHeight="27.0" prefWidth="300.0" stylesheets="@button.css">
+                                          <Button alignment="CENTER" minWidth="150.0" mnemonicParsing="false" onAction="#onRemoveAll" prefHeight="27.0" stylesheets="@default.css">
                                              <padding>
                                                 <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                                              </padding>
@@ -369,7 +315,7 @@
                                                 <Label text="RemoveAll" />
                                              </graphic>
                                           </Button>
-                                          <Button minWidth="300.0" mnemonicParsing="false" onAction="#onRemoveFromWearableQueue" prefHeight="27.0" prefWidth="300.0" stylesheets="@button.css">
+                                          <Button alignment="CENTER" minWidth="150.0" mnemonicParsing="false" onAction="#onRemoveFromWearableQueue" prefHeight="27.0" stylesheets="@default.css">
                                              <HBox.margin>
                                                 <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                                              </HBox.margin>
@@ -380,7 +326,7 @@
                                                 <Label text="Remove Selected" />
                                              </graphic>
                                           </Button>
-                                          <Button minWidth="300.0" mnemonicParsing="false" onAction="#onInstallWearableToGame" prefHeight="27.0" prefWidth="300.0" stylesheets="@button.css">
+                                          <Button alignment="CENTER" minWidth="150.0" mnemonicParsing="false" onAction="#onInstallWearableToGame" prefHeight="27.0" stylesheets="@default.css">
                                              <padding>
                                                 <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                                              </padding>
@@ -405,11 +351,48 @@
                   <Label text="Wearables" />
                </graphic>
           </Tab>
-          <Tab text="Untitled Tab 2" />
-            <Tab text="Untitled Tab">
+            <Tab text="Landscapes, towers, creeps">
               <content>
-                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                <AnchorPane minHeight="0.0" minWidth="0.0" style="-fx-background-color: #333333;">
+                     <children>
+                        <VBox alignment="CENTER" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <Label text="WIP">
+                                 <font>
+                                    <Font size="220.0" />
+                                 </font>
+                              </Label>
+                              <Label text="Coming Soon™">
+                                 <font>
+                                    <Font size="37.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </VBox>
+                     </children></AnchorPane>
               </content>
+            </Tab>
+            <Tab text="Wards, couriers, etc">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" style="-fx-background-color: #333333;">
+                     <children>
+                        <VBox alignment="CENTER" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <Label text="WIP">
+                                 <font>
+                                    <Font size="220.0" />
+                                 </font>
+                              </Label>
+                              <Label text="Coming Soon™">
+                                 <font>
+                                    <Font size="37.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </VBox>
+                     </children>
+                  </AnchorPane>
+               </content>
             </Tab>
         </tabs>
       </TabPane>

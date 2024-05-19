@@ -1,6 +1,7 @@
 package com.dfined.omnipatcher.dalt;
 
 import lombok.Getter;
+import lombok.Setter;
 
 import java.util.*;
 
@@ -8,13 +9,24 @@ import java.util.*;
  * Basic type for the DLAT (DFined's Labeled Abstract Tree) format
  */
 @Getter
+@Setter
 public class ALTNode {
-    private final String name;
-    private final String value;
+    private String name;
+    private String value;
 
     private final List<String> pathSegments;
 
     private final LinkedHashMap<String, List<ALTNode>> childNodes;
+
+    public ALTNode(ALTNode clone){
+        this.name = clone.getName();
+        this.pathSegments = clone.getPathSegments();
+        this.value = clone.value;
+
+        this.childNodes = new LinkedHashMap<>();
+        clone.getChildNodes().forEach(this::addChildren);
+
+    }
 
     public ALTNode(String name, String value, List<String> parentPaths) {
         this.name = name;
@@ -68,5 +80,25 @@ public class ALTNode {
                 }
             }
         }
+    }
+
+    public void addChildren(String name, List<ALTNode> altNodes) {
+        this.childNodes.computeIfAbsent(name, (ignored) -> new ArrayList<>());
+        this.childNodes.get(name).addAll(altNodes);
+    }
+
+    public List<ALTNode> getChildren(String childName) {
+        return childNodes.get(childName);
+    }
+
+    public void copyChildrenFrom(ALTNode backingObject) {
+        childNodes.clear();
+        backingObject.childNodes.forEach(this::addChildren);
+    }
+
+    public void replaceChild(String name, ALTNode value){
+        childNodes.remove(name);
+        childNodes.put(name, new ArrayList<>());
+        childNodes.get(name).add(value);
     }
 }

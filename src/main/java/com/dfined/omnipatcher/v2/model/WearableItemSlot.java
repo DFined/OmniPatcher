@@ -2,7 +2,6 @@ package com.dfined.omnipatcher.v2.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.EqualsAndHashCode;
 import lombok.ToString;
 
 import java.util.Objects;
@@ -13,10 +12,10 @@ public class WearableItemSlot {
 
     @ToString.Exclude
     Hero hero;
-    String slot;
+    String slotName;
 
     public boolean isValidSlot(){
-        return !slot.contains("taunt");
+        return slotName != null && !slotName.contains("taunt");
     }
 
     @Override
@@ -24,11 +23,11 @@ public class WearableItemSlot {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         WearableItemSlot that = (WearableItemSlot) o;
-        return Objects.equals(hero.getName(), that.hero.getName()) && Objects.equals(slot, that.slot);
+        return Objects.equals(hero.getName(), that.hero.getName()) && Objects.equals(slotName, that.slotName);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(hero.getName(), slot);
+        return Objects.hash(hero.getName(), slotName);
     }
 }

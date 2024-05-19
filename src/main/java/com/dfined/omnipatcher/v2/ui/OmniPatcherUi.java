@@ -1,7 +1,5 @@
 package com.dfined.omnipatcher.v2.ui;
 
-import com.dfined.omnipatcher.application.gui.SelfRootedGUIScreen;
-import com.dfined.omnipatcher.application.gui.VBoxWithSelection;
 import com.dfined.omnipatcher.v2.DFUtil;
 import com.dfined.omnipatcher.v2.Globals;
 import com.dfined.omnipatcher.v2.InterfaceUtils;
@@ -17,6 +15,7 @@ import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import lombok.NoArgsConstructor;
 import one.util.streamex.StreamEx;
@@ -52,6 +51,8 @@ public class OmniPatcherUi extends AnchorPane implements SelfRootedGUIScreen {
     @FXML
     ComboBox<String> heroSelector;
     @FXML
+    ComboBox<String> targetHeroSelector;
+    @FXML
     ComboBox<String> slotSelector;
     @FXML
     CheckComboBox<String> raritiesSelector;
@@ -72,11 +73,15 @@ public class OmniPatcherUi extends AnchorPane implements SelfRootedGUIScreen {
     @FXML
     Label detailsSlot;
     @FXML
-    ComboBox<String> detailsSelectHero;
-    @FXML
-    ComboBox<String> detailsSelectSlot;
-    @FXML
     ImageView detailsImageView;
+    @FXML
+    VBox targetVBox;
+    @FXML
+    Button quickInstallButton;
+    @FXML
+    Label unknownSlotLabel;
+
+    WearableItem selectedItem;
 
     @Override
     public String getName() {
@@ -103,7 +108,7 @@ public class OmniPatcherUi extends AnchorPane implements SelfRootedGUIScreen {
         var hero = heroSelector.getSelectionModel().getSelectedItem();
         List<String> slots = new ArrayList<>();
         if (heroSelector.getSelectionModel().getSelectedIndex() > 0) {
-            slots = DFUtil.convert(Globals.getHeroByQualifiedName(hero).getValidSlots().values(), WearableItemSlot::getSlot);
+            slots = DFUtil.convert(Globals.getHeroByQualifiedName(hero).getValidSlots().values(), WearableItemSlot::getSlotName);
         }
         slots.add(0, ANY_SELECTOR_ELEMENT);
         slotSelector.setItems(FXCollections.observableList(slots));
@@ -111,45 +116,42 @@ public class OmniPatcherUi extends AnchorPane implements SelfRootedGUIScreen {
     }
 
     @FXML
+    public void onTargetHeroSelected() {
+        var hero = Globals.getHeroByQualifiedName(targetHeroSelector.getSelectionModel().getSelectedItem());
+        targetVBox.getChildren().clear();
+        if (hero != null) {
+            for (var slotName : hero.getSlots().values()) {
+                targetVBox.getChildren().add(new InstallSlotTile(slotName, this::onInstallToSlot, this::onRemoveFromSlot));
+            }
+        }
+    }
+
+    private void onRemoveFromSlot(WearableItemSlot slot) {
+       if(slot != null){
+           ItemsToInstall.getInstance().getWearables().uninstall(slot);
+       }
+    }
+
+    public void onInstallToSlot(WearableItemSlot slot) {
+        if (slot != null && selectedItem != null) {
+            ItemsToInstall.getInstance().getWearables().install(new WearableInstallInfo(slot, selectedItem));
+        }
+    }
+
+    @FXML
     public void onSearch() {
         setWearableProgress(0);
         var rarities = DFUtil.convert(raritiesSelector.getCheckModel().getCheckedItems(), ItemRarity::valueOf);
         var pageSize = pageSize();
-        var items = Globals.getItems(getValueWithAny(heroSelector), getValueWithAny(slotSelector), itemNameSelector.getText(), rarities, false);
+        var items = Globals.getItems(
+                getValueWithAny(heroSelector), getValueWithAny(slotSelector), itemNameSelector.getText(), rarities
+        );
         itemsResult = Lists.partition(items, pageSize);
         int pageCount = itemsResult.size();
         updatePageInfo(0, pageCount);
 
     }
 
-    @FXML
-    public void onDetailsHeroSelect() {
-        if (detailsSelectHero.getSelectionModel().getSelectedItem() != null) {
-            var hero = Globals.getHeroByQualifiedName(detailsSelectHero.getSelectionModel().getSelectedItem());
-            detailsSelectSlot.setItems(FXCollections.observableList(DFUtil.convert(hero.getValidSlots().values(), WearableItemSlot::getSlot)));
-            detailsSelectSlot.getSelectionModel().selectFirst();
-        }
-    }
-
-    @FXML
-    public void onWearableInstall() {
-        if (itemSearchResults.getChildren() != null) {
-            var item = itemSearchResults.getSelected().getItem();
-            var slot = Globals.getHeroByQualifiedName(detailsSelectHero.getSelectionModel().getSelectedItem()).getSlots().get(
-                    detailsSelectSlot.getSelectionModel().getSelectedItem()
-            );
-            if (!ItemsToInstall.getInstance().getWearables().isItemEnqueued(slot)) {
-                var uninst = ItemsToInstall.getInstance().getWearables().install(new WearableInstallInfo(slot, item));
-                if (uninst != null) {
-                    installQueue.deselect();
-                    installQueue.getChildren().remove(installQueue.getSelected());
-                }
-                var tile = new WearableItemResultTile(item);
-                tile.setSlot(slot);
-                installQueue.addSelectables(tile);
-            }
-        }
-    }
 
     @FXML
     public void onRemoveFromWearableQueue() {
@@ -160,7 +162,7 @@ public class OmniPatcherUi extends AnchorPane implements SelfRootedGUIScreen {
     }
 
     private void uninstallSlot(WearableItemSlot slot) {
-        if (ItemsToInstall.getInstance().getWearables().isItemEnqueued(slot)) {
+        if (ItemsToInstall.getInstance().getWearables().getItemForSlot(slot) != null) {
             ItemsToInstall.getInstance().getWearables().uninstall(slot);
             installQueue.getChildren().remove(installQueue.getSelected());
             installQueue.deselect();
@@ -208,7 +210,7 @@ public class OmniPatcherUi extends AnchorPane implements SelfRootedGUIScreen {
     public void onSaveAll() {
         try {
             InterfaceUtils.saveFile(ItemsToInstall.getInstance(), "opw");
-        } catch (IOException e){
+        } catch (IOException e) {
             throw new IllegalStateException(new ExceptionInfo().toString(), e);
         }
     }
@@ -246,6 +248,11 @@ public class OmniPatcherUi extends AnchorPane implements SelfRootedGUIScreen {
         heroSelector.setItems(FXCollections.observableList(getHeroSelectorValues(true)));
         heroSelector.getSelectionModel().select(0);
 
+        targetHeroSelector.setItems(FXCollections.observableList(getHeroSelectorValues(false)));
+        targetHeroSelector.getSelectionModel().select(0);
+
+        onTargetHeroSelected();
+
         slotSelector.setItems(FXCollections.observableList(new ArrayList<>(List.of(ANY_SELECTOR_ELEMENT))));
         slotSelector.getSelectionModel().select(0);
 
@@ -265,8 +272,10 @@ public class OmniPatcherUi extends AnchorPane implements SelfRootedGUIScreen {
         searchResScrl.setContent(itemSearchResults);
 
         installQueue = new VBoxWithSelection<>(this::onSelectInQueue);
-        installedScrlPane.setContent(installQueue);
         onSearch();
+
+        quickInstallButton.setDisable(true);
+        unknownSlotLabel.setVisible(false);
     }
 
     private void onSelectInQueue(WearableItemResultTile wearableItemResultTile) {
@@ -281,6 +290,20 @@ public class OmniPatcherUi extends AnchorPane implements SelfRootedGUIScreen {
         return heroNames;
     }
 
+    @FXML
+    private void onQuickInstall() {
+        if (selectedItem != null && selectedItem.getSlot().isValidSlot()) {
+            if (selectedItem != null) {
+                for (var child : targetVBox.getChildren()) {
+                    if (((InstallSlotTile) child).getSlot().equals(selectedItem.getSlot())) {
+                        ((InstallSlotTile) child).onInstallToSlot();
+                    }
+                }
+            }
+        }
+    }
+
+
     private void onSelect(WearableItemResultTile tile) {
         var item = tile.getItem();
         detailsItemNameLabel.setText(item.getQualifiedName());
@@ -289,13 +312,14 @@ public class OmniPatcherUi extends AnchorPane implements SelfRootedGUIScreen {
 
         detailsHero.setText(item.getHero().getQualifiedName());
 
-        detailsSlot.setText(item.getSlot().getSlot());
+        var slot = item.getSlot().getSlotName();
+        detailsSlot.setText(slot == null ? "UNKNOWN" : slot);
+        this.selectedItem = item;
 
-        detailsSelectHero.setItems(FXCollections.observableList(getHeroSelectorValues(false)));
-        detailsSelectHero.getSelectionModel().select(item.getHero().getQualifiedName());
+        targetHeroSelector.getSelectionModel().select(item.getSlot().getHero().getQualifiedName());
 
-        detailsSelectSlot.setItems(FXCollections.observableList(DFUtil.convert(item.getHero().getValidSlots().values(), WearableItemSlot::getSlot)));
-        detailsSelectSlot.getSelectionModel().select(item.getSlot().getSlot());
+        quickInstallButton.setDisable(!item.getSlot().isValidSlot());
+        unknownSlotLabel.setVisible(!item.getSlot().isValidSlot());
     }
 
     private void setWearableProgress(double value) {

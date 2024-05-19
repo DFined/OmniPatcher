@@ -1,7 +1,6 @@
 package com.dfined.omnipatcher.v2.filesystem;
 
 import com.dfined.omnipatcher.v2.OmniPatcherV2;
-import external.CRCHack;
 import javafx.application.Platform;
 import javafx.scene.image.Image;
 import javavpk.core.Archive;
@@ -126,7 +125,6 @@ public class ValveResourceManager {
         var appendCommentLength = (int) realLength - newLength - 2 - HELLO_GABEN.length();
         builder.append("//").append(HELLO_GABEN).append("u".repeat(appendCommentLength));
         FileUtils.writeStringToFile(gameinfoCopy, builder.toString(), "UTF8");
-        CRCHack.modifyFileCrc32(gameinfoCopy, gameinfoClean, newLength + 31, true);
         gameinfo.delete();
         gameinfoCopy.renameTo(gameinfo);
     }

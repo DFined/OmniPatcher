@@ -1,6 +1,5 @@
 package com.dfined.omnipatcher.v2.ui;
 
-import com.dfined.omnipatcher.application.gui.Selectable;
 import com.dfined.omnipatcher.v2.Globals;
 import com.dfined.omnipatcher.v2.filesystem.ValveResourceManager;
 import com.dfined.omnipatcher.v2.model.WearableItemSlot;
@@ -60,7 +59,8 @@ public class WearableItemResultTile extends BorderPane implements Selectable {
         rarityLabel.setText(rarity.name());
         rarityLabel.setTextFill(Color.color(rarity.getR(), rarity.getG(), rarity.getB()));
 
-        slotLabel.setText(item.getSlot().getSlot());
+        var slot = item.getSlot().getSlotName();
+        slotLabel.setText(slot == null ? "UNKNOWN" : slot);
 
         heroLabel.setText(Globals.getHero(item.getSlot().getHero().getName()).getQualifiedName());
 

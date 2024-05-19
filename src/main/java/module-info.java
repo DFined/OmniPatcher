@@ -14,12 +14,8 @@ module OmniPatcher {
     requires jsr305;
     requires org.slf4j;
     requires org.controlsfx.controls;
-    exports com.dfined.omnipatcher.application;
-    exports com.dfined.omnipatcher.filesystem;
     exports com.dfined.omnipatcher.v2.model;
     opens com.dfined.omnipatcher.v2.model;
-    opens com.dfined.omnipatcher.application;
-    opens com.dfined.omnipatcher.application.gui;
     exports com.dfined.omnipatcher.v2;
     opens com.dfined.omnipatcher.v2;
     exports com.dfined.omnipatcher.v2.filesystem;

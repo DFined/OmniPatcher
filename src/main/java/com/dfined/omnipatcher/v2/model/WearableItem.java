@@ -20,7 +20,7 @@ import java.util.List;
 @Builder
 @Getter
 @Slf4j
-public class WearableItem implements ALTBackedObject, InstallableItem<WearableItemSlot> {
+public class WearableItem implements ALTBackedObject {
     @JsonIgnore
     ALTNode backingObject;
 
@@ -63,7 +63,7 @@ public class WearableItem implements ALTBackedObject, InstallableItem<WearableIt
         var heroNames = heroes.getChildNames();
         if (!heroNames.isEmpty()) {
             var hero = Globals.getHero(heroNames.get(0));
-            if(hero == null){
+            if (hero == null) {
                 log.warn(String.format("Item %s has no hero specified", item.name));
                 return null;
             }
@@ -77,20 +77,5 @@ public class WearableItem implements ALTBackedObject, InstallableItem<WearableIt
     @NonNull
     public Hero getHero() {
         return slot.getHero();
-    }
-
-    @Override
-    public void customInstall(WearableItemSlot slot) {
-        try {
-            var defaultItem = Globals.DEFAULT_WEARABLE_ITEMS.get(slot);
-            if (getModelPath() != null && defaultItem != null && defaultItem.getModelPath() != null) {
-                var src = OmniPatcherV2.FSM.getFileForPath(getModelPath() + "_c", FileStore.CACHE);
-                if (src != null) {
-                    FileUtils.copyFile(src, OmniPatcherV2.FSM.getInDir(defaultItem.getModelPath() + "_c", FileStore.TMP));
-                }
-            }
-        } catch (IOException e) {
-            System.out.printf("Error installing item %s to slot %s%n", getName(), getSlot().getSlot());
-        }
     }
 }

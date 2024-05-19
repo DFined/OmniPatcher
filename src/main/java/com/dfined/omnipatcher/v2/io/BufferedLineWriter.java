@@ -1,7 +1,6 @@
 package com.dfined.omnipatcher.v2.io;
 
-import com.dfined.omnipatcher.application.OmniPatcher;
-import com.dfined.omnipatcher.data.data_structure.io.LineWriter;
+import com.dfined.omnipatcher.v2.OmniPatcherV2;
 import javafx.application.Platform;
 import org.apache.commons.io.FileUtils;
 import org.apache.logging.log4j.LogManager;
@@ -9,9 +8,9 @@ import org.apache.logging.log4j.Logger;
 
 import java.io.*;
 
-public class BufferedLineWriter implements LineWriter {
+public class BufferedLineWriter {
     BufferedWriter writer;
-    private static final Logger log = LogManager.getLogger(OmniPatcher.class.getSimpleName());
+    private static final Logger log = LogManager.getLogger(OmniPatcherV2.class.getSimpleName());
     public BufferedLineWriter(File file){
         try {
             if(file.exists()){
@@ -26,12 +25,10 @@ public class BufferedLineWriter implements LineWriter {
         }
     }
 
-    @Override
     public void writeLine(String line) throws IOException {
         writer.write(line);
     }
 
-    @Override
     public void close() throws IOException {
         writer.flush();
         writer.close();

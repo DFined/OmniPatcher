@@ -1,4 +1,4 @@
-package com.dfined.omnipatcher.application.gui;
+package com.dfined.omnipatcher.v2.ui;
 
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;

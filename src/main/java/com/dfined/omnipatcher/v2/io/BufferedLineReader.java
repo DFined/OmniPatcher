@@ -1,16 +1,15 @@
 package com.dfined.omnipatcher.v2.io;
 
-import com.dfined.omnipatcher.application.OmniPatcher;
-import com.dfined.omnipatcher.data.data_structure.io.LineReader;
+import com.dfined.omnipatcher.v2.OmniPatcherV2;
 import javafx.application.Platform;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import java.io.*;
 
-public class BufferedLineReader implements LineReader {
+public class BufferedLineReader {
     BufferedReader reader;
-    private static final Logger log = LogManager.getLogger(OmniPatcher.class.getSimpleName());
+    private static final Logger log = LogManager.getLogger(OmniPatcherV2.class.getSimpleName());
 
     public BufferedLineReader(File file) {
         try {
@@ -22,7 +21,6 @@ public class BufferedLineReader implements LineReader {
         }
     }
 
-    @Override
     public String readLine() throws IOException {
         return reader.readLine();
     }
