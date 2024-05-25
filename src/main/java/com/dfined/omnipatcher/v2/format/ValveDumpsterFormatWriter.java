@@ -31,6 +31,9 @@ public class ValveDumpsterFormatWriter {
 
     private void writeNode(ALTNode sourceNode) throws IOException {
         {
+//            if(sourceNode.getName().equals("apply_when_equipped_in_ability_effects_slot")){
+//                return;
+//            }
             if (sourceNode.getValue() == null) {
                 writeObjectNode(sourceNode);
             } else {

@@ -2,8 +2,12 @@ package com.dfined.omnipatcher.dalt;
 
 import lombok.Getter;
 import lombok.Setter;
+import one.util.streamex.StreamEx;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.stream.Stream;
 
 /**
  * Basic type for the DLAT (DFined's Labeled Abstract Tree) format
@@ -18,7 +22,7 @@ public class ALTNode {
 
     private final LinkedHashMap<String, List<ALTNode>> childNodes;
 
-    public ALTNode(ALTNode clone){
+    public ALTNode(ALTNode clone) {
         this.name = clone.getName();
         this.pathSegments = clone.getPathSegments();
         this.value = clone.value;
@@ -48,6 +52,11 @@ public class ALTNode {
     public String tryGetValue(String name) {
         var subNode = getFirstChild(name);
         return subNode == null ? null : subNode.getValue();
+    }
+
+    public Stream<ALTNode> streamChildren() {
+        return StreamEx.of(childNodes.values())
+                .flatMap(StreamEx::of);
     }
 
     public ArrayList<String> getChildNames() {
@@ -96,7 +105,7 @@ public class ALTNode {
         backingObject.childNodes.forEach(this::addChildren);
     }
 
-    public void replaceChild(String name, ALTNode value){
+    public void replaceChild(String name, ALTNode value) {
         childNodes.remove(name);
         childNodes.put(name, new ArrayList<>());
         childNodes.get(name).add(value);

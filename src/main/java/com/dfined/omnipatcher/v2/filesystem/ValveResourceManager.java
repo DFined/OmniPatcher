@@ -18,12 +18,6 @@ import java.util.function.Function;
 
 public class ValveResourceManager {
     private static final String ICONS_INPUT_EXTENSION = "_png.vtex_c";
-    private static final String ICONS_OUTPUT_EXTENSION = ".png";
-    private static final String HELLO_GABEN = "Hello, Gaben, this string ==>1234<== is defeating your validity check. Please unblock my dota custom files and eat a deek. F";
-    private static final String STEAM_CMD_URL = "https://steamcdn-a.akamaihd.net/client/installer/steamcmd.zip";
-    private static final File STEAM_CMD_ARCHIVE = new File(System.getProperty("user.dir"), "steamcmd.zip");
-    private static final File STEAM_CMD_DIR = new File(System.getProperty("user.dir"), "steamcmd");
-    private static final File STEAM_CMD_FILE = new File(STEAM_CMD_DIR, "steamcmd.exe");
     static Logger log = LogManager.getLogger(ValveResourceManager.class);
     private static final String VALVE_FORMAT_DECOMPILER_LOCATION = "valveFormatDecompiler/Decompiler.exe";
     private static final File DEFAULT_IMAGE = new File(System.getProperty("user.dir"), "defaultIcon.png");
@@ -97,36 +91,6 @@ public class ValveResourceManager {
 
     private static String pathRelativeToDir(File file, File dir) {
         return dir.toPath().relativize(file.toPath()).toString();
-    }
-
-    public static void convertGameinfo(File gameinfo) throws IOException {
-        HashMap<String, String> inserts = new HashMap<>();
-        inserts.put("Game_Language\t\tdota_*LANGUAGE*", "Game\t\tmods");
-        inserts.put("Game\t\t\t\tdota", "Game\t\tmods");
-        inserts.put("Mod\t\t\t\t\tdota", "Mod\t\tmods");
-        File gameinfoCopy = new File(gameinfo.getPath() + "copy");
-        File gameinfoClean = new File(gameinfo.getPath() + "_Clean");
-        if (!gameinfoClean.exists()) {
-            FileUtils.copyFile(gameinfo, gameinfoClean);
-        }
-        String[] lines = FileUtils.readFileToString(gameinfoClean, "UTF8").split("\n");
-        StringBuilder builder = new StringBuilder("");
-        for (String line : lines) {
-            String lineClean = line.trim();
-            if (lineClean.startsWith("//")) continue;
-//            if (inserts.containsKey(line.trim())) {
-//                builder.append(inserts.get(line.trim()) + "\n");
-//            }
-            builder.append(line + "\n");
-        }
-        var realLength = gameinfoClean.length();
-        var newLength = builder.toString().length();
-        //How many symbols to append to a comment at the end of file. -2 because // at start of comment
-        var appendCommentLength = (int) realLength - newLength - 2 - HELLO_GABEN.length();
-        builder.append("//").append(HELLO_GABEN).append("u".repeat(appendCommentLength));
-        FileUtils.writeStringToFile(gameinfoCopy, builder.toString(), "UTF8");
-        gameinfo.delete();
-        gameinfoCopy.renameTo(gameinfo);
     }
 
 //    public void prepareSteamCMDLocal() {

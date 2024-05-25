@@ -134,7 +134,7 @@ public class OmniPatcherUi extends AnchorPane implements SelfRootedGUIScreen {
 
     public void onInstallToSlot(WearableItemSlot slot) {
         if (slot != null && selectedItem != null) {
-            ItemsToInstall.getInstance().getWearables().install(new WearableInstallInfo(slot, selectedItem));
+            ItemsToInstall.getInstance().getWearables().install(new WearableInstallInfo(slot, selectedItem,0));
         }
     }
 

@@ -35,7 +35,7 @@ public class Hero {
         hero.name = node.getName();
 
         hero.models = new ArrayList<>();
-        hero.models.add("Model");
+        hero.models.add(node.getFirstChild("Model").getValue());
         //TODO support multi model heroes
 
         hero.slots = new HashMap<>();

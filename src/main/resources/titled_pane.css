@@ -48,8 +48,7 @@
 .titled-pane > *.content
 {
     -fx-background-color: #444444;
-    -fx-box-border,
-    linear-gradient(to bottom, derive(-fx-color,-02%), derive(-fx-color,65%) 12%,      derive(-fx-color,23%) 88%, derive(-fx-color,50%) 99%, -fx-box-border);
+    -linear-gradient(to bottom, derive(-fx-color,-02%), derive(-fx-color,65%) 12%,      derive(-fx-color,23%) 88%, derive(-fx-color,50%) 99%, -fx-box-border);
     -fx-background-insets: 0, 0 1 1 1;
     -fx-padding: 0.167em;
  }

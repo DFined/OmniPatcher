@@ -14,6 +14,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.io.FileUtils;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -70,6 +71,13 @@ public class WearableItem implements ALTBackedObject {
 
             item.slot = new WearableItemSlot(hero, item.slot_name);
         }
+
+        var visualsNode = node.getFirstChild("visuals");
+        if (visualsNode != null) {
+            item.visualModifiers = new ArrayList<>();
+            visualsNode.streamChildren().forEach(vNode -> item.visualModifiers.add(VisualModifier.fromData(vNode)));
+        }
+
         return item;
     }
 

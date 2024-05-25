@@ -16,6 +16,7 @@ import com.dfined.omnipatcher.v2.ui.OmniPatcherUi;
 import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.stage.Stage;
+import lombok.extern.slf4j.Slf4j;
 import one.util.streamex.EntryStream;
 import one.util.streamex.StreamEx;
 
@@ -25,6 +26,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.function.Function;
 
+@Slf4j
 public class OmniPatcherV2 extends Application {
     public static final File dotaRootDir = new File("C:\\Program Files (x86)\\Steam\\steamapps\\common\\dota 2 beta");
     public static final File localCacheDir = new File("E:\\DFined\\Design\\ParserPatcher\\local");
@@ -57,8 +59,6 @@ public class OmniPatcherV2 extends Application {
 
             Globals.ROOT_NODE = OPFileUtil.readVDF(itemsFile);
 
-//            var itemsTempFile = new File("test.txt");
-//            ValveDumpsterFormatWriter.write(itemsTempFile, Globals.ROOT_NODE, Map.of());
             var items = Globals.ROOT_NODE.findNodesByPaths(Arrays.asList("items", null)).stream()
                     .map(WearableItem::fromData)
                     .toList();
@@ -80,17 +80,24 @@ public class OmniPatcherV2 extends Application {
     }
 
 
-    private static void validateDefaultItems(Map<String, Hero> heroes, Map<Hero, Map<WearableItemSlot, List<WearableItem>>> defaultItemsByHero) {
+    private static void validateDefaultItems(
+            Map<String, Hero> heroes, Map<Hero, Map<WearableItemSlot, List<WearableItem>>> defaultItemsByHero
+    ) {
         for (Hero hero : heroes.values()) {
             for (WearableItemSlot slot : hero.getValidSlots().values()) {
                 var defaults = defaultItemsByHero.get(hero).getOrDefault(slot, List.of());
                 if (defaults.size() > 1) {
-                    //This really, really shouldn't happen ever, but this is valve data soooo
-                    System.out.printf("Error: more than 1 default item for hero %s and slot %s\n", hero.getName(), slot.getSlotName());
+                    //This really, really shouldn't happen ever, but this is valve data soooo lets at least log it
+                    log.error(String.format(
+                            "more than 1 default item for hero %s and slot %s\n",
+                            hero.getName(),
+                            slot.getSlotName()
+                    ));
                     continue;
                 }
                 if (defaults.isEmpty()) {
-                    System.out.printf("Error: no default items known for hero %s and slot %s\n", hero.getName(), slot.getSlotName());
+                    //with the new item format, missing defaults are not only possible, but expected, so we
+                    //literally just ignore them - there are dozens already
                     continue;
                 }
                 Globals.DEFAULT_WEARABLE_ITEMS.put(slot, defaults.get(0));
