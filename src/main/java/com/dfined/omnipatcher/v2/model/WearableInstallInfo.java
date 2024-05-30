@@ -69,12 +69,14 @@ public class WearableInstallInfo implements InstallableItem<WearableItemSlot> {
                                 DataHelper.getHeroIconPathBase(modifier.asset), FileStore.TMP
                         );
                         FileUtils.copyFile(src, dst);
+                    }
+                    case ICON_REPLACEMENT_HERO_MINIMAP -> {
 
-                        src = OmniPatcherV2.FSM.getFileForPath(
+                        var src = OmniPatcherV2.FSM.getFileForPath(
                                 DataHelper.getHeroIconPathIcons(modifier.modifier), FileStore.CACHE
                         );
-                        dst = OmniPatcherV2.FSM.getInDir(
-                                DataHelper.getHeroIconPathSelection(modifier.asset), FileStore.TMP
+                        var dst = OmniPatcherV2.FSM.getInDir(
+                                DataHelper.getHeroIconPathIcons(modifier.asset), FileStore.TMP
                         );
                         FileUtils.copyFile(src, dst);
                     }
@@ -97,8 +99,8 @@ public class WearableInstallInfo implements InstallableItem<WearableItemSlot> {
         }
         var overrides = new HashMap<List<String>, List<ALTNode>>();
 
-        var defaultNode = defaultItem.backingObject;
-        var defaultPath = defaultItem.backingObject.getPathSegments();
+        var defaultNode = defaultItem.getBackingObject();
+        var defaultPath = defaultNode.getPathSegments();
 
         var overrideNode = new ALTNode(defaultNode.getName(), null, defaultPath.subList(0, defaultPath.size() - 1));
         overrideNode.copyChildrenFrom(baseItem.getBackingObject());

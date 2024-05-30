@@ -1,0 +1,11 @@
+{
+  "slotOverrides": [
+    {
+      "hero": "npc_dota_hero_slardar",
+      "slot": "head",
+      "models": [
+        "models/heroes/slardar/slardar_head.vmdl"
+      ]
+    }
+  ]
+}

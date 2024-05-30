@@ -1,5 +1,7 @@
 package com.dfined.omnipatcher.v2;
 
+import com.dfined.omnipatcher.v2.filesystem.ValveResourceManager;
+
 import java.util.List;
 
 /**
@@ -29,8 +31,5 @@ public class DataHelper {
     }
     public static String getHeroIconPathIcons(String iconId){
         return String.format("%s/icons/%s_png.vtex_c", HERO_ICONS_PATH, iconId);
-    }
-    public static String getHeroIconPathSelection(String iconId){
-        return String.format("%s/selection/%s_png.vtex_c", HERO_ICONS_PATH, iconId);
     }
 }

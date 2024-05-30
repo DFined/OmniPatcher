@@ -15,6 +15,7 @@ import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import lombok.NoArgsConstructor;
@@ -24,6 +25,7 @@ import org.controlsfx.control.CheckComboBox;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import static com.dfined.omnipatcher.v2.filesystem.GamePathConstants.ICONS_PATH_PREFIX;
 
@@ -80,6 +82,10 @@ public class OmniPatcherUi extends AnchorPane implements SelfRootedGUIScreen {
     Button quickInstallButton;
     @FXML
     Label unknownSlotLabel;
+    @FXML
+    HBox styleSelectorBox;
+    @FXML
+    ComboBox<String> styleSelectorComboBox;
 
     WearableItem selectedItem;
 
@@ -127,14 +133,21 @@ public class OmniPatcherUi extends AnchorPane implements SelfRootedGUIScreen {
     }
 
     private void onRemoveFromSlot(WearableItemSlot slot) {
-       if(slot != null){
-           ItemsToInstall.getInstance().getWearables().uninstall(slot);
-       }
+        if (slot != null) {
+            ItemsToInstall.getInstance().getWearables().uninstall(slot);
+        }
     }
 
     public void onInstallToSlot(WearableItemSlot slot) {
         if (slot != null && selectedItem != null) {
-            ItemsToInstall.getInstance().getWearables().install(new WearableInstallInfo(slot, selectedItem,0));
+            ItemsToInstall.getInstance().getWearables().install(
+                    new WearableInstallInfo(
+                            slot,
+                            selectedItem,
+                            selectedItem.getStyles().isEmpty() ?
+                                    0 : Integer.parseInt(styleSelectorComboBox.getSelectionModel().getSelectedItem())
+                    )
+            );
         }
     }
 
@@ -228,7 +241,7 @@ public class OmniPatcherUi extends AnchorPane implements SelfRootedGUIScreen {
 
     private void updateItemResultTiles(int page) {
         List<WearableItemResultTile> tiles = new ArrayList<>();
-        if (itemsResult.size() > 0) {
+        if (!itemsResult.isEmpty()) {
             var items = itemsResult.get(Math.min(itemsResult.size() - 1, page));
             for (int i = 0; i < items.size(); i++) {
                 tiles.add(new WearableItemResultTile(items.get(i)));
@@ -283,7 +296,9 @@ public class OmniPatcherUi extends AnchorPane implements SelfRootedGUIScreen {
     }
 
     private List<String> getHeroSelectorValues(boolean addAny) {
-        var heroNames = StreamEx.of(Globals.getHEROES().values()).map(Hero::getQualifiedName).sorted().toList();
+        var heroNames = StreamEx.of(Globals.getHEROES().values())
+                .map(Hero::getQualifiedName).sorted()
+                .collect(Collectors.toCollection(ArrayList::new));
         if (addAny) {
             heroNames.add(0, ANY_SELECTOR_ELEMENT);
         }
@@ -320,6 +335,16 @@ public class OmniPatcherUi extends AnchorPane implements SelfRootedGUIScreen {
 
         quickInstallButton.setDisable(!item.getSlot().isValidSlot());
         unknownSlotLabel.setVisible(!item.getSlot().isValidSlot());
+
+        var hasStyles = !item.getStyles().isEmpty();
+        if (hasStyles) {
+            if (!styleSelectorComboBox.getItems().isEmpty()) {
+                styleSelectorComboBox.getItems().clear();
+            }
+            styleSelectorComboBox.getItems().addAll(item.getStyles());
+            styleSelectorComboBox.getSelectionModel().select(0);
+        }
+        styleSelectorBox.setVisible(hasStyles);
     }
 
     private void setWearableProgress(double value) {

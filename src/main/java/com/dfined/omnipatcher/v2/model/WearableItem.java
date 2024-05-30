@@ -4,16 +4,13 @@ import com.dfined.omnipatcher.dalt.ALTBackedObject;
 import com.dfined.omnipatcher.dalt.ALTMapping;
 import com.dfined.omnipatcher.dalt.ALTNode;
 import com.dfined.omnipatcher.v2.Globals;
-import com.dfined.omnipatcher.v2.OmniPatcherV2;
-import com.dfined.omnipatcher.v2.filesystem.FileStore;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NonNull;
+import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.commons.io.FileUtils;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -23,33 +20,35 @@ import java.util.List;
 @Slf4j
 public class WearableItem implements ALTBackedObject {
     @JsonIgnore
-    ALTNode backingObject;
+    private ALTNode backingObject;
 
     @ALTMapping(value = "prefab")
-    ItemType type;
+    private ItemType type;
 
     @ALTMapping(value = "item_name")
-    String name;
+    private String name;
 
     @ALTMapping(value = "name")
-    String qualifiedName;
+    private String qualifiedName;
 
     @ALTMapping(value = "item_rarity")
     @Builder.Default()
-    ItemRarity rarity = ItemRarity.UNKNOWN;
+    private ItemRarity rarity = ItemRarity.UNKNOWN;
 
     @ALTMapping(value = "model_player")
-    String modelPath;
+    @Setter
+    private String modelPath;
 
     @ALTMapping(value = "image_inventory")
-    String imagePath;
+    private String imagePath;
 
     @ALTMapping(value = "item_slot")
-    String slot_name;
+    private String slot_name;
 
-    WearableItemSlot slot;
-    List<VisualModifier> visualModifiers;
-    boolean workshopAccepted;
+    private WearableItemSlot slot;
+    private List<VisualModifier> visualModifiers;
+
+    private List<String> styles;
 
 
     public static WearableItem fromData(ALTNode node) {
@@ -72,10 +71,17 @@ public class WearableItem implements ALTBackedObject {
             item.slot = new WearableItemSlot(hero, item.slot_name);
         }
 
+
+        item.styles = new ArrayList<>();
+
         var visualsNode = node.getFirstChild("visuals");
         if (visualsNode != null) {
             item.visualModifiers = new ArrayList<>();
             visualsNode.streamChildren().forEach(vNode -> item.visualModifiers.add(VisualModifier.fromData(vNode)));
+            var stylesNode = visualsNode.getFirstChild("styles");
+            if (stylesNode != null) {
+                item.styles.addAll(stylesNode.getChildNodes().keySet());
+            }
         }
 
         return item;

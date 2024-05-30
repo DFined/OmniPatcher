@@ -110,4 +110,8 @@ public class ALTNode {
         childNodes.put(name, new ArrayList<>());
         childNodes.get(name).add(value);
     }
+
+    public void removeChild(ALTNode n) {
+        this.childNodes.get(n.getName()).remove(n);
+    }
 }

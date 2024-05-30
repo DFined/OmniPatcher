@@ -41,13 +41,12 @@ public class ValveResourceManager {
 
     public static File getIcon(String name, String formatIn) {
         var fileManager = OmniPatcherV2.FSM;
-        var file = fileManager.getFileForPath(name + formatIn, FileStore.PERSISTENT);
+        var fullname = name.contains(".vtex_c") ? name : name + formatIn;
+        var file = fileManager.getFileForPath(fullname, FileStore.PERSISTENT);
         var resultFile = new File(file.getAbsolutePath().replace(".vtex_c", ".png"));
 
         if (!resultFile.exists()) {
             try {
-
-
                 if (file != null && file.exists()) {
                     Runtime rt = Runtime.getRuntime();
 

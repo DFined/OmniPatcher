@@ -7,10 +7,7 @@ import com.dfined.omnipatcher.v2.filesystem.FileStore;
 import com.dfined.omnipatcher.v2.filesystem.GamePathConstants;
 import com.dfined.omnipatcher.v2.filesystem.OPFileUtil;
 import com.dfined.omnipatcher.v2.format.ValveDumpsterFormatWriter;
-import com.dfined.omnipatcher.v2.model.Hero;
-import com.dfined.omnipatcher.v2.model.ItemType;
-import com.dfined.omnipatcher.v2.model.WearableItem;
-import com.dfined.omnipatcher.v2.model.WearableItemSlot;
+import com.dfined.omnipatcher.v2.model.*;
 import com.dfined.omnipatcher.v2.ui.GUI;
 import com.dfined.omnipatcher.v2.ui.OmniPatcherUi;
 import javafx.application.Application;
@@ -73,6 +70,8 @@ public class OmniPatcherV2 extends Application {
                     .mapValues(values -> DFUtil.groupMapify(values, WearableItem::getSlot))
                     .toMap();
             validateDefaultItems(heroes, defaultItemsByHero);
+//            This will be needed once I figure out how to actually install items with missing data. Currently useless
+//            DataOverrides.apply();
             Platform.runLater(() -> gui.addAndOpenScreen(new OmniPatcherUi()));
         } catch (Exception e) {
             throw new IllegalStateException(new ExceptionInfo().toString(), e);
@@ -95,12 +94,16 @@ public class OmniPatcherV2 extends Application {
                     ));
                     continue;
                 }
-                if (defaults.isEmpty()) {
-                    //with the new item format, missing defaults are not only possible, but expected, so we
-                    //literally just ignore them - there are dozens already
+                if (defaults.isEmpty() || defaults.get(0).getModelPath() == null) {
+                    //currently I don't have a method for installing to a slot with missing defaults, so we need to
+                    //exclude them from showing up as targets for installation
+                    hero.getSlots().remove(slot.getSlotName());
                     continue;
                 }
                 Globals.DEFAULT_WEARABLE_ITEMS.put(slot, defaults.get(0));
+                if(defaults.get(0).getModelPath() == null){
+                    System.out.println("Bad slot " + slot.getHero() + " " + slot.getSlotName());
+                }
             }
         }
     }
