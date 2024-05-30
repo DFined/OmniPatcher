@@ -9,9 +9,8 @@ import org.apache.commons.io.FileUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import javax.swing.JOptionPane;
+import javax.swing.*;
 import java.io.*;
-import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import java.util.function.Function;
@@ -47,7 +46,7 @@ public class ValveResourceManager {
 
         if (!resultFile.exists()) {
             try {
-                if (file != null && file.exists()) {
+                if (file.exists()) {
                     Runtime rt = Runtime.getRuntime();
 
                     Process pr = rt.exec(

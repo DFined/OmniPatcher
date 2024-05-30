@@ -6,8 +6,10 @@ import com.dfined.omnipatcher.v2.filesystem.CachedVPKFileManager;
 import com.dfined.omnipatcher.v2.filesystem.FileStore;
 import com.dfined.omnipatcher.v2.filesystem.GamePathConstants;
 import com.dfined.omnipatcher.v2.filesystem.OPFileUtil;
-import com.dfined.omnipatcher.v2.format.ValveDumpsterFormatWriter;
-import com.dfined.omnipatcher.v2.model.*;
+import com.dfined.omnipatcher.v2.model.Hero;
+import com.dfined.omnipatcher.v2.model.ItemType;
+import com.dfined.omnipatcher.v2.model.WearableItem;
+import com.dfined.omnipatcher.v2.model.WearableItemSlot;
 import com.dfined.omnipatcher.v2.ui.GUI;
 import com.dfined.omnipatcher.v2.ui.OmniPatcherUi;
 import javafx.application.Application;
@@ -101,7 +103,7 @@ public class OmniPatcherV2 extends Application {
                     continue;
                 }
                 Globals.DEFAULT_WEARABLE_ITEMS.put(slot, defaults.get(0));
-                if(defaults.get(0).getModelPath() == null){
+                if (defaults.get(0).getModelPath() == null) {
                     System.out.println("Bad slot " + slot.getHero() + " " + slot.getSlotName());
                 }
             }
@@ -110,7 +112,7 @@ public class OmniPatcherV2 extends Application {
 
 
     @Override
-    public void start(Stage primaryStage) throws Exception {
+    public void start(Stage primaryStage) {
         gui = new GUI(primaryStage);
         Thread thread = new Thread(this::run);
         thread.start();
