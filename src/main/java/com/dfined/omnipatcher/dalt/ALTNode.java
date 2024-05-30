@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.stream.Stream;
 
 /**
- * Basic type for the DLAT (DFined's Labeled Abstract Tree) format
+ * Basic type for the Abstract Labeled Tree format
  */
 @Getter
 @Setter
