@@ -12,6 +12,7 @@ items can be installed perfectly. For example custom animations or effects, whic
 and are known to be problematic.
 
 ## Usage
+Warning: Currently in extremely early alpha. use at your own risk. May malfunction or not work at all until recent updates to the game format are accounted for 
 To use the patcher, you need to add '-language omnipatcher' to your launch options for Dota 2. Afterwards, 
 launch the patcher, select items you want to patch and install them to the desired hero slots. Then click
 'Install to game' and launch Dota 2
