@@ -1,5 +1,6 @@
-# OmniPatcher
+# OmniPatcher [Discontinued]
 Omnipatcher is a modification/skin-changer client for the Valve game Dota 2.
+Due to Valve changing and tightening security checks on VPK edits, this is discontinued and will not work in any modern versions
 
 ## Description
 Omnipatcher is fully automatic, meaning that all the available items for installation are discovered in the game files 
